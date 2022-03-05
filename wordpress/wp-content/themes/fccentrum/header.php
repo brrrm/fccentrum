@@ -148,6 +148,9 @@
 			</button><!-- .search-toggle -->
 
 		</header><!-- #site-header -->
+		<div id="header-graphic">
+			<img src="<?php echo get_template_directory_uri(); ?>/img/header-graphic-1.png" alt="footer logo FC Centrum" />
+		</div>
 
 		<div class="search-modal cover-modal header-footer-group" data-modal-target-string=".search-modal">
 

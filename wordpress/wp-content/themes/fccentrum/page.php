@@ -1,12 +1,12 @@
 <?php
 /**
- * The template for displaying single posts and pages.
+ * The template for displaying all single posts
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
  * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
+ * @subpackage Twenty_Twenty_One
+ * @since Twenty Twenty-One 1.0
  */
 
 get_header();
@@ -14,18 +14,11 @@ get_header();
 
 <main id="site-content">
 	<header class="post-header">
-		<?php 
-		$video = get_field('video');
-		if($video){
-		?>
-		<div class="mainVideo">
-			<?php echo $video; ?>
-		</div>
-		<?php
-		}elseif(has_post_thumbnail()){
-			the_post_thumbnail();
-		}
-		?>
+	<?php	
+	if(has_post_thumbnail()){
+		the_post_thumbnail();
+	}
+	?>
 	</header>
 	<?php
 

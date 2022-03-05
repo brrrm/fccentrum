@@ -1,5 +1,7 @@
 			<footer id="site-footer" class="header-footer-group">
-				
+					<div class="footer-graphic">
+						<img src="<?php echo get_template_directory_uri(); ?>/img/footer-kerk.png" alt="Echt Amsterdams!" />
+					</div>
 					<div class="footer-logo">
 						<a href="/" title="Naar de homepage"><img src="<?php echo get_template_directory_uri(); ?>/img/footer_logo.svg" alt="footer logo FC Centrum" /></a>
 					</div><!-- .footer-credits -->
