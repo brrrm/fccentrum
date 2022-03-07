@@ -206,6 +206,8 @@ function my_scripts_method() {
         array( 'jquery' ) #dependencies
     );
     wp_enqueue_style( 'fccentrum-styles', get_stylesheet_uri() );
+    wp_enqueue_style( 'typekit', 'https://use.typekit.net/fnf5oyg.css');
+    //https://use.typekit.net/fnf5oyg.css
 }
 add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
 

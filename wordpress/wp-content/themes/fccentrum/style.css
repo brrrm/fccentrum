@@ -5,4 +5,83 @@ Author: Garbo
 Author URI: https://garbo.nl/
 */
 
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/4357a2");
+@font-face {
+  font-family: "BrandonTextCond";
+  src: url('fonts/BrandonTextCondThin/font.woff2') format('woff2'), url('fonts/BrandonTextCondThin/font.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BrandonTextCond";
+  src: url('fonts/BrandonTextCondThinIt/font.woff2') format('woff2'), url('fonts/BrandonTextCondThinIt/font.woff') format('woff');
+  font-weight: 100;
+  font-style: italic;
+}
+@font-face {
+  font-family: "BrandonTextCond";
+  src: url('fonts/BrandonTextCondLight/font.woff2') format('woff2'), url('fonts/BrandonTextCondLight/font.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BrandonTextCond";
+  src: url('fonts/BrandonTextCondLightIt/font.woff2') format('woff2'), url('fonts/BrandonTextCondLightIt/font.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: "BrandonTextCond";
+  src: url('fonts/BrandonTextCondRegular/font.woff2') format('woff2'), url('fonts/BrandonTextCondRegular/font.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BrandonTextCond";
+  src: url('fonts/BrandonTextCondRegularIt/font.woff2') format('woff2'), url('fonts/BrandonTextCondRegularIt/font.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "BrandonTextCond";
+  src: url('fonts/BrandonTextCondMedium/font.woff2') format('woff2'), url('fonts/BrandonTextCondMedium/font.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BrandonTextCond";
+  src: url('fonts/BrandonTextCondMediumIt/font.woff2') format('woff2'), url('fonts/BrandonTextCondMediumIt/font.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  font-family: "BrandonTextCond";
+  src: url('fonts/BrandonTextCondBold/font.woff2') format('woff2'), url('fonts/BrandonTextCondBold/font.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BrandonTextCond";
+  src: url('fonts/BrandonTextCondBoldIt/font.woff2') format('woff2'), url('fonts/BrandonTextCondBoldIt/font.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: "BrandonTextCond";
+  src: url('fonts/BrandonTextCondBlack/font.woff2') format('woff2'), url('fonts/BrandonTextCondBlack/font.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BrandonTextCond";
+  src: url('fonts/BrandonTextCondBlackIt/font.woff2') format('woff2'), url('fonts/BrandonTextCondBlackIt/font.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+}
 
+body{
+	font-family: 'garage-gothic', sans-serif;
+	font-weight: 700;
+	font-style: normal;
+}
