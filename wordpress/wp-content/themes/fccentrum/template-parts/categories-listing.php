@@ -10,7 +10,11 @@ $categories = get_categories( array(
     'parent'     => 0,
     'hide_empty' => 0, // change to 1 to hide categores not having a single post
 ) );
-
-foreach ( $categories as $category ) {
+?>
+<ul class="categories-block">
+    <?php
+    foreach ( $categories as $category ) {
         get_template_part( 'template-parts/category-teaser', null, ['category' => $category] );
     }
+    ?>
+</ul>
