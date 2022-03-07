@@ -96,12 +96,26 @@ body{
 	margin: 0;
 }
 
+
+p{
+	font-family: "BrandonTextCond";
+	font-weight: 400;
+	font-style: normal;
+	font-size: 16px;
+}
+a{
+	font-family: 'garage-gothic', sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	text-transform: uppercase
+}
 #site-header{
 	display: flex;
 	flex-wrap: nowrap;
 	align-items: center;
 	justify-content: space-between;
 	margin: 0 1em;
+	height: 5em;
 }
 #site-header > a{
 	flex: 50% 0 1;
@@ -171,18 +185,56 @@ body{
 	text-indent: -999em;
 	width: 2.5em;
 	height: 2.5em;
-	background-size: cover;
 	border: none;
 }
 
+#site-footer .footer-graphic{
+	background: #000; /* waarom ? **/
+}
+#site-footer .footer-content{
+	background: #000;
+	padding-bottom: 3em;
+}
 
+#site-footer .footer-content .footer-logo{
+	text-align: center;
+}
+#site-footer .footer-content .footer-logo img{
+	width: 18em;
 
+}
+#site-footer .footer-content ul.footer-socials{
+	display: flex;
+	list-style: none;
+	justify-content: center;
+	flex: 100% 0 0;
+	padding: 0;
 
+}
+#site-footer .footer-content ul.footer-socials li{
+	text-indent: -999em;
+	background-image: url(../fccentrum/img/youtube.svg);
+	width: 2em;
+	height: 2em;
+	align-items: center;
+	margin: 0.5em;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
 
+#site-footer .footer-content ul.footer-socials li.footer-twitter{
+	background-image: url(../fccentrum/img/twitter.svg);
+}
+#site-footer .footer-content ul.footer-socials li.footer-facebook{
+	background-image: url(../fccentrum/img/facebook.svg);
 
+}
+#site-footer .footer-content ul.footer-socials li.footer-instagram{
+	background-image: url(../fccentrum/img/instagram.svg);
 
-
-
-
-
+}
+#site-footer .footer-content p.footer-address{
+	color: white;
+	text-align: center;
+}
 
