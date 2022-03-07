@@ -205,6 +205,7 @@ function my_scripts_method() {
         get_stylesheet_directory_uri() . '/js/spots.js', #your JS file
         array( 'jquery' ) #dependencies
     );
+    wp_enqueue_style( 'fccentrum-styles', get_stylesheet_uri() );
 }
 add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
 
