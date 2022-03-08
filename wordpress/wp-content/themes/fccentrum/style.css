@@ -352,7 +352,8 @@ input{
 
 
 /**Algemene elementen van de site-content */
-#site-content h1{
+#site-content h1,
+#site-content h2{
 	text-align: center;
 	color: #000;
 	font-family: 'garage-gothic', sans-serif;
@@ -368,14 +369,6 @@ input{
 #site-content h1.page-title span{
 	background-color: #000;
 	padding-top: 0.3em;
-}
-#site-content h2{
-	color: #000;
-	font-family: 'garage-gothic', sans-serif;
-	font-weight: 400;
-	text-transform: uppercase;
-	font-size: 2em;
-	text-align: center;
 }
 #site-content h2 a:link,
 #site-content h2 a:visited{
@@ -402,6 +395,12 @@ input{
 	display: block;
 	margin: 0;
 	padding: 0;
+}
+#site-content ul.categories-block li.cat h2{
+	color: #000;
+	text-align: center;
+	font-size: 2em;
+	font-weight: 400;
 }
 #site-content ul.categories-block li.cat .category-pic a{
 	display: block;
@@ -440,6 +439,8 @@ input{
     bottom: 0;
     left: 1em;
     color: #fff;
+    	font-size: 2em;
+	font-weight: 400;
 }
 #site-content .stories-container .teaser ul{
 	padding: 0;
@@ -465,5 +466,11 @@ input{
 
 
 
-
-
+#site-content .wp-block-contact-form-7-contact-form-selector form{
+	background: red;
+	display: flex;
+	flex-wrap: wrap;
+}
+#site-content .wp-block-contact-form-7-contact-form-selector form p{
+	flex: 50% 0 0;
+}

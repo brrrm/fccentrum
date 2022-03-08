@@ -11,7 +11,6 @@
 
 get_header();
 ?>
-
 <main id="site-content">
 	<header class="post-header">
 	<?php	
