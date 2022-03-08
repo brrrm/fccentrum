@@ -90,10 +90,15 @@ font-weight: 400;
 font-style: normal;
 */
 
-
+html,body{
+	margin: 0;
+	padding: 0;
+}
+*{
+	box-sizing: border-box;
+}
 body{
 	background: #fff;
-	margin: 0;
 }
 
 
@@ -109,6 +114,11 @@ a{
 	font-style: normal;
 	text-transform: uppercase
 }
+input{
+	border-radius: 5px;
+	border: none;
+	height: 30px;
+}
 #site-header{
 	display: flex;
 	flex-wrap: nowrap;
@@ -118,14 +128,14 @@ a{
 	height: 5em;
 }
 #site-header > a{
-	flex: 50% 0 1;
+	flex: auto 1 0;
 }
 #site-header > a svg{
 	height: 3em;
 }
 
 #site-header .primary-menu-wrapper{
-	flex: 40% 0 0;
+	flex: auto 0 0;
 }
 #site-header .primary-menu-wrapper a{
 	font-family: 'garage-gothic', sans-serif;
@@ -147,9 +157,11 @@ a{
 }
 #site-header .primary-menu-wrapper ul.primary-menu li{
 	list-style: none;
-	line-height: 4em;
+	line-height: 4.8em;
 	text-align: center;
 	width: 100%;
+	margin-right: 3em;
+	position: relative;
 }
 #site-header .primary-menu-wrapper ul.primary-menu li.current-menu-item a{
 	color: #E30916;
@@ -158,13 +170,13 @@ a{
 #site-header .primary-menu-wrapper ul.primary-menu li ul.sub-menu{
 	position: absolute;
 	left: -999em;
-	margin: 0 -2em;
 	background-image: url(../fccentrum/img/menu-bg.svg);
 	background-size: contain;
-	padding: 1em 3em 1em 1em;
+	padding: 1em;
 }
 #site-header .primary-menu-wrapper ul.primary-menu li:hover ul.sub-menu{
-	left: auto;
+	left: 50%;
+	transform: translate(-50%);
 }
 #site-header .primary-menu-wrapper ul.primary-menu li ul.sub-menu a{
 	color: #fff;
@@ -180,7 +192,7 @@ a{
 }
 
 #site-header .search-toggle{
-	flex: auto 0 1;
+	flex: 2.5em 0 0;
 	background: transparent url(../fccentrum/img/search-icon.svg);
 	text-indent: -999em;
 	width: 2.5em;
@@ -188,8 +200,13 @@ a{
 	border: none;
 }
 
+
+
 #site-footer .footer-graphic{
 	background: #000; /* waarom ? **/
+}
+#site-footer .footer-graphic img{
+	display: block;
 }
 #site-footer .footer-content{
 	background: #000;
@@ -199,42 +216,107 @@ a{
 #site-footer .footer-content .footer-logo{
 	text-align: center;
 }
+#site-footer .footer-content .footer-logo a,
 #site-footer .footer-content .footer-logo img{
 	width: 18em;
-
+	display: block;
+	margin: 0 auto;
 }
 #site-footer .footer-content ul.footer-socials{
 	display: flex;
 	list-style: none;
 	justify-content: center;
 	flex: 100% 0 0;
+	align-items: center;
 	padding: 0;
 
 }
-#site-footer .footer-content ul.footer-socials li{
+#site-footer .footer-content ul.footer-socials li a{
+	display: block;
 	text-indent: -999em;
 	background-image: url(../fccentrum/img/youtube.svg);
+	background-position: center;
 	width: 2em;
 	height: 2em;
 	align-items: center;
 	margin: 0.5em;
 	background-size: contain;
 	background-repeat: no-repeat;
+	text-decoration: none;
 }
 
-#site-footer .footer-content ul.footer-socials li.footer-twitter{
+#site-footer .footer-content ul.footer-socials li.footer-twitter a{
 	background-image: url(../fccentrum/img/twitter.svg);
 }
-#site-footer .footer-content ul.footer-socials li.footer-facebook{
+#site-footer .footer-content ul.footer-socials li.footer-facebook a{
 	background-image: url(../fccentrum/img/facebook.svg);
-
 }
-#site-footer .footer-content ul.footer-socials li.footer-instagram{
+#site-footer .footer-content ul.footer-socials li.footer-instagram a{
 	background-image: url(../fccentrum/img/instagram.svg);
-
 }
 #site-footer .footer-content p.footer-address{
 	color: white;
 	text-align: center;
 }
+
+
+.search-modal{
+	background: #E30916;
+	padding: 1em 0;
+	box-sizing: border-box;
+	position: absolute;
+	top: 7em;
+	width: 100%;
+	display: none;
+}
+.search-modal .section-inner{
+	display: flex;
+	flex-wrap: nowrap;
+	border-bottom: 1px solid white;
+	margin: 0 2em;
+	justify-content: space-between;
+	padding-bottom: 0.5em;
+}
+.search-modal .section-inner form{
+	flex: 90% 0 0;
+	display: flex;
+}
+.search-modal .section-inner form label{
+	order: 2;
+	flex: 95% 0 0;
+}
+.search-modal .section-inner form label input{
+	background: none;
+	width: 100%;
+	margin-left: 1em;
+}
+
+.search-modal .section-inner form label input::placeholder{
+	color: #F28C92;
+	font-family: 'garage-gothic', sans-serif;
+	font-weight: 700;
+	font-size: 1.5em;
+	text-transform: uppercase;
+}
+.search-modal .section-inner form input[type="submit"]{
+	flex: auto 0 0;
+	order: 1;
+	background: transparent url(../fccentrum/img/search-icon-white.svg) left center no-repeat;
+	text-indent: -999em;
+	width: 2em;
+	height: 2em;
+
+}
+.search-modal .section-inner button{
+	flex: auto 0 0;
+	background: transparent url(../fccentrum/img/close.svg) left center no-repeat;
+	border: none;
+}
+
+
+
+
+
+
+
 
