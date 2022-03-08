@@ -15,17 +15,19 @@ get_header();
 
 <main id="site-content">
 	<header class="post-header">
+
 	</header>
 
 <?php if ( have_posts() ) : ?>
+	<?php the_archive_title( '<h1 class="page-title"><span>', '</span></h1>' ); ?>
+	<div class="stories-container">
+		<?php while ( have_posts() ) : ?>
 
-	<?php while ( have_posts() ) : ?>
-
-		<?php the_post(); ?>
-		<?php get_template_part( 'template-parts/story-teaser', null, [] ); ?>
-		
-	<?php endwhile; ?>
-
+			<?php the_post(); ?>
+			<?php get_template_part( 'template-parts/story-teaser', null, [] ); ?>
+			
+		<?php endwhile; ?>
+	</div>
 <?php else : ?>
 
 	<p>Geen posts</p>
