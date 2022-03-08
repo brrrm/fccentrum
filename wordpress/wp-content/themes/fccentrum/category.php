@@ -29,11 +29,13 @@ get_header();
 		<?php endwhile; ?>
 	</div>
 <?php else : ?>
+		<?php the_archive_title( '<h1 class="page-title"><span>', '</span></h1>' ); ?>
 
 	<p>Geen posts</p>
 
 <?php endif; ?>
 
+<h1>Stories</h1>
 <?php get_template_part( 'template-parts/categories-listing', null, [] ); ?>
 
 </main><!-- #site-content -->
