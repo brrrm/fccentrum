@@ -56,22 +56,24 @@ get_header();
 		?>
 		</div>
 	</header>
-	<?php
+	<div class="post-content">
+		<?php
 
-	if ( have_posts() ) {
+		if ( have_posts() ) {
 
-		while ( have_posts() ) {
-			the_post();
-			?>
-			
-			<h1><?php the_title(); ?></h1>
-			<?php the_content(__('(more...)')); ?>
+			while ( have_posts() ) {
+				the_post();
+				?>
+				
+				<h1 class="page-title"><span><?php the_title(); ?></span></h1>
+				<?php the_content(__('(more...)')); ?>
 
-			<?php
+				<?php
+			}
 		}
-	}
 
-	?>
+		?>
+	</div>
 
 </main><!-- #site-content -->
 

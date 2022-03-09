@@ -15,25 +15,36 @@ get_header();
 
 <main id="site-content">
 	<header class="post-header">
+
 	</header>
+	
+		<?php if ( have_posts() ) : ?>
 
-<?php if ( have_posts() ) : ?>
+			<div class="post-content">
+			<?php the_archive_title( '<h1 class="page-title"><span>', '</span></h1>' ); ?>
+			</div>
+			<div class="stories-container">
+				<?php while ( have_posts() ) : ?>
 
-	<?php while ( have_posts() ) : ?>
+					<?php the_post(); ?>
+					<?php get_template_part( 'template-parts/story-teaser', null, [] ); ?>
+					
+				<?php endwhile; ?>
+			</div>
+			
+		<?php else : ?>
 
-		<?php the_post(); ?>
-		<?php get_template_part( 'template-parts/story-teaser', null, [] ); ?>
-		
-	<?php endwhile; ?>
+			<div class="post-content">
+				<?php the_archive_title( '<h1 class="page-title"><span>', '</span></h1>' ); ?>
+				<p>Geen posts</p>
+			</div>
 
-<?php else : ?>
+		<?php endif; ?>
 
-	<p>Geen posts</p>
+		<h2>Stories</h2>
+		<?php get_template_part( 'template-parts/categories-listing', null, [] ); ?>
 
-<?php endif; ?>
-
-<?php get_template_part( 'template-parts/categories-listing', null, [] ); ?>
-
+	
 </main><!-- #site-content -->
 
 <?php get_footer(); ?>

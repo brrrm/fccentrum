@@ -34,9 +34,10 @@ get_header();
 		while ( have_posts() ) {
 			the_post();
 			?>
-			
-			<h1><?php the_title(); ?></h1>
-			<?php the_content(__('(more...)')); ?>
+			<div class="post-content">
+				<h1><?php the_title(); ?></h1>
+				<?php the_content(__('(more...)')); ?>
+			</div>
 
 			<?php
 			get_template_part( 'template-parts/content', get_post_type() );
