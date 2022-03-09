@@ -19,26 +19,27 @@ get_header();
 	}
 	?>
 	</header>
-	<?php
 
-	if ( have_posts() ) {
+	<div class="post-content">
+		<?php
 
-		while ( have_posts() ) {
-			the_post();
-			?>
-			
-			<h1 class="page-title"><span><?php the_title(); ?></span></h1>
-			<?php the_content(__('(more...)')); ?>
+		if ( have_posts() ) {
 
-			<?php
-			get_template_part( 'template-parts/content', get_post_type() );
+			while ( have_posts() ) {
+				the_post();
+				?>
+				
+				<h1 class="page-title"><span><?php the_title(); ?></span></h1>
+				<?php the_content(__('(more...)')); ?>
+
+				<?php
+				get_template_part( 'template-parts/content', get_post_type() );
+			}
 		}
-	}
+		?>
+	</div>
 
-	get_template_part( 'template-parts/categories-listing', null, [] );
-
-	?>
-
+	<?php get_template_part( 'template-parts/categories-listing', null, [] ); ?>
 </main><!-- #site-content -->
 
 <?php get_footer(); ?>

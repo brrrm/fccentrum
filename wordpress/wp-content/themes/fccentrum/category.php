@@ -17,27 +17,34 @@ get_header();
 	<header class="post-header">
 
 	</header>
+	
+		<?php if ( have_posts() ) : ?>
 
-<?php if ( have_posts() ) : ?>
-	<?php the_archive_title( '<h1 class="page-title"><span>', '</span></h1>' ); ?>
-	<div class="stories-container">
-		<?php while ( have_posts() ) : ?>
+			<div class="post-content">
+			<?php the_archive_title( '<h1 class="page-title"><span>', '</span></h1>' ); ?>
+			</div>
+			<div class="stories-container">
+				<?php while ( have_posts() ) : ?>
 
-			<?php the_post(); ?>
-			<?php get_template_part( 'template-parts/story-teaser', null, [] ); ?>
+					<?php the_post(); ?>
+					<?php get_template_part( 'template-parts/story-teaser', null, [] ); ?>
+					
+				<?php endwhile; ?>
+			</div>
 			
-		<?php endwhile; ?>
-	</div>
-<?php else : ?>
-		<?php the_archive_title( '<h1 class="page-title"><span>', '</span></h1>' ); ?>
+		<?php else : ?>
 
-	<p>Geen posts</p>
+			<div class="post-content">
+				<?php the_archive_title( '<h1 class="page-title"><span>', '</span></h1>' ); ?>
+				<p>Geen posts</p>
+			</div>
 
-<?php endif; ?>
+		<?php endif; ?>
 
-<h1>Stories</h1>
-<?php get_template_part( 'template-parts/categories-listing', null, [] ); ?>
+		<h2>Stories</h2>
+		<?php get_template_part( 'template-parts/categories-listing', null, [] ); ?>
 
+	
 </main><!-- #site-content -->
 
 <?php get_footer(); ?>

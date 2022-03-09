@@ -20,24 +20,25 @@ get_header();
 	}
 	?>
 	</header>
-	<?php
+	<div class="post-content">
+		<?php
 
-	if ( have_posts() ) {
+		if ( have_posts() ) {
 
-		while ( have_posts() ) {
-			the_post();
-			?>
-			
-			<h1 class="page-title"><span><?php the_title(); ?></span></h1>
-			<?php the_content(__('(more...)')); ?>
+			while ( have_posts() ) {
+				the_post();
+				?>
+				
+				<h1 class="page-title"><span><?php the_title(); ?></span></h1>
+				<?php the_content(__('(more...)')); ?>
 
-			<?php
-			get_template_part( 'template-parts/content', get_post_type() );
+				<?php
+				get_template_part( 'template-parts/content', get_post_type() );
+			}
 		}
-	}
 
-	?>
-
+		?>
+	</div>
 </main><!-- #site-content -->
 
 <?php get_footer(); ?>
