@@ -14,6 +14,7 @@ $terms = wp_get_post_terms(get_the_ID(), ['category', 'spots', 'fans']);
 		?>
 	</a>
 	</header>
+	<div class="link-container">
 	<h2><a href="<?php echo esc_url( get_permalink() ); ?>" ><?php the_title(); ?></a></h2>
 	<?php if($terms){ ?>
 		<ul class="post-terms">
@@ -29,4 +30,5 @@ $terms = wp_get_post_terms(get_the_ID(), ['category', 'spots', 'fans']);
 		}
 		?>
 	<?php } ?>
+</div>
 </div>

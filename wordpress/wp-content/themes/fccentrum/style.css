@@ -105,10 +105,6 @@ body{
 	font-size: 100%;
 }
 
-
-p{
-	
-}
 a:link,
 a:visited{
 	font-family: 'garage-gothic', sans-serif;
@@ -121,10 +117,12 @@ a:visited{
 a:hover,
 a:focus{
 }
-input{
+input,
+textarea{
 	border-radius: 5px;
-	height: 30px;
+	min-height: 30px;
 	border: 1px solid #000;
+	width: 100%;
 }
 #site-header{
 	display: flex;
@@ -133,6 +131,7 @@ input{
 	justify-content: space-between;
 	padding: 0 1em;
 	height: 5em;
+	background: #fff;
 }
 #site-header > a{
 	flex: auto 1 0;
@@ -328,12 +327,12 @@ input{
 }
 
 
-#site-content{
-	max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-}
+
+
+
+
+
+
 
 
 /**Zoom animatie foto buttons */
@@ -344,6 +343,8 @@ input{
 #site-content .stories-container .teaser img,
 #site-content ul.categories-block li.cat .category-pic img{
   transition: transform 1s ease-in-out;
+  object-fit: cover;
+	object-position: center;
 }
 #site-content .stories-container .teaser img:hover,
 #site-content ul.categories-block li.cat .category-pic img:hover{
@@ -369,18 +370,32 @@ input{
 }
 #site-content h1.page-title span{
 	background-color: #000;
-	padding-top: 0.3em;
+	padding: 0.3em 0.3em 0em 0.3em;
 }
 #site-content h2 a:link,
 #site-content h2 a:visited{
 	color: #000;
 	text-decoration: none;
 }
-#site-content h2:hover a{
+#site-content h2 a:hover{
 	text-decoration: underline;
 }
 /***/
 
+
+
+#site-content .post-content{
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto ;
+	position: relative;
+} 
+#site-content ul.categories-block,
+#site-content .stories-container{
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto ;
+}
 
 
 
@@ -398,21 +413,11 @@ input{
 	padding: 0;
 }
 #site-content ul.categories-block li.cat h2{
-	color: #000;
-	text-align: center;
 	font-size: 2em;
-	font-weight: 400;
-}
-#site-content ul.categories-block li.cat .category-pic a{
-	display: block;
-	width: 100%;
-	height: 20em;
 }
 #site-content ul.categories-block li.cat .category-pic img{
 	width: 100%;
 	height: 20em;	
-	object-fit: cover;
-	object-position: center;
 	display: block;
 }
 
@@ -422,55 +427,141 @@ input{
 	column-count: 2;
 	column-gap: 1.3em;
 }
+
+
 #site-content .stories-container .teaser{
 	position: relative;
-  	margin-bottom: 1.3em;
-  	break-inside: avoid;
+  margin-bottom: 1.3em;
+  break-inside: avoid;
+  max-height: 48em;
+	min-height: 22em;
 }
-
+#site-content .stories-container .teaser a{
+	color: #fff;
+	text-decoration: none;
+}
+#site-content .stories-container .teaser a:hover{
+	text-decoration: underline;
+}
 #site-content .stories-container .teaser img{
 	display: block;
 	width: 100%;
-	height: 20em;
-	object-fit: cover;
-	object-position: center;
+	height: 100%;
 }
-#site-content .stories-container .teaser h2{
+#site-content .stories-container .teaser .link-container{
 	position: absolute;
-    bottom: 0;
-    left: 1em;
-    color: #fff;
-    	font-size: 2em;
-	font-weight: 400;
+  bottom: 1.5em;
+  left: 1em;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
 }
-#site-content .stories-container .teaser ul{
+#site-content .stories-container .teaser .link-container h2{
+	flex: 100% 0 0;
+	order: 2;
+	font-size: 3em;
+	text-align: left;
+	margin: 0;
+}
+#site-content .stories-container .teaser .link-container ul{
+	flex: 100% 0 0;
+	order: 1;
+	list-style: none;
 	padding: 0;
 	margin: 0;
-	position: absolute;
-	bottom: 4em;
-	left: 2em;
-	list-style: none;
 	display: flex;
 }
-#site-content .stories-container .teaser ul li{
+#site-content .stories-container .teaser .link-container ul li{
 	margin-right: 1em;
 }
-#site-content .stories-container .teaser ul li a{
+
+#site-content .post-content h2{
+	text-align: left;
+}
+
+body.page-id-5 #header-graphic{
+	display: none;
+}
+body.page-id-5{
+	background: black;
+	background-image: url(../fccentrum/img/contact-bg.png);
+	background-size: cover;
 	color: #fff;
-	text-decoration: none;
-	font-size: 1em;
 }
-#site-content .stories-container .teaser ul li a:hover{
-	text-decoration: underline;
+body.page-id-5 #site-content .post-content{
+	max-width: 900px;
+	margin-left: auto;
+	margin-right: auto;
 }
-
-
-
-
-#site-content .wp-block-contact-form-7-contact-form-selector form{
+body.page-id-5 #site-content .post-content h2{
+	color: #fff;
+	text-align: left;
+	font-size: 3em;
+	font-weight: 200;
+}
+body.page-id-5 #site-content .post-content h1 span{
+	background-color: #E30613;
+}
+body.page-id-5 #site-content .post-content form{
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: space-between;
 }
-#site-content .wp-block-contact-form-7-contact-form-selector form p{
-	flex: 50% 0 0;
+body.page-id-5 #site-content .post-content form .field{
+	flex: 49% 0 0;
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 1em;
+}
+body.page-id-5 #site-content .post-content form .field.message{
+	flex: 100% 0 0;
+}
+body.page-id-5 #site-content .post-content form .field.actions{
+	flex: 100% 0 0;
+	justify-content: right;
+}
+body.page-id-5 #site-content .post-content form .field.actions input{ 
+	background: #E30613;
+	width: auto;
+	float: right;
+	padding: 1em;
+	text-transform: uppercase;
+	color: #fff;
+	font-family: 'garage-gothic', sans-serif;
+	font-weight: 400;
+	font-size: 1em;
+}
+body.page-id-5 #site-content .post-content form .field label,
+body.page-id-5 #site-content .post-content form .field span{
+	flex: 100% 0 0;
+	text-transform: uppercase;
+
+}
+body.page-id-5 #site-content .post-content form .field span input,
+body.page-id-5 #site-content .post-content form .field textarea{
+	width: 100%;
+}
+body.page-id-5 #site-footer .footer-graphic{
+	display: none;
+}
+body.page-id-5 #site-footer .footer-content{
+	background: transparent;
+	border-top: 4px solid #fff;
+	max-width: 900px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 4em;
+	margin-top: 4em;
+}
+
+
+
+
+#site-content .marker-inner .spot-pic img{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+#site-content .marker-inner  h2 {
+	font-size: 1.5em;
 }
