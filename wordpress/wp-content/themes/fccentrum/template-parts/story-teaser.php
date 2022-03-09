@@ -15,20 +15,17 @@ $terms = wp_get_post_terms(get_the_ID(), ['category', 'spots', 'fans']);
 	</a>
 	</header>
 	<div class="link-container">
-	<h2><a href="<?php echo esc_url( get_permalink() ); ?>" ><?php the_title(); ?></a></h2>
-	<?php if($terms){ ?>
-		<ul class="post-terms">
-		<?php
-		foreach($terms as $term){
-			?>
-			<li class="term">
-				<a href="<?php echo get_category_link( $term->term_id ); ?>" title="<?php echo $term->name; ?>">
-					<?php echo $term->name; ?>
-				</a>
-			</li>
-			<?php
-		}
-		?>
-	<?php } ?>
-</div>
+		<h2><a href="<?php echo esc_url( get_permalink() ); ?>" ><?php the_title(); ?></a></h2>
+		<?php if($terms){ ?>
+			<ul class="post-terms">
+				<?php foreach($terms as $term){ ?>
+					<li class="term">
+						<a href="<?php echo get_category_link( $term->term_id ); ?>" title="<?php echo $term->name; ?>">
+							<?php echo $term->name; ?>
+						</a>
+					</li>
+				<?php } ?>
+			</ul>
+		<?php } ?>
+	</div>
 </div>

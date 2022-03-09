@@ -103,6 +103,8 @@ body{
 	font-weight: 400;
 	font-style: normal;
 	font-size: 100%;
+	line-height: 1.333;
+	letter-spacing: 0.04em;
 }
 
 a:link,
@@ -117,12 +119,41 @@ a:visited{
 a:hover,
 a:focus{
 }
-input,
-textarea{
+label{
+	font-family: 'garage-gothic', sans-serif;
+	font-weight: 400;
+	font-size: 1.5em;
+	text-transform: uppercase;
+}
+input[type="submit"]{
+	font-family: 'garage-gothic', sans-serif;
+	font-weight: 400;
+	font-size: 1.5em;
+	text-transform: uppercase;
+	background-color: #E30613;
+	color: #fff;
+	border: none;
 	border-radius: 5px;
-	min-height: 30px;
-	border: 1px solid #000;
+	width: auto;
+	height: 2em;
+	line-height: 1em;
+}
+input[type="text"],
+input[type="search"],
+input[type="email"],
+textarea{
+	font-family: "BrandonTextCond";
+	font-weight: 400;
+	font-size: 1em;
+	border: 1px solid #C3C3C3;
+	border-radius: 5px;
 	width: 100%;
+	padding: 0.5em 1em;
+	line-height: 2em;
+	height: 3em;
+}
+textarea{
+	min-height: 6em;
 }
 #site-header{
 	display: flex;
@@ -268,43 +299,41 @@ textarea{
 
 
 .search-modal{
-	background: #E30916;
-	padding: 1em 0;
-	box-sizing: border-box;
+	background: #E72934;
 	position: absolute;
 	top: 7em;
 	width: 100%;
-	display: none;
 }
 .search-modal .section-inner{
 	display: flex;
 	flex-wrap: nowrap;
-	border-bottom: 1px solid white;
-	margin: 0 2em;
 	justify-content: space-between;
-	padding-bottom: 0.5em;
+	margin:  1em 4em;
+	padding: ;
+	border-bottom: 1px solid white;
+
 }
 .search-modal .section-inner form{
 	flex: 90% 0 0;
 	display: flex;
+	align-items: baseline;
+
 }
 .search-modal .section-inner form label{
 	order: 2;
 	flex: 95% 0 0;
 }
-.search-modal .section-inner form label input{
+.search-modal .section-inner form label input[type="search"]{
 	background: none;
-	width: 100%;
-	margin-left: 1em;
 	border: none;
+	font-weight: 700;
+	font-family: 'garage-gothic', sans-serif;
+	text-transform: uppercase;
+	color: #fff;
 }
 
 .search-modal .section-inner form label input::placeholder{
 	color: #F28C92;
-	font-family: 'garage-gothic', sans-serif;
-	font-weight: 700;
-	font-size: 1.5em;
-	text-transform: uppercase;
 }
 .search-modal .section-inner form input[type="submit"]{
 	flex: auto 0 0;
@@ -363,6 +392,12 @@ textarea{
 	text-transform: uppercase;
 	font-size: 5em;
 	margin: 0.5em 0;
+	letter-spacing: 0;
+	line-height: 1em;
+}
+#site-content h2{
+	margin: 1.5em 0em 0.5em 0;
+	font-weight: 400;
 }
 #site-content h1.page-title{
 	color: #fff;
@@ -395,6 +430,7 @@ textarea{
 	max-width: 1200px;
 	margin-left: auto;
 	margin-right: auto ;
+	position: relative;
 }
 
 
@@ -415,12 +451,16 @@ textarea{
 #site-content ul.categories-block li.cat h2{
 	font-size: 2em;
 }
+#site-content ul.categories-block li.cat .category-pic{
+	width: 100%;
+	height: 20em;
+	overflow: hidden;
+}
 #site-content ul.categories-block li.cat .category-pic img{
 	width: 100%;
-	height: 20em;	
+	height: 100%;
 	display: block;
 }
-
 
 
 #site-content .stories-container{
@@ -433,8 +473,6 @@ textarea{
 	position: relative;
   margin-bottom: 1.3em;
   break-inside: avoid;
-  max-height: 48em;
-	min-height: 22em;
 }
 #site-content .stories-container .teaser a{
 	color: #fff;
@@ -492,6 +530,7 @@ body.page-id-5 #site-content .post-content{
 	max-width: 900px;
 	margin-left: auto;
 	margin-right: auto;
+	position: relative;
 }
 body.page-id-5 #site-content .post-content h2{
 	color: #fff;
@@ -509,38 +548,21 @@ body.page-id-5 #site-content .post-content form{
 }
 body.page-id-5 #site-content .post-content form .field{
 	flex: 49% 0 0;
-	display: flex;
-	flex-wrap: wrap;
 	margin-bottom: 1em;
 }
-body.page-id-5 #site-content .post-content form .field.message{
+body.page-id-5 #site-content .post-content form .message{
 	flex: 100% 0 0;
 }
-body.page-id-5 #site-content .post-content form .field.actions{
-	flex: 100% 0 0;
-	justify-content: right;
+body.page-id-5 #site-content .post-content form .actions{
+	flex: auto 0 0;
+	margin-left: auto;
+	margin-right: 0;
 }
-body.page-id-5 #site-content .post-content form .field.actions input{ 
-	background: #E30613;
-	width: auto;
+body.page-id-5 #site-content .post-content form .actions input{ 
+	min-width: 12em;
 	float: right;
-	padding: 1em;
-	text-transform: uppercase;
-	color: #fff;
-	font-family: 'garage-gothic', sans-serif;
-	font-weight: 400;
-	font-size: 1em;
 }
-body.page-id-5 #site-content .post-content form .field label,
-body.page-id-5 #site-content .post-content form .field span{
-	flex: 100% 0 0;
-	text-transform: uppercase;
 
-}
-body.page-id-5 #site-content .post-content form .field span input,
-body.page-id-5 #site-content .post-content form .field textarea{
-	width: 100%;
-}
 body.page-id-5 #site-footer .footer-graphic{
 	display: none;
 }
@@ -557,11 +579,59 @@ body.page-id-5 #site-footer .footer-content{
 
 
 
+.acf-map {
+    width: 100%;
+    height: calc(100vh - 5em);
+    margin: 0;
+}
+
+// Fixes potential theme css conflict.
+.acf-map img {
+   max-width: inherit !important;
+}
+#site-content .marker-inner{
+	text-align: center;
+}
 #site-content .marker-inner .spot-pic img{
+	display: block;
+	width: 20em;
+	height: 12em;
+	object-fit: cover;
+}
+#site-content .marker-inner  h2 {
+  font-weight: 400;
+	font-size: 2em;
+  padding: 0;
+  margin: 0.5em 0 0 0;
+}
+#site-content .marker-inner p{
+	font-family: "BrandonTextCond";
+  font-weight: 600;
+	font-size: 1.333em;
+	margin:0.5em 0;
+	
+}
+
+
+body.single-story #header-graphic{
+	display: none;
+}
+body.single-story #site-content .post-header{ 
+	width: 100%;
+	height: calc(100vh - 5em);
+
+}
+body.single-story #site-content .post-header img{
 	display: block;
 	width: 100%;
 	height: 100%;
+	object-fit: cover;
+	object-position: center;
 }
-#site-content .marker-inner  h2 {
-	font-size: 1.5em;
+body.single-story #site-content .post-content h1{
+	text-align: left;
+}
+
+body.single-story #site-content .post-content figcaption{
+	text-align: right;
 }
