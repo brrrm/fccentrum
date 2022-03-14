@@ -282,7 +282,6 @@ textarea{
 	background-repeat: no-repeat;
 	text-decoration: none;
 }
-
 #site-footer .footer-content ul.footer-socials li.footer-twitter a{
 	background-image: url(../fccentrum/img/twitter.svg);
 }
@@ -303,21 +302,19 @@ textarea{
 	position: absolute;
 	top: 7em;
 	width: 100%;
+	display: none;
 }
 .search-modal .section-inner{
 	display: flex;
 	flex-wrap: nowrap;
 	justify-content: space-between;
 	margin:  1em 4em;
-	padding: ;
 	border-bottom: 1px solid white;
-
 }
 .search-modal .section-inner form{
 	flex: 90% 0 0;
 	display: flex;
 	align-items: baseline;
-
 }
 .search-modal .section-inner form label{
 	order: 2;
@@ -331,7 +328,6 @@ textarea{
 	text-transform: uppercase;
 	color: #fff;
 }
-
 .search-modal .section-inner form label input::placeholder{
 	color: #F28C92;
 }
@@ -342,7 +338,6 @@ textarea{
 	text-indent: -999em;
 	width: 2em;
 	height: 2em;
-	border: none;
 }
 .search-modal .section-inner button{
 	flex: auto 0 0;
