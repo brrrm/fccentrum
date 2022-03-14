@@ -113,7 +113,6 @@ function create_taxonomy() {
  
 	// Add new taxonomy, make it hierarchical like categories
 	//first do the translations part for GUI
-
 	$spotsLabels = array(
 		'name' 				=> _x( 'Spots', 'taxonomy general name' ),
 		'singular_name' 	=> _x( 'Spot', 'taxonomy singular name' ),
@@ -154,6 +153,33 @@ function create_taxonomy() {
 		'add_new_item' 		=> __( 'Add new fan' ),
 		'new_item_name' 	=> __( 'New subject fan' ),
 		'menu_name' 		=> __( 'Fans' ),
+	);    
+
+	// Now register the taxonomy
+	register_taxonomy('fans', array('story'), array(
+		'hierarchical' 		=> false,
+		'labels' 			=> $fansLabels,
+		'show_ui' 			=> true,
+		'show_in_rest' 		=> true,
+		'show_admin_column' => true,
+		'query_var' 		=> true,
+		'rewrite' 			=> array( 
+			'slug' => 'fan'
+		),
+	));
+
+	$rubriekLabels = array(
+		'name' 				=> _x( 'News categories', 'taxonomy general name' ),
+		'singular_name' 	=> _x( 'News category', 'taxonomy singular name' ),
+		'search_items' 		=> __( 'Search news categories' ),
+		'all_items' 		=> __( 'All news categories' ),
+		'parent_item' 		=> __( 'Parent news category' ),
+		'parent_item_colon' => __( 'Parent news category:' ),
+		'edit_item' 		=> __( 'Edit news category' ), 
+		'update_item' 		=> __( 'Update news category' ),
+		'add_new_item' 		=> __( 'Add new news category' ),
+		'new_item_name' 	=> __( 'New subject news category' ),
+		'menu_name' 		=> __( 'news categories' ),
 	);    
 
 	// Now register the taxonomy

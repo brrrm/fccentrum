@@ -4,17 +4,8 @@ $story = $args['story'];
 $terms = wp_get_post_terms(get_the_ID(), ['category', 'spots', 'fans']);
 ?>
 
-<div class="story teaser">
-	<header class="post-header">
-		<a href="<?php echo esc_url( get_permalink() ); ?>" >
-			<?php	
-			if(has_post_thumbnail()){
-				the_post_thumbnail('medium');
-			}
-			?>
-		</a>
-	</header>
-	<h2><a href="<?php echo esc_url( get_permalink() ); ?>" ><?php the_title(); ?></a></h2>
+<div class="news teaser">
+	
 	<?php if($terms){ ?>
 		<ul class="post-terms">
 		<?php
@@ -30,4 +21,6 @@ $terms = wp_get_post_terms(get_the_ID(), ['category', 'spots', 'fans']);
 		?>
 		</ul>
 	<?php } ?>
+	<h2><a href="<?php echo esc_url( get_permalink() ); ?>" ><?php the_title(); ?></a></h2>
+	<?php the_content(__('(more...)')); ?>
 </div>
