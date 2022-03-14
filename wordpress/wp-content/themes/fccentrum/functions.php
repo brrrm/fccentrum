@@ -75,6 +75,15 @@ function create_posttypes() {
 add_action( 'init', 'create_posttypes' );
 
 
+// Show posts of 'post', 'page' and 'movie' post types on home page
+function add_my_post_types_to_query( $query ) {
+    if ( is_home() && $query->is_main_query() )
+        $query->set( 'post_type', array( 'story' ) );
+    return $query;
+}
+add_action( 'pre_get_posts', 'add_my_post_types_to_query' );
+
+
 
 function alter_archive_title($title) {    
     if ( is_category() ) {    
