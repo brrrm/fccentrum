@@ -112,8 +112,8 @@ get_header();
 	           get_template_part( 'template-parts/news-teaser', null, [] );
 	        }
 
-	       /* Restore original Post Data */
-	          wp_reset_postdata();
+	       	/* Restore original Post Data */
+	        wp_reset_postdata();
 
 	    } else {
 	       // no posts found

@@ -155,6 +155,8 @@ textarea{
 textarea{
 	min-height: 6em;
 }
+
+
 #site-header{
 	display: flex;
 	flex-wrap: nowrap;
@@ -170,18 +172,13 @@ textarea{
 #site-header > a svg{
 	height: 3em;
 }
-
 #site-header .primary-menu-wrapper{
 	flex: auto 0 0;
 }
 #site-header .primary-menu-wrapper a{
-	font-family: 'garage-gothic', sans-serif;
-	font-weight: 400;
-	font-style: normal;
 	text-decoration: none;
 	font-size: 1.625em;
 	color: #000;
-	text-transform: uppercase;
 }
 #site-header .primary-menu-wrapper a:hover{
 	color: #E72934;
@@ -475,7 +472,6 @@ textarea{
 	text-decoration: underline;
 }
 #site-content .stories-container .teaser img{
-	display: block;
 	width: 100%;
 	height: 100%;
 }
