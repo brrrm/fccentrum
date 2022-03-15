@@ -13,5 +13,6 @@ $location = get_field('locatie', $spot);
 			</a>
 		</div>
 		<h2><a href="<?php echo get_category_link( $spot->term_id ); ?>" title="<?php echo $spot->name; ?>"><?php echo $spot->name; ?></a></h2>
+		<p><?php echo $location['street_name'] . ' ' . $location['street_number']; ?>
 	</div>
 </div>

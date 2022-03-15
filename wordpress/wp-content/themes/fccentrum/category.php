@@ -10,10 +10,15 @@
  */
 
 get_header();
+
+$term = get_queried_object();
+$bg_color = 'background-' . get_field('achtergrondkleur', $term);
+$text_color = 'foreground-' . get_field('tekstkleur', $term);
+$graphic = get_field('graphic_halverwege', $term);
 ?>
 
 
-<main id="site-content">
+<main id="site-content" class="<?php echo $bg_color; ?> <?php echo $text_color; ?>">
 	<header class="post-header">
 
 	</header>
@@ -40,6 +45,15 @@ get_header();
 			</div>
 
 		<?php endif; ?>
+
+
+		<div id="mid-graphic">
+			<?php if(isset($graphic) && $graphic){ ?>
+				<?php echo wp_get_attachment_image( $graphic, 'full' ); ?>
+			<?php }else{ ?>
+				<img src="<?php echo get_template_directory_uri(); ?>/img/header-graphic-1.png" alt="footer logo FC Centrum" />
+			<?php } ?>
+		</div>
 
 		<h2>Stories</h2>
 		<?php get_template_part( 'template-parts/categories-listing', null, [] ); ?>

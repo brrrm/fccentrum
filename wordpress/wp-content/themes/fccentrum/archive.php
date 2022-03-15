@@ -27,6 +27,7 @@ $description = get_the_archive_description();
 		<?php the_post(); ?>
 		<h1><?php the_title(); ?></h1>
 		<?php the_content(__('(more...)')); ?>
+
 	<?php endwhile; ?>
 
 

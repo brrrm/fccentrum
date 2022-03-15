@@ -32,7 +32,6 @@ function create_posttypes() {
  				'title',
  				'editor',
  				'author',
- 				'excerpt',
  				'revisions',
  				'thumbnail'
  			]
@@ -66,11 +65,42 @@ function create_posttypes() {
  				'title',
  				'editor',
  				'author',
- 				'excerpt',
  				'revisions'
  			]
         )
     );
+
+    $carouselLabels = array(
+		'name' => __( 'Carousel slides' ),
+		'singular_name' => __( 'Carousel slide' ),
+		'add_new' => __( 'New carousel slide' ),
+		'add_new_item' => __( 'Add new carousel slide' ),
+		'edit_item' => __( 'Edit carousel slide' ),
+		'new_item' => __( 'New carousel slide' ),
+		'view_item' => __( 'View carousel slide' ),
+		'search_items' => __( 'Search carousel slides' ),
+		'not_found' =>  __( 'No carousel slides Found' ),
+		'not_found_in_trash' => __( 'No carousel slide found in Trash'),
+	);
+
+    register_post_type( 'carouselslide',
+    // CPT Options
+        array(
+            'labels' 		=> $carouselLabels,
+            'public' 		=> true,
+            'has_archive' 	=> true,
+            'rewrite' 		=> array('slug' => 'slide'),
+            'show_in_rest' 	=> false,
+            'menu_position'	=> 6,
+ 			'menu_icon'		=> 'dashicons-format-gallery',
+ 			'supports'		=> [
+ 				'title',
+ 				'revisions'
+ 			]
+        )
+    );
+
+    
 }
 add_action( 'init', 'create_posttypes' );
 
