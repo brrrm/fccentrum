@@ -100,6 +100,11 @@ function initMarker( $marker, map ) {
             marker.infowindow.open( map, marker );
             marker.setIcon( activeImage);
         });
+        google.maps.event.addListener(marker.infowindow, 'closeclick', function(){
+        	map.markers.forEach(function(marker){
+        		marker.setIcon( image);
+        	});
+        });
     }
 }
 
