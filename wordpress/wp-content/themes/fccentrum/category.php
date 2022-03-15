@@ -18,7 +18,7 @@ $graphic = get_field('graphic_halverwege', $term);
 ?>
 
 
-<main id="site-content" >
+<main id="site-content" class="<?php echo $bg_color; ?> <?php echo $text_color; ?>" >
 	<header class="post-header">
 
 	</header>
@@ -28,7 +28,7 @@ $graphic = get_field('graphic_halverwege', $term);
 			<div class="post-content">
 			<?php the_archive_title( '<h1 class="page-title"><span>', '</span></h1>' ); ?>
 			</div>
-			<div class="stories-container <?php echo $bg_color; ?> <?php echo $text_color; ?>">
+			<div class="stories-container ">
 				<?php while ( have_posts() ) : ?>
 
 					<?php the_post(); ?>
