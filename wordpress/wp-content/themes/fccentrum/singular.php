@@ -55,7 +55,7 @@ get_header();
 						<li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $share_url; ?>" target="_blank">Deel op Facebook</a></li>
 						<li class="twitter"><a href="https://twitter.com/intent/tweet?text=<?php the_title(); ?>&url=<?php echo $share_url; ?>" target="_blank">Deel op Twitter</a></li>
 						<li class="email"><a href="mailto:?SUBJECT=Leuk verhaal op FCcentrum.nl: <?php the_title(); ?>&BODY=Zie <?php echo esc_url( get_permalink()); ?>" title="klik om een mail te sturen">Mail een link</a></li>
-						<li class="link"><button class="linkcopy" >testtest<?php echo esc_url( get_permalink()); ?></button></li>
+						<li class="link"><button class="linkcopy" ><?php echo esc_url( get_permalink()); ?></button></li>
 					</ul>
 				</div>
 			</footer>
