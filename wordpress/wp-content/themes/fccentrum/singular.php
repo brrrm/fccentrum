@@ -44,6 +44,22 @@ get_header();
 				<?php the_content(__('(more...)')); ?>
 			</div>
 
+			<footer class="post-closure">
+				<p class="author"><strong><?php the_author(); ?>.</strong> <?php the_date(); ?></p>
+				<div class="share-btns">
+					<h3>Deel dit verhaal</h3>
+					<?php 
+					$share_url = urlencode(esc_url( get_permalink() ));
+					?>
+					<ul class="share-btns-list">
+						<li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $share_url; ?>" target="_blank">Deel op Facebook</a></li>
+						<li class="twitter"><a href="https://twitter.com/intent/tweet?text=<?php the_title(); ?>&url=<?php echo $share_url; ?>" target="_blank">Deel op Twitter</a></li>
+						<li class="email"><a href="mailto:?SUBJECT=Leuk verhaal op FCcentrum.nl: <?php the_title(); ?>&BODY=Zie <?php echo esc_url( get_permalink()); ?>" title="klik om een mail te sturen">Mail een link</a></li>
+						<li class="link"><button class="linkcopy" >testtest<?php echo esc_url( get_permalink()); ?></button></li>
+					</ul>
+				</div>
+			</footer>
+
 
 			<div id="mid-graphic">
 				<?php if(isset($graphic) && $graphic){ ?>
