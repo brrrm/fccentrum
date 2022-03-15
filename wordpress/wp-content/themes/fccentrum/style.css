@@ -327,11 +327,18 @@ body.page #site-content .post-content h2{
 #carousel{
 	width: 100%;
 	height: calc(100vh - 5em);
-	position: relative;
+}
+#carousel img{
+	height: 100vh;
+	object-fit: cover;
+	object-position: center;
 }
 #carousel h2{
 	margin: 0;
 	width: 35%;
+	position: absolute;
+	bottom: 5em; 
+	left: 2em;
 }
 #carousel h2 a{
 	font-size: 3em;
@@ -340,20 +347,15 @@ body.page #site-content .post-content h2{
 	text-decoration: none;
 	color: #fff;
 	font-weight: 700;
-  overflow-wrap: break-word;
-  position: absolute;
-	bottom:  4em; /**wat doe ik hier verkeerd dat dit 0 niet onderaan komt */
-	left: 1em;
 }
 #carousel-scrollDown-arrow{
 	position: absolute;
-	z-index: 100;
 	bottom: 0;
 	left: 50%;
-	background: transparent url(../fccentrum/img/dropdown-arrow-icon.svg);
-	background-repeat: no-repeat;
-	padding-left: 3em;
-	color: white;
+	background: transparent url(../fccentrum/img/dropdown-arrow-icon.svg) no-repeat;
+	width: 3em;
+	height: auto;
+	text-indent: -999em;
 }
 
 
