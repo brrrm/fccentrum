@@ -349,3 +349,25 @@ function remove_frontend_post_href(){
 }
 add_action( 'init', 'remove_frontend_post_href' );
 
+
+
+
+function get_postsbycategory($term) {
+	// the query
+	$the_query = new WP_Query( array( 
+	    'category_name' => $term->name, 
+	    'posts_per_page' => 6,
+				    'post_type'			=> 'story'
+	) ); 
+	   
+	// The Loop
+	if ( $the_query->have_posts() ) {
+	    while ( $the_query->have_posts() ) {
+	        $the_query->the_post();
+	        get_template_part( 'template-parts/story-teaser', null, [] );
+	    }
+	}
+	   
+	/* Restore original Post Data */
+	wp_reset_postdata();
+}
