@@ -290,6 +290,13 @@ function my_scripts_method() {
     );
     wp_enqueue_style( 'fccentrum-styles', get_stylesheet_uri() );
     wp_enqueue_style( 'typekit', 'https://use.typekit.net/fnf5oyg.css');
+    wp_enqueue_script('slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js');
+    wp_enqueue_style('slickstyles', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css');
+    wp_enqueue_script(
+        'carousel',
+        get_stylesheet_directory_uri() . '/js/carousel.js', #your JS file
+        array( 'jquery' ) #dependencies
+    );
     //https://use.typekit.net/fnf5oyg.css
 }
 add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
@@ -366,6 +373,29 @@ function get_postsbycategory($term) {
 	        $the_query->the_post();
 	        get_template_part( 'template-parts/story-teaser', null, [] );
 	    }
+	}
+	   
+	/* Restore original Post Data */
+	wp_reset_postdata();
+}
+
+function get_carousel(){
+
+	// the query
+	$the_query = new WP_Query( array(
+	    'posts_per_page' 	=> 6,
+		'post_type'			=> 'carouselslide'
+	) ); 
+	   
+	// The Loop
+	if ( $the_query->have_posts() ) {
+		echo '<div id="carousel">';
+	    while ( $the_query->have_posts() ) {
+	        $the_query->the_post();
+	        get_template_part( 'template-parts/carousel', null, [] );
+	    }
+	    echo '</div>';
+	    echo '<a id="carousel-scrollDown-arrow" href="#site-content">Scroll naar beneden</a>';
 	}
 	   
 	/* Restore original Post Data */

@@ -148,6 +148,12 @@
 
 		</header><!-- #site-header -->
 
+		<?php 
+		if(is_home()){
+			get_carousel();
+		}
+		?>
+
 		<?php
 			$object = get_queried_object();
 			$graphic = get_field('graphic_boven', $object);
