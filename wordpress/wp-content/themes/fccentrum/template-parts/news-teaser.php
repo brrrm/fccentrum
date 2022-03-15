@@ -1,7 +1,7 @@
 <?php
 
 $story = $args['story'];
-$terms = wp_get_post_terms(get_the_ID(), ['category', 'spots', 'fans']);
+$terms = wp_get_post_terms(get_the_ID(), ['news_cats']);
 ?>
 
 <div class="news teaser">
