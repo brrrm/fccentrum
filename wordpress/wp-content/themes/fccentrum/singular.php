@@ -10,9 +10,13 @@
  */
 
 get_header();
+$terms = get_the_terms($post, 'category');
+			$bg_color = 'background-' . get_field('achtergrondkleur', $terms[0]);
+			$text_color = 'foreground-' . get_field('tekstkleur', $terms[0]);
+			$graphic = get_field('graphic_halverwege', $terms[0]);
 ?>
 
-<main id="site-content">
+<main id="site-content" class="<?php echo $bg_color; ?> <?php echo $text_color; ?>">
 	<header class="post-header">
 		<?php 
 		$video = get_field('video');
@@ -33,13 +37,10 @@ get_header();
 
 		while ( have_posts() ) {
 
-			$terms = get_the_terms($post, 'category');
-			$bg_color = 'background-' . get_field('achtergrondkleur', $terms[0]);
-			$text_color = 'foreground-' . get_field('tekstkleur', $terms[0]);
-			$graphic = get_field('graphic_halverwege', $terms[0]);
+			
 			the_post();
 			?>
-			<div class="post-content <?php echo $bg_color; ?> <?php echo $text_color; ?>">
+			<div class="post-content ">
 				<h1><?php the_title(); ?></h1>
 				<?php the_content(__('(more...)')); ?>
 			</div>
