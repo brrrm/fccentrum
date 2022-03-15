@@ -148,24 +148,6 @@
 
 		</header><!-- #site-header -->
 
-		<?php 
-		if(is_home()){
-			get_carousel();
-		}
-		?>
-
-		<?php
-			$object = get_queried_object();
-			$graphic = get_field('graphic_boven', $object);
-		?>
-		<div id="header-graphic">
-			<?php if(isset($graphic) && $graphic){ ?>
-				<?php echo wp_get_attachment_image( $graphic, 'full' ); ?>
-			<?php }else{ ?>
-				<img src="<?php echo get_template_directory_uri(); ?>/img/header-graphic-1.png" alt="footer logo FC Centrum" />
-			<?php } ?>
-		</div>
-
 		<div class="search-modal cover-modal header-footer-group" data-modal-target-string=".search-modal">
 
 			<div class="search-modal-inner modal-inner">
@@ -190,3 +172,23 @@
 			</div><!-- .search-modal-inner -->
 
 		</div><!-- .search-modal -->
+		
+		<?php 
+		if(is_home()){
+			get_carousel();
+		}
+		?>
+
+		<?php
+			$object = get_queried_object();
+			$graphic = get_field('graphic_boven', $object);
+		?>
+		<div id="header-graphic">
+			<?php if(isset($graphic) && $graphic){ ?>
+				<?php echo wp_get_attachment_image( $graphic, 'full' ); ?>
+			<?php }else{ ?>
+				<img src="<?php echo get_template_directory_uri(); ?>/img/header-graphic-1.png" alt="footer logo FC Centrum" />
+			<?php } ?>
+		</div>
+
+		

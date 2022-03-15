@@ -61,6 +61,7 @@ function create_posttypes() {
             'show_in_rest' 	=> true,
             'menu_position'	=> 5,
  			'menu_icon'		=> 'dashicons-admin-site-alt',
+ 			'taxonomies'	=> ['news_cats'],
  			'supports'		=> [
  				'title',
  				'editor',
@@ -213,9 +214,9 @@ function create_taxonomy() {
 	);    
 
 	// Now register the taxonomy
-	register_taxonomy('fans', array('story'), array(
-		'hierarchical' 		=> false,
-		'labels' 			=> $fansLabels,
+	register_taxonomy('news_cats', array('story'), array(
+		'hierarchical' 		=> true,
+		'labels' 			=> $rubriekLabels,
 		'show_ui' 			=> true,
 		'show_in_rest' 		=> true,
 		'show_admin_column' => true,
