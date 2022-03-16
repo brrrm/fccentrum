@@ -16,7 +16,6 @@ $bg_color = 'background-' . get_field('achtergrondkleur', $term);
 $text_color = 'foreground-' . get_field('tekstkleur', $term);
 $graphic = get_field('graphic_halverwege', $term);
 $location = get_field('locatie', $term);
-var_dump($term);
 ?>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYtTpBXwzon3LA0TTzVGAl69h8qoMqFoc"></script>
