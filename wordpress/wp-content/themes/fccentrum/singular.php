@@ -16,7 +16,7 @@ $terms = get_the_terms($post, 'category');
 			$graphic = get_field('graphic_halverwege', $terms[0]);
 ?>
 
-<a id="scrollDown-arrow" href="#site-content"> Ga naar beneden</a>
+
 <main id="site-content" class="<?php echo $bg_color; ?> <?php echo $text_color; ?>">
 	<header class="post-header">
 		<?php 
@@ -32,7 +32,7 @@ $terms = get_the_terms($post, 'category');
 		}
 		?>
 	</header>
-	
+	<a id="scrollDown-arrow" href="#the-post"> Ga naar beneden</a>
 
 
 	<?php
@@ -44,7 +44,7 @@ $terms = get_the_terms($post, 'category');
 			
 			the_post();
 			?>
-			<div class="post-content ">
+			<div class="post-content" id="the-post">
 				<h1><?php the_title(); ?></h1>
 				<?php the_content(__('(more...)')); ?>
 			</div>
@@ -74,6 +74,8 @@ $terms = get_the_terms($post, 'category');
 				<?php } ?>
 			</div>
 
+			
+			<h2><?php echo $terms[0]->name; ?></h2>
 			<div class="stories-container">
 				<?php get_postsbycategory($terms[0]); // see functions.php ?>
 			</div>

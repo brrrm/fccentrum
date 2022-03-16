@@ -345,6 +345,9 @@ body.page #site-content .post-content h2{
 	width: 100%;
 	height: calc(100vh - 5em);
 }
+#carousel .carousel-slide{
+	height:  calc(100vh - 5em);
+}
 #carousel img{
 	height: 100vh;
 	object-fit: cover;
@@ -382,6 +385,15 @@ body.page #site-content .post-content h2{
     left: 0
 	}
 }
+#carousel .slide-video{
+	width: 100%;
+	height: 100%;
+}
+#carousel .slide-video iframe{
+	width:  100%;
+	height: 100%;
+}
+
 
 #header-graphic{
 	position: absolute;
@@ -514,10 +526,27 @@ body.search #site-content #news-list .teaser{
   margin-bottom: 1.3em;
   break-inside: avoid;
 }
+#site-content .stories-container .teaser header a{
+	position: relative;
+	display: block;
+	width:  100%;
+	height: 0;
+	padding: 100% 0 0 0;
+	overflow: hidden;
+}
+#site-content .stories-container .teaser header a.image-orientation-2x3{
+	padding-top: 150%;
+}
+#site-content .stories-container .teaser header a.image-orientation-3x2{
+	padding-top: 66.667%;
+}
 #site-content .stories-container .teaser img{
 	display: block;
 	width: 100%;
 	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
 }
 #site-content .stories-container .teaser .link-container{
 	position: absolute;
@@ -647,6 +676,9 @@ body.page-id-5 #site-footer .footer-content{
     height: calc(100vh - 5em);
     margin: 0;
 }
+body.tax-spots .acf-map {
+    height: 30vh;
+}
 
 // Fixes potential theme css conflict.
 .acf-map img {
@@ -673,6 +705,14 @@ body.page-id-5 #site-footer .footer-content{
 	font-size: 1.333em;
 	margin:0.5em 0;
 }
+body.tax-spots #site-content h1{
+	text-align: left;
+	font-weight: 400;
+}
+body.tax-spots #header-graphic{
+	display: none;
+}
+
 
 
 body.single-story #header-graphic{
@@ -752,8 +792,12 @@ body.home #news-list .news{
 	border-bottom: 1px solid #707070;
 }
 
-
-
+/** Fans*/
+body.page-id-53 #site-content ul.categories-block li.cat{
+	flex: 32% 0 0;
+}
+body.page-id-53 #site-content ul.categories-block li.cat .category-pic{
+	height: 25em;
 }
 
 
@@ -770,6 +814,15 @@ body.home #news-list .news{
 
 #site-footer .footer-content .footer-logo{
 	text-align: center;
+}
+#site-footer .footer-content a{
+	color: inherit;	
+	text-decoration: none;
+	font-family: "BrandonTextCond";
+	font-weight: 600;
+}
+#site-footer .footer-content a:hover{
+	text-decoration: underline;
 }
 #site-footer .footer-content .footer-logo a,
 #site-footer .footer-content .footer-logo img{

@@ -8,10 +8,10 @@ $text_pos = get_field('positie_van_titel');
 
 <div class="story teaser <?php echo $text_pos; ?>">
 	<header class="post-header">
-		<a href="<?php echo esc_url( get_permalink() ); ?>" >
+		<a href="<?php echo esc_url( get_permalink() ); ?>" class="<?php echo 'image-orientation-' . $image_layout; ?>" >
 			<?php	
 			if(has_post_thumbnail()){
-				the_post_thumbnail('large', ['class' => 'image-orientation-' . $image_layout]);
+				the_post_thumbnail('large');
 			}
 			?>
 		</a>

@@ -15,7 +15,7 @@
 						</ul>
 
 						<p class="footer-address">
-							Alberdink Thijmstraat 123<br />1033 AA Amsterdam
+							<a href="https://goo.gl/maps/BxF8wzv5woFyqgaX7" target="_blank" rel="nofollow">Alberdink Thijmstraat 123<br />1033 AA Amsterdam </a>
 						</p>
 					</div>
 			</footer><!-- #site-footer -->
