@@ -160,11 +160,17 @@ textarea{
 .background-zwart{
 	background: #000;
 }
+.background-zwart .post-closure{
+	border-top: 1px solid white;
+}
 .foreground-zwart{
 	color: #000;
 }
 .background-wit{
 	background: #fff;
+}
+.background-wit .post-closure{
+	border-top: 1px solid black;
 }
 .foreground-wit{
 	color:#fff;
@@ -323,15 +329,33 @@ body.page #site-content .post-content h2{
 	border: none;
 	cursor: pointer;
 }
+@media all and (max-width: 768px){
+	#site-header .primary-menu-wrapper  ul.primary-menu{
+		display: block;
+	}
+	#site-header .primary-menu-wrapper  ul.primary-menu li{
+		line-height: 0;
+	}
+}
+
+
+
 
 #carousel{
 	width: 100%;
 	height: calc(100vh - 5em);
-	position: relative;
+}
+#carousel img{
+	height: 100vh;
+	object-fit: cover;
+	object-position: center;
 }
 #carousel h2{
 	margin: 0;
 	width: 35%;
+	position: absolute;
+	bottom: 5em; 
+	left: 2em;
 }
 #carousel h2 a{
 	font-size: 3em;
@@ -340,22 +364,24 @@ body.page #site-content .post-content h2{
 	text-decoration: none;
 	color: #fff;
 	font-weight: 700;
-  overflow-wrap: break-word;
-  position: absolute;
-	bottom:  4em; /**wat doe ik hier verkeerd dat dit 0 niet onderaan komt */
-	left: 1em;
 }
 #carousel-scrollDown-arrow{
 	position: absolute;
-	z-index: 100;
 	bottom: 0;
 	left: 50%;
-	background: transparent url(../fccentrum/img/dropdown-arrow-icon.svg);
-	background-repeat: no-repeat;
-	padding-left: 3em;
-	color: white;
+	background: transparent url(../fccentrum/img/dropdown-arrow-icon.svg) no-repeat;
+	width: 3em;
+	height: auto;
+	text-indent: -999em;
 }
-
+@media all and (max-width: 768px){
+	#carousel h2{
+		width: 100%;
+    bottom: 9em;
+    text-align: center;
+    left: 0
+	}
+}
 
 #header-graphic{
 	position: absolute;
@@ -410,6 +436,16 @@ body.page #site-content .post-content h2{
 	border: none;
 	cursor: pointer;
 }
+body.search #site-content{
+	position: relative;
+	max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+body.search #site-content #news-list .teaser{
+	border-top: 1px solid black;
+	padding: 2em 0.5em;
+}
 
 #site-content .post-content{
 	max-width: 600px;
@@ -417,6 +453,11 @@ body.page #site-content .post-content h2{
 	margin-right: auto ;
 	position: relative;
 } 
+@media all and (max-width: 768px){
+	#site-content .post-content{
+		max-width: 350px;
+	}
+}
 #site-content ul.categories-block,
 #site-content .stories-container{
 	max-width: 1200px;
@@ -458,6 +499,15 @@ body.page #site-content .post-content h2{
 #site-content .stories-container{
 	column-count: 2;
 	column-gap: 1.3em;
+}
+@media all and (max-width: 678px){
+	#site-content .stories-container{
+		column-count: 1;
+	}
+	#site-content .stories-container .link-container{
+		padding-left: 1em;
+	}
+
 }
 #site-content .stories-container  .teaser{
 	position: relative;
@@ -566,7 +616,11 @@ body.page-id-5 #site-content .post-content form .actions input{
 	min-width: 12em;
 	float: right;
 }
-
+@media all and (max-width: 768px){
+	body.page-id-5 #site-content .post-content form .actions input{ 
+		width: 100%;
+	}
+}
 body.page-id-5 #site-footer .footer-graphic{
 	display: none;
 }
@@ -579,7 +633,14 @@ body.page-id-5 #site-footer .footer-content{
 	padding-top: 4em;
 	margin-top: 4em;
 }
-
+@media all and (max-width: 786px){
+	body.page-id-5 #site-content .post-content{
+		max-width: 350px;
+	}
+	body.page-id-5 #site-content .post-content form{
+		display: block;
+	}
+}
 
 .acf-map {
     width: 100%;
@@ -629,9 +690,6 @@ body.single-story #site-content .post-header img{
 	object-fit: cover;
 	object-position: center;
 }
-body.single-story #site-content .post-content{
-	border-bottom: 1px solid black;
-}
 body.single-story #site-content .post-content h1{
 	text-align: left;
 }
@@ -639,7 +697,15 @@ body.single-story #site-content .post-content h1{
 body.single-story #site-content .post-content figcaption{
 	text-align: right;
 }
-
+body.single-story #scrollDown-arrow{
+position: absolute;
+	bottom: 0;
+	left: 50%;
+	background: transparent url(../fccentrum/img/dropdown-arrow-icon.svg) no-repeat;
+	width: 3em;
+	height: auto;
+	text-indent: -999em;
+}
 
 
 
@@ -656,6 +722,11 @@ body.home #site-content{
 	display: flex;
 	flex-wrap: nowrap;
 	justify-content: space-between;
+}
+@media all and (max-width: 768px){
+	body.home #site-content{
+		display: block ;
+	}
 }
 body.home #site-content .stories-container{
 	flex: 77% 0 0;
@@ -683,11 +754,7 @@ body.home #news-list .news{
 
 
 
-
-
-
-
-
+}
 
 
 #site-footer .footer-graphic{
@@ -718,6 +785,12 @@ body.home #news-list .news{
 	align-items: center;
 	padding: 0;
 }
+#site-footer .footer-content ul.footer-socials li{
+	border-bottom: 2px solid transparent;
+}
+#site-footer .footer-content ul.footer-socials li:hover  {
+	border-bottom: 2px solid #fff;	
+}
 #site-footer .footer-content ul.footer-socials li a{
 	display: block;
 	text-indent: -999em;
@@ -743,4 +816,91 @@ body.home #news-list .news{
 #site-footer .footer-content p.footer-address{
 	color: white;
 	text-align: center;
+}
+
+
+#site-content footer.post-closure{
+	max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media all and (max-width: 768px){
+	#site-content footer.post-closure{
+		max-width: 350px;
+	}
+}
+#site-content footer.post-closure h3{
+	font-weight: 400;
+	text-transform: uppercase;
+	text-align: center;
+}
+#site-content footer.post-closure p.author{
+	text-align: right;
+}
+#site-content footer.post-closure .share-btns ul.share-btns-list{
+	display: flex;
+	list-style: none;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+}
+ #site-content footer.post-closure .share-btns ul li{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	border-bottom: 2px solid transparent;
+}
+#site-content footer.post-closure .share-btns ul li a{
+	width: 1.5em;
+	height: 1.5em;
+	background-size: 1.5em;
+}
+
+#site-content footer.post-closure .share-btns ul li a,
+#site-content footer.post-closure .share-btns ul li button{
+	display: block;
+	text-indent: -999em;
+	background-image: url(../fccentrum/img/youtube.svg);
+	background-position: center;
+	width: 2em;
+	height: 2em;
+	align-items: center;
+	margin: 0.5em;
+	background-size: contain;
+	background-repeat: no-repeat;
+	text-decoration: none;
+	border: none;
+	background-color: transparent;
+}
+.background-zwart#site-content footer.post-closure .share-btns ul li:hover  {
+	border-bottom: 2px solid #fff;	
+}
+.background-zwart#site-content footer.post-closure .share-btns ul li.twitter a{
+	background-image: url(../fccentrum/img/twitter.svg);
+}
+.background-zwart#site-content footer.post-closure .share-btns ul li.facebook a{
+	background-image: url(../fccentrum/img/facebook.svg);
+}
+.background-zwart#site-content footer.post-closure .share-btns ul.share-btns-list li.email a{
+	background-image: url(../fccentrum/img/mail-icon.svg);
+}
+.background-zwart#site-content footer.post-closure .share-btns ul.share-btns-list li.link button{
+	background-image: url(../fccentrum/img/link-icon.svg);
+}
+
+.background-wit#site-content footer.post-closure .share-btns ul li:hover  {
+	border-bottom: 2px solid #000;	
+	box-sizing: border-box;
+}
+.background-wit#site-content footer.post-closure .share-btns ul li.twitter a{
+	background-image: url(../fccentrum/img/twitter-zwart.svg);
+}
+.background-wit#site-content footer.post-closure .share-btns ul li.facebook a{
+	background-image: url(../fccentrum/img/facebook-zwart.svg);
+}
+.background-wit#site-content footer.post-closure .share-btns ul.share-btns-list li.email a{
+	background-image: url(../fccentrum/img/mail-icon-zwart.svg);
+}
+.background-wit#site-content footer.post-closure .share-btns ul.share-btns-list li.link button{
+	background-image: url(../fccentrum/img/link-icon-zwart.svg);
 }

@@ -86,6 +86,16 @@ $location = get_field('locatie', $term);
 				</div>
 			</footer>
 
+
+
+			<div id="mid-graphic">
+				<?php if(isset($graphic) && $graphic){ ?>
+					<?php echo wp_get_attachment_image( $graphic, 'full' ); ?>
+				<?php }else{ ?>
+					<img src="<?php echo get_template_directory_uri(); ?>/img/header-graphic-1.png" alt="footer logo FC Centrum" />
+				<?php } ?>
+			</div>
+
 			<div class="stories-container ">
 				<?php while ( have_posts() ) : ?>
 
@@ -95,6 +105,7 @@ $location = get_field('locatie', $term);
 				<?php endwhile; ?>
 			</div>
 			
+			
 		<?php else : ?>
 
 			<div class="post-content">
@@ -103,18 +114,6 @@ $location = get_field('locatie', $term);
 			</div>
 
 		<?php endif; ?>
-
-
-		<div id="mid-graphic">
-			<?php if(isset($graphic) && $graphic){ ?>
-				<?php echo wp_get_attachment_image( $graphic, 'full' ); ?>
-			<?php }else{ ?>
-				<img src="<?php echo get_template_directory_uri(); ?>/img/header-graphic-1.png" alt="footer logo FC Centrum" />
-			<?php } ?>
-		</div>
-
-		<h2>Stories</h2>
-		<?php get_template_part( 'template-parts/categories-listing', null, [] ); ?>
 
 	
 </main><!-- #site-content -->
