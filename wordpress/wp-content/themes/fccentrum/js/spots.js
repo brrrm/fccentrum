@@ -15,7 +15,6 @@ function initMap( $el ) {
 
     // Find marker elements within map.
     var $markers = $el.find('.marker');
-
     // Create gerenic map.
     var mapArgs = {
         zoom        : $el.data('zoom') || 14,
@@ -51,10 +50,11 @@ function initMap( $el ) {
  * @return  object The marker instance.
  */
 function initMarker( $marker, map ) {
-
     // Get position from marker.
     var lat = $marker.data('lat');
     var lng = $marker.data('lng');
+    var singular = $marker.data('singular');
+
     var latLng = {
         lat: parseFloat( lat ),
         lng: parseFloat( lng )
@@ -73,18 +73,23 @@ function initMarker( $marker, map ) {
     	anchor: new google.maps.Point(24, 24)
     };
 
+    if(singular){
+    	markerImage = activeImage;
+    }else{
+    	markerImage = image;
+    }
     // Create marker instance.
     var marker = new google.maps.Marker({
         position : latLng,
         map: map,
-        icon: image//'/wp-content/themes/fccentrum/img/marker_red.png'
+        icon: markerImage//'/wp-content/themes/fccentrum/img/marker_red.png'
     });
 
     // Append to reference for later use.
     map.markers.push( marker );
 
     // If marker contains HTML, add it to an infoWindow.
-    if( $marker.html() ){
+    if( $marker.html() && !singular ){
 
         // Create info window.
         marker.infowindow = new google.maps.InfoWindow({
@@ -99,6 +104,11 @@ function initMarker( $marker, map ) {
         	});
             marker.infowindow.open( map, marker );
             marker.setIcon( activeImage);
+        });
+        google.maps.event.addListener(marker.infowindow, 'closeclick', function(){
+        	map.markers.forEach(function(marker){
+        		marker.setIcon( image);
+        	});
         });
     }
 }
