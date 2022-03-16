@@ -94,6 +94,8 @@ $image = get_field('headerafbeelding', $term);
 				<?php } ?>
 			</div>
 
+			<h2>Stories over <?php echo $term->name; ?></h2>
+
 			<div class="stories-container ">
 				<?php while ( have_posts() ) : ?>
 
