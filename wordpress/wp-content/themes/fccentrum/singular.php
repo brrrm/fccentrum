@@ -16,6 +16,7 @@ $terms = get_the_terms($post, 'category');
 			$graphic = get_field('graphic_halverwege', $terms[0]);
 ?>
 
+<a id="scrollDown-arrow" href="#site-content"> Ga naar beneden</a>
 <main id="site-content" class="<?php echo $bg_color; ?> <?php echo $text_color; ?>">
 	<header class="post-header">
 		<?php 
@@ -31,6 +32,9 @@ $terms = get_the_terms($post, 'category');
 		}
 		?>
 	</header>
+	
+
+
 	<?php
 
 	if ( have_posts() ) {

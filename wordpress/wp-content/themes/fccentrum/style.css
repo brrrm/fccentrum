@@ -697,7 +697,15 @@ body.single-story #site-content .post-content h1{
 body.single-story #site-content .post-content figcaption{
 	text-align: right;
 }
-
+body.single-story #scrollDown-arrow{
+position: absolute;
+	bottom: 0;
+	left: 50%;
+	background: transparent url(../fccentrum/img/dropdown-arrow-icon.svg) no-repeat;
+	width: 3em;
+	height: auto;
+	text-indent: -999em;
+}
 
 
 
@@ -777,8 +785,13 @@ body.home #news-list .news{
 	align-items: center;
 	padding: 0;
 }
-#site-footer .footer-content ul.footer-socials li a,
-#site-content footer.post-closure .share-btns ul li a{
+#site-footer .footer-content ul.footer-socials li{
+	border-bottom: 2px solid transparent;
+}
+#site-footer .footer-content ul.footer-socials li:hover  {
+	border-bottom: 2px solid #fff;	
+}
+#site-footer .footer-content ul.footer-socials li a{
 	display: block;
 	text-indent: -999em;
 	background-image: url(../fccentrum/img/youtube.svg);
@@ -791,12 +804,10 @@ body.home #news-list .news{
 	background-repeat: no-repeat;
 	text-decoration: none;
 }
-#site-footer .footer-content ul.footer-socials li.footer-twitter a,
-#site-content footer.post-closure .share-btns ul li.twitter a{
+#site-footer .footer-content ul.footer-socials li.footer-twitter a{
 	background-image: url(../fccentrum/img/twitter.svg);
 }
-#site-footer .footer-content ul.footer-socials li.footer-facebook a,
-#site-content footer.post-closure .share-btns ul li.facebook a{
+#site-footer .footer-content ul.footer-socials li.footer-facebook a{
 	background-image: url(../fccentrum/img/facebook.svg);
 }
 #site-footer .footer-content ul.footer-socials li.footer-instagram a{
@@ -823,6 +834,9 @@ body.home #news-list .news{
 	text-transform: uppercase;
 	text-align: center;
 }
+#site-content footer.post-closure p.author{
+	text-align: right;
+}
 #site-content footer.post-closure .share-btns ul.share-btns-list{
 	display: flex;
 	list-style: none;
@@ -830,21 +844,63 @@ body.home #news-list .news{
 	align-items: center;
 	padding: 0;
 }
- footer.post-closure .share-btns ul li{
+ #site-content footer.post-closure .share-btns ul li{
 	list-style: none;
 	padding: 0;
 	margin: 0;
+	border-bottom: 2px solid transparent;
 }
-footer.post-closure .share-btns ul li a{
+#site-content footer.post-closure .share-btns ul li a{
 	width: 1.5em;
 	height: 1.5em;
 	background-size: 1.5em;
 }
 
-#site-content footer.post-closure .share-btns ul.share-btns-list li.email a{
+#site-content footer.post-closure .share-btns ul li a,
+#site-content footer.post-closure .share-btns ul li button{
+	display: block;
+	text-indent: -999em;
+	background-image: url(../fccentrum/img/youtube.svg);
+	background-position: center;
+	width: 2em;
+	height: 2em;
+	align-items: center;
+	margin: 0.5em;
+	background-size: contain;
+	background-repeat: no-repeat;
+	text-decoration: none;
+	border: none;
+	background-color: transparent;
+}
+.background-zwart#site-content footer.post-closure .share-btns ul li:hover  {
+	border-bottom: 2px solid #fff;	
+}
+.background-zwart#site-content footer.post-closure .share-btns ul li.twitter a{
+	background-image: url(../fccentrum/img/twitter.svg);
+}
+.background-zwart#site-content footer.post-closure .share-btns ul li.facebook a{
+	background-image: url(../fccentrum/img/facebook.svg);
+}
+.background-zwart#site-content footer.post-closure .share-btns ul.share-btns-list li.email a{
 	background-image: url(../fccentrum/img/mail-icon.svg);
 }
-#site-content footer.post-closure .share-btns ul.share-btns-list li.link a{
+.background-zwart#site-content footer.post-closure .share-btns ul.share-btns-list li.link button{
 	background-image: url(../fccentrum/img/link-icon.svg);
-	text-indent: -999em;
+}
 
+.background-wit#site-content footer.post-closure .share-btns ul li:hover  {
+	border-bottom: 2px solid #000;	
+	box-sizing: border-box;
+}
+.background-wit#site-content footer.post-closure .share-btns ul li.twitter a{
+	background-image: url(../fccentrum/img/twitter-zwart.svg);
+}
+.background-wit#site-content footer.post-closure .share-btns ul li.facebook a{
+	background-image: url(../fccentrum/img/facebook-zwart.svg);
+}
+.background-wit#site-content footer.post-closure .share-btns ul.share-btns-list li.email a{
+	background-image: url(../fccentrum/img/mail-icon-zwart.svg);
+}
+.background-wit#site-content footer.post-closure .share-btns ul.share-btns-list li.link button{
+	background-image: url(../fccentrum/img/link-icon-zwart.svg);
+}
