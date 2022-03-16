@@ -1,4 +1,9 @@
-			<footer id="site-footer" class="header-footer-group">
+<?php
+$terms = get_the_terms($post, 'category');
+$bg_color = 'background-' . get_field('achtergrondkleur', $terms[0]);
+$text_color = 'foreground-' . get_field('tekstkleur', $terms[0]);
+?>
+			<footer id="site-footer" class="header-footer-group <?php echo $bg_color; ?> <?php echo $text_color; ?>">
 					<div class="footer-graphic">
 						<img src="<?php echo get_template_directory_uri(); ?>/img/footer-kerk.png" alt="Echt Amsterdams!" />
 					</div>
