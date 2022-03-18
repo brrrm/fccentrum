@@ -240,6 +240,7 @@ add_action( "spots_add_form", 'hide_description_row');
 
 function fccentrum_theme_support(){
 	add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'align-wide' );
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments
@@ -298,7 +299,11 @@ function my_scripts_method() {
         get_stylesheet_directory_uri() . '/js/carousel.js', #your JS file
         array( 'jquery' ) #dependencies
     );
-    //https://use.typekit.net/fnf5oyg.css
+    wp_enqueue_script(
+        'scroll',
+        get_stylesheet_directory_uri() . '/js/scroll.js', #your JS file
+        array( 'jquery' ) #dependencies
+    );
 }
 add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
 

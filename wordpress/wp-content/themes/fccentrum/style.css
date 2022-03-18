@@ -264,7 +264,42 @@ body.page #site-content .post-content h2{
 	padding: 0 1em;
 	height: 5em;
 	background: #fff;
+	position: absolute;
+	width: 100%;
+	top: 0;
+    z-index: 10;
 }
+body{
+	/* ruimte maken voor de header die absolute gepositioneerd is */
+	padding-top:  5em;
+}
+
+body.showHeader #site-header{
+    position: fixed;
+    top: 0;
+    animation-duration: 0.4s;
+  	animation-name: slidein;
+}
+body.admin-bar #site-header,
+body.admin-bar.showHeader #site-header{
+	top: 32px;
+}
+@media screen and ( max-width: 782px ) {
+	body.admin-bar #site-header,
+	body.admin-bar.showHeader #site-header{
+		top: 46px;
+	}
+}
+@keyframes slidein {
+  from {
+    top: -7em;
+  }
+
+  to {
+    top:  0;
+  }
+}
+
 #site-header > a{
 	flex: auto 1 0;
 }
@@ -428,18 +463,20 @@ body.page #site-content .post-content h2{
 }
 
 .search-modal{
+	position: relative;
 	background: #E72934;
-	position: absolute;
-	top: 7em;
 	width: 100%;
 	display: none;
 	z-index: 10;
+	padding: 1em 4em;
+}
+.search-modal.always-open{
+	display: block;
 }
 .search-modal .section-inner{
 	display: flex;
 	flex-wrap: nowrap;
 	justify-content: space-between;
-	margin:  1em 4em;
 	border-bottom: 1px solid white;
 }
 .search-modal .section-inner form{
@@ -458,6 +495,9 @@ body.page #site-content .post-content h2{
 	font-family: 'garage-gothic', sans-serif;
 	text-transform: uppercase;
 	color: #fff;
+}
+.search-modal .section-inner form label input[type="search"]:focus{
+	outline: none;
 }
 .search-modal .section-inner form label input::placeholder{
 	color: #F28C92;
@@ -626,6 +666,15 @@ body.home #site-content .stories-container .teaser.tekst_onder_foto .link-contai
 }
 
 
+
+.post-content figure{
+	display: block;
+	margin: 1.5em 0;
+}
+.post-content figure.alignwide{
+	margin-left:  -4em;
+	margin-right:  -4em;
+}
 
 
 

@@ -147,8 +147,15 @@
 			</button><!-- .search-toggle -->
 
 		</header><!-- #site-header -->
+		
+		<?php 
+		$modal_always_open = '';
+		if ( is_search() ) {
+			$modal_always_open = 'always-open';
+		}
+		?>
 
-		<div class="search-modal cover-modal header-footer-group" data-modal-target-string=".search-modal">
+		<div class="search-modal cover-modal header-footer-group <?php echo $modal_always_open; ?>" data-modal-target-string=".search-modal">
 
 			<div class="search-modal-inner modal-inner">
 
@@ -186,7 +193,7 @@
 		<div id="header-graphic">
 			<?php if(isset($graphic) && $graphic){ ?>
 				<?php echo wp_get_attachment_image( $graphic, 'full' ); ?>
-			<?php }else{ ?>
+			<?php }elseif(is_home()){ ?>
 				<img src="<?php echo get_template_directory_uri(); ?>/img/header-graphic-1.png" alt="footer logo FC Centrum" />
 			<?php } ?>
 		</div>

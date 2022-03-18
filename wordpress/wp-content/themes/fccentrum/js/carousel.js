@@ -6,6 +6,9 @@
 		$('.search-toggle, .search-untoggle').click(function(e){
 			e.preventDefault();
 			$('.search-modal').toggle();
+			if($('.search-modal').css('display') == 'block'){
+				$('.search-modal .search-field').focus();
+			}
 		});
 
 		$('.share-btns-list li.link button').click(function(e){
