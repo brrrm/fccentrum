@@ -146,6 +146,12 @@
 				</span>
 			</button><!-- .search-toggle -->
 
+			<button id="hamburger">
+				<span class="stripe top"></span>
+				<span class="stripe middle"></span>
+				<span class="stripe bottom"></span>Menu
+			</button>
+
 		</header><!-- #site-header -->
 		
 		<?php 

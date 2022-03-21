@@ -2,13 +2,29 @@
 	let lastKnownScrollPosition = 0;
 	let ticking = false;
 	let htmlTopMargin = parseInt( $('html').css('marginTop'));
+	
 	$(document).ready(function(){
 		htmlTopMargin = parseInt($('html').css('marginTop'));
+
+		$('#hamburger').click(function(e){
+			e.preventDefault();
+			console.log('click');
+			$('nav.primary-menu-wrapper').toggleClass('show');
+		});
+
+		document.addEventListener('scroll', function(e) {
+		  if (!ticking) {
+		    window.requestAnimationFrame(function() {
+		      headerScrollEffect(window.scrollY);
+		      ticking = false;
+		    });
+
+		    ticking = true;
+		  }
+		});
 	});
 
-	function doSomething(scrollPos) {
-	  // Do something with the scroll position
-	  console.log(scrollPos + '--' + lastKnownScrollPosition);
+	function headerScrollEffect(scrollPos) {
 	  let headerPos = $('#site-header').offset();
 	  if(scrollPos < lastKnownScrollPosition){
 	  	$('body').addClass('showHeader');
@@ -19,17 +35,4 @@
 	  }
 	  lastKnownScrollPosition = scrollPos;
 	}
-
-	document.addEventListener('scroll', function(e) {
-	  
-
-	  if (!ticking) {
-	    window.requestAnimationFrame(function() {
-	      doSomething(window.scrollY);
-	      ticking = false;
-	    });
-
-	    ticking = true;
-	  }
-	});
 })(jQuery);
