@@ -11,9 +11,10 @@
 
 get_header();
 $terms = get_the_terms($post, 'category');
-			$bg_color = 'background-' . get_field('achtergrondkleur', $terms[0]);
-			$text_color = 'foreground-' . get_field('tekstkleur', $terms[0]);
-			$graphic = get_field('graphic_halverwege', $terms[0]);
+$bg_color = 'background-' . get_field('achtergrondkleur', $terms[0]);
+$text_color = 'foreground-' . get_field('tekstkleur', $terms[0]);
+$graphic = get_field('graphic_halverwege', $terms[0]);
+
 ?>
 
 
