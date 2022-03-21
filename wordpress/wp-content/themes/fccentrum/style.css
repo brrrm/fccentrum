@@ -267,7 +267,8 @@ body.page #site-content .post-content h2{
 	position: absolute;
 	width: 100%;
 	top: 0;
-    z-index: 10;
+  z-index: 11;
+  box-shadow: ;
 }
 body{
 	/* ruimte maken voor de header die absolute gepositioneerd is */
@@ -420,9 +421,6 @@ body.admin-bar.showHeader #site-header{
 	object-fit: cover;
 	object-position: center;
 }
-#carousel h2{
-
-}
 #carousel h2 a{
 	font-size: 3em;
 	background: #000;
@@ -433,13 +431,22 @@ body.admin-bar.showHeader #site-header{
 }
 #carousel-scrollDown-arrow{
 	position: absolute;
-	bottom: 0;
+	bottom: 2em;
 	left: 50%;
 	background: transparent url(../fccentrum/img/dropdown-arrow-icon.svg) no-repeat;
 	width: 3em;
 	height: auto;
 	text-indent: -999em;
 }
+#scrollDown-arrow{
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	background: transparent url(../fccentrum/img/dropdown-arrow-icon.svg) no-repeat;
+	width: 3em;
+	height: auto;
+	text-indent: -999em;
+} 
 @media all and (max-width: 768px){
 	#carousel h2{
 		width: 100%;
@@ -460,73 +467,15 @@ body.admin-bar.showHeader #site-header{
 
 #header-graphic{
 	position: absolute;
-}
-
-.search-modal{
-	position: relative;
-	background: #E72934;
 	width: 100%;
-	display: none;
-	z-index: 10;
-	padding: 1em 4em;
 }
-.search-modal.always-open{
-	display: block;
-}
-.search-modal .section-inner{
-	display: flex;
-	flex-wrap: nowrap;
-	justify-content: space-between;
-	border-bottom: 1px solid white;
-}
-.search-modal .section-inner form{
-	flex: 90% 0 0;
-	display: flex;
-	align-items: baseline;
-}
-.search-modal .section-inner form label{
-	order: 2;
-	flex: 95% 0 0;
-}
-.search-modal .section-inner form label input[type="search"]{
-	background: none;
-	border: none;
-	font-weight: 700;
-	font-family: 'garage-gothic', sans-serif;
-	text-transform: uppercase;
-	color: #fff;
-}
-.search-modal .section-inner form label input[type="search"]:focus{
-	outline: none;
-}
-.search-modal .section-inner form label input::placeholder{
-	color: #F28C92;
-}
-.search-modal .section-inner form input[type="submit"]{
-	flex: auto 0 0;
-	order: 1;
-	background: transparent url(../fccentrum/img/search-icon-white.svg) left center no-repeat;
-	text-indent: -999em;
-	width: 2em;
-	height: 2em;
-}
-.search-modal .section-inner button{
-	flex: auto 0 0;
-	background: transparent url(../fccentrum/img/close.svg) left center no-repeat;
-	border: none;
-	cursor: pointer;
-}
-body.search #site-content{
-	position: relative;
-	max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-body.search #site-content #news-list .teaser{
-	border-top: 1px solid black;
-	padding: 2em 0.5em;
+#header-graphic img{
+	width: 100%;
 }
 
+#site-content{
+	padding-top: 1px;
+}
 #site-content .post-content{
 	max-width: 600px;
 	margin-left: auto;
@@ -639,7 +588,8 @@ body.home #site-content .stories-container .teaser.tekst_onder_foto .link-contai
 	text-align: left;
 	margin: 0;
 }
-#site-content .stories-container .teaser .link-container ul{
+
+#site-content ul.post-terms{
 	flex: 100% 0 0;
 	order: 1;
 	list-style: none;
@@ -647,25 +597,33 @@ body.home #site-content .stories-container .teaser.tekst_onder_foto .link-contai
 	margin: 0;
 	display: flex;
 }
-#site-content .stories-container .teaser .link-container ul li:not(:last-child){
-	margin-right: 0.5em;
-	padding-right: 1em;
-	background-image: url(../fccentrum/img/bulletpoint-white.png);
-	background-repeat: no-repeat;
-	background-position: top right;
-}
-body.home #site-content .stories-container .teaser.tekst_onder_foto .link-container ul li:not(:last-child){
-	background-image: url(../fccentrum/img/bulletpoint.png);
-}
-#site-content .stories-container .teaser .link-container ul li a{
+#site-content ul.post-terms li.term a{
 	color: inherit;
 	text-decoration: none;
+	padding: 0 1em 0em 0.5em;
 }
-#site-content .stories-container .teaser .link-container ul li a:hover{
+#site-content ul.post-terms li.term:not(:last-child) a{
+	background: url(../fccentrum/img/bulletpoint-white.svg);
+	background-repeat: no-repeat;
+	background-position: top right;
+	background-size: 10% auto;
+}
+
+#site-content ul.post-terms li.term:first-child a{
+	padding-left: 0;
+}
+#site-content ul.post-terms li.term a:hover{
 	text-decoration: underline;
 }
+body.home #site-content .tekst_onder_foto ul.post-terms li.term:not(:last-child) a{
+	background-image: url(../fccentrum/img/bulletpoint-black.svg);
+}
 
 
+#site-content #mid-graphic,
+#site-content #mid-graphic img{
+	width: 100%;
+}
 
 .post-content figure{
 	display: block;
@@ -675,6 +633,7 @@ body.home #site-content .stories-container .teaser.tekst_onder_foto .link-contai
 	margin-left:  -4em;
 	margin-right:  -4em;
 }
+
 
 
 
@@ -815,15 +774,7 @@ body.single-story #site-content .post-content h1{
 body.single-story #site-content .post-content figcaption{
 	text-align: right;
 }
-body.single-story #scrollDown-arrow{
-position: absolute;
-	bottom: 0;
-	left: 50%;
-	background: transparent url(../fccentrum/img/dropdown-arrow-icon.svg) no-repeat;
-	width: 3em;
-	height: auto;
-	text-indent: -999em;
-}
+
 body.single-story .background-zwart#site-footer .footer-graphic{
 	display: none;
 }
@@ -908,6 +859,7 @@ body.page-id-53 #site-content ul.categories-block li.cat .category-pic{
 }
 #site-footer .footer-graphic img{
 	display: block;
+	width: 100%;
 }
 #site-footer .footer-content{
 	background: #000;
@@ -1058,4 +1010,121 @@ body.page-id-53 #site-content ul.categories-block li.cat .category-pic{
 }
 .background-wit#site-content footer.post-closure .share-btns ul.share-btns-list li.link button{
 	background-image: url(../fccentrum/img/link-icon-zwart.svg);
+}
+
+
+.search-modal{
+	position: relative;
+	background: #E72934;
+	width: 100%;
+	display: none;
+	z-index: 10;
+	padding: 1em 4em;
+}
+.search-modal.always-open{
+	display: block;
+}
+.search-modal .section-inner{
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	border-bottom: 1px solid white;
+}
+.search-modal .section-inner form{
+	flex: 90% 0 0;
+	display: flex;
+	align-items: baseline;
+}
+.search-modal .section-inner form label{
+	order: 2;
+	flex: 95% 0 0;
+}
+.search-modal .section-inner form label input[type="search"]{
+	background: none;
+	border: none;
+	font-weight: 700;
+	font-family: 'garage-gothic', sans-serif;
+	text-transform: uppercase;
+	color: #fff;
+}
+.search-modal .section-inner form label input[type="search"]:focus{
+	outline: none;
+}
+.search-modal .section-inner form label input::placeholder{
+	color: #F28C92;
+}
+.search-modal .section-inner form input[type="submit"]{
+	flex: auto 0 0;
+	order: 1;
+	background: transparent url(../fccentrum/img/search-icon-white.svg) left center no-repeat;
+	text-indent: -999em;
+	width: 1.5em;
+	height: 1.5em;
+}
+.search-modal .section-inner button{
+	flex: auto 0 0;
+	background: transparent url(../fccentrum/img/close.svg) left center no-repeat;
+	border: none;
+	cursor: pointer;
+	width: 1.5em;
+}
+body.search #site-content{
+	position: relative;
+	max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+body.search #site-content #news-list .teaser{
+	border-top: 1px solid #000;
+	padding: 2em 0.5em;
+}
+
+
+body.search-results #site-content .post-content h1{
+	display: none;
+} 
+body.search-results #site-content .post-content .archive-subtitle p{
+	font-size: 2em;
+	font-weight: 700;
+	font-family: 'garage-gothic', sans-serif;
+	text-transform: uppercase;
+	text-align: center;
+}
+#site-content .search-results .search-result{
+	border-top: 1.5px solid #949494;
+	padding: 1.5em 10em;
+	display: flex;
+	flex-wrap: nowrap;
+}
+#site-content .search-results .search-result > a{
+	flex: auto 0 0;
+	height: 100%;
+}
+#site-content .search-results .search-result > a img{
+	display: block;
+	height: 12em;
+	min-width: 19em;
+	object-fit: cover;
+	object-position: center;
+	margin-right: 1.5em;
+}
+#site-content .search-results .search-result .post-info{
+	flex: auto 0 1;
+}
+#site-content .search-results .search-result .post-info ul{
+	padding: 0;
+}
+#site-content .search-results ul.post-terms li:not(:last-child) a{
+	background-image: url(../fccentrum/img/bulletpoint-black.svg);
+}
+#site-content .search-results .search-result .post-info h2{
+	font-size: 2.5em;
+	text-align: left;
+	margin: 0.2em 0;
+}
+#site-content .search-results .search-result .post-info p{
+	margin: 0;
+  display: flex;
+  height: calc(100% - 4.5em);
+	 align-items: flex-end;
 }
