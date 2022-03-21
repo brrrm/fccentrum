@@ -1019,7 +1019,7 @@ body.page-id-53 #site-content ul.categories-block li.cat .category-pic{
 	width: 100%;
 	display: none;
 	z-index: 10;
-	padding: 1em 4em;
+	padding: 0.5em 4em 1em 4em;
 }
 .search-modal.always-open{
 	display: block;
@@ -1045,7 +1045,9 @@ body.page-id-53 #site-content ul.categories-block li.cat .category-pic{
 	font-weight: 700;
 	font-family: 'garage-gothic', sans-serif;
 	text-transform: uppercase;
-	color: #fff;
+	color: #F28C92;
+	height: 2em;
+	padding: 0 0 0 0.5em;
 }
 .search-modal .section-inner form label input[type="search"]:focus{
 	outline: none;
@@ -1054,12 +1056,15 @@ body.page-id-53 #site-content ul.categories-block li.cat .category-pic{
 	color: #F28C92;
 }
 .search-modal .section-inner form input[type="submit"]{
+	border-radius: 0;
 	flex: auto 0 0;
 	order: 1;
 	background: transparent url(../fccentrum/img/search-icon-white.svg) left center no-repeat;
 	text-indent: -999em;
-	width: 1.5em;
-	height: 1.5em;
+	width: 1em;
+	height: 1em;
+	border-right: 1px solid #fff;
+	padding-right: 1.5em ;
 }
 .search-modal .section-inner button{
 	flex: auto 0 0;
