@@ -156,6 +156,15 @@ textarea{
 	min-height: 6em;
 }
 
+/* clears the ‘X’ from Internet Explorer */
+input[type=search]::-ms-clear { display: none; width : 0; height: 0; }
+input[type=search]::-ms-reveal { display: none; width : 0; height: 0; }
+/* clears the ‘X’ from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
 /**background algemene layout */
 .background-zwart{
 	background: #000;
@@ -1084,11 +1093,13 @@ body.search #site-content #news-list .teaser{
 	padding: 2em 0.5em;
 }
 
-
-body.search-results #site-content .post-content h1{
+body.search #site-header .toggle{
+	display: none;
+}
+body.search #site-content .post-content h1{
 	display: none;
 } 
-body.search-results #site-content .post-content .archive-subtitle p{
+body.search #site-content .post-content .archive-subtitle p{
 	font-size: 2em;
 	font-weight: 700;
 	font-family: 'garage-gothic', sans-serif;
@@ -1113,6 +1124,9 @@ body.search-results #site-content .post-content .archive-subtitle p{
 	object-position: center;
 	margin-right: 1.5em;
 }
+
+
+
 #site-content .search-results .search-result .post-info{
 	flex: auto 0 1;
 }
