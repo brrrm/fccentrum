@@ -327,6 +327,13 @@ body.page #site-content .post-content h2{
 	top: 0;
     z-index: 11;
 }
+#site-header #logo{
+	display: block;
+	height: 5em;
+	position: fixed;
+	left: 2em;
+	top: 0;
+}
 body{
 	/* ruimte maken voor de header die absolute gepositioneerd is */
 	padding-top:  5em;
@@ -338,12 +345,14 @@ body.showHeader #site-header{
   	animation-name: slidein;
 }
 body.admin-bar #site-header,
-body.admin-bar.showHeader #site-header{
+body.admin-bar.showHeader #site-header,
+body.admin-bar #site-header #logo{
 	top: 32px;
 }
 @media screen and ( max-width: 782px ) {
 	body.admin-bar #site-header,
-	body.admin-bar.showHeader #site-header{
+	body.admin-bar.showHeader #site-header,
+	body.admin-bar #site-header #logo{
 		top: 46px;
 	}
 }
@@ -424,13 +433,6 @@ body.admin-bar.showHeader #site-header{
 	height: 2.5em;
 	border: none;
 	cursor: pointer;
-}
-#site-header #logo{
-	display: block;
-	height: 5em;
-	position: fixed;
-	left: 2em;
-	top: 0;
 }
 
 #hamburger{
