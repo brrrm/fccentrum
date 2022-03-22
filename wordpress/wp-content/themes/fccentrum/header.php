@@ -149,7 +149,7 @@
 			<button id="hamburger">
 				<span class="stripe top"></span>
 				<span class="stripe middle"></span>
-				<span class="stripe bottom"></span>Menu
+				<span class="stripe bottom"></span>
 			</button>
 
 		</header><!-- #site-header -->
