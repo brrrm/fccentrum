@@ -437,25 +437,18 @@ body.admin-bar.showHeader #site-header{
 	text-decoration: none;
 	color: #fff;
 	font-weight: 700;
+	line-height: 1em;
 }
-#carousel-scrollDown-arrow{
-	position: absolute;
-	bottom: 2em;
-	left: 50%;
-	background: transparent url(../fccentrum/img/dropdown-arrow-icon.svg) no-repeat;
-	width: 3em;
-	height: auto;
-	text-indent: -999em;
-}
+#carousel-scrollDown-arrow,
 #scrollDown-arrow{
 	position: absolute;
-	bottom: 0;
+	bottom: 3em;
 	left: 50%;
 	background: transparent url(../fccentrum/img/dropdown-arrow-icon.svg) no-repeat;
 	width: 3em;
 	height: auto;
 	text-indent: -999em;
-} 
+}
 @media all and (max-width: 768px){
 	#carousel h2{
 		width: 100%;
@@ -614,7 +607,7 @@ body.home #site-content .stories-container .teaser.tekst_onder_foto .link-contai
 #site-content ul.post-terms li.term:not(:last-child) a{
 	background: url(../fccentrum/img/bulletpoint-white.svg);
 	background-repeat: no-repeat;
-	background-position: top right;
+	background-position: center right;
 	background-size: 10% auto;
 }
 
@@ -837,6 +830,7 @@ body.home #news-list .news ul{
 body.home #news-list .news li a{
 	text-decoration: none;
 	font-size: 2em;
+	color: #E30613;
 }
 
 body.home #news-list .news h2{
@@ -1106,6 +1100,7 @@ body.search #site-content .post-content .archive-subtitle p{
 	text-transform: uppercase;
 	text-align: center;
 }
+
 #site-content .search-results .search-result{
 	border-top: 1.5px solid #949494;
 	padding: 1.5em 10em;
