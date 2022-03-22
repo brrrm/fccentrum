@@ -34,7 +34,7 @@ $mid_graphic = get_field('graphic_halverwege');
 				the_post();
 				?>
 				
-				<h1 class="page-title"><span>PAGINA<?php the_title(); ?></span></h1>
+				<h1 class="page-title"><span><?php the_title(); ?></span></h1>
 				<?php the_content(__('(more...)')); ?>
 
 				<?php
