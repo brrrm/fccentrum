@@ -393,8 +393,8 @@ body.admin-bar.showHeader #site-header{
 		 width: 100%;
 	   height: 5px;
 	   margin: 5px 0;
-	   background-color: black;
-	   display :block;
+	   background-color: #000;
+	   display:block;
 	   border-radius: 1em;
 	}
 	#site-header .primary-menu-wrapper.show {
@@ -405,9 +405,8 @@ body.admin-bar.showHeader #site-header{
 	#site-header .primary-menu-wrapper.show  ul.primary-menu{
 		display: block;
     position: relative;
-    background: green;
 		width: 100vw;
-    height: 100%;
+    height: 60vh;
 		background: url(../fccentrum/img/menu-bg.svg) no-repeat center bottom;
 		background-size: 100%;
 		padding: 2em;            
@@ -421,6 +420,15 @@ body.admin-bar.showHeader #site-header{
 	}
 	#site-header .primary-menu-wrapper ul.primary-menu li.current-menu-item a{
 		color: #F28C92;
+	}
+	#site-header .primary-menu-wrapper  ul.primary-menu li ul.sub-menu{
+		left: 0;
+		padding: 0;
+		background: none;
+		position: relative;
+	}
+	#site-header .primary-menu-wrapper  ul.primary-menu li ul.sub-menu a{
+		font-size: 1em;
 	}
 	#site-header .primary-menu-wrapper{
 		display: none;
@@ -449,9 +457,16 @@ body.admin-bar.showHeader #site-header{
 #carousel button.slick-prev{
 	left: 3em;
 }
+#carousel button.slick-prev:hover{
+	background: transparent url(../fccentrum/img/previous-icon-hover.svg) no-repeat center;
+
+}
 #carousel button.slick-next{
 	right: 3em;
 	background-image:url(../fccentrum/img/next-icon.svg) ;
+}
+#carousel button.slick-next:hover{
+	background: transparent url(../fccentrum/img/next-icon-hover.svg) no-repeat center;
 }
 #carousel .carousel-slide{
 	height:  calc(100vh - 5em);
