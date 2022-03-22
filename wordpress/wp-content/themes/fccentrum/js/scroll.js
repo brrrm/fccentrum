@@ -12,16 +12,17 @@
 			$('nav.primary-menu-wrapper').toggleClass('show');
 		});
 
-		document.addEventListener('scroll', function(e) {
-		  if (!ticking) {
-		    window.requestAnimationFrame(function() {
-		      headerScrollEffect(window.scrollY);
-		      ticking = false;
-		    });
+		
+	});
+	document.addEventListener('scroll', function(e) {
+	  if (!ticking) {
+	    window.requestAnimationFrame(function() {
+	      headerScrollEffect(window.scrollY);
+	      ticking = false;
+	    });
 
-		    ticking = true;
-		  }
-		});
+	    ticking = true;
+	  }
 	});
 
 	function headerScrollEffect(scrollPos) {
