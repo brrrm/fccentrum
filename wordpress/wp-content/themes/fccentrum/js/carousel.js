@@ -1,7 +1,10 @@
 (function( $ ) {
 
 	$(document).ready(function(){
-		$('#carousel').slick();
+		$('#carousel').slick({
+			'prevArrow': $('#prevslide'),
+			'nextArrow': $('#nextslide')
+		});
 
 		$('.search-toggle, .search-untoggle').click(function(e){
 			e.preventDefault();

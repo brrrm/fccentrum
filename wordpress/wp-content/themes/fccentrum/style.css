@@ -109,10 +109,6 @@ body{
 
 a:link,
 a:visited{
-	font-family: 'garage-gothic', sans-serif;
-	font-weight: 400;
-	font-style: normal;
-	text-transform: uppercase;
 	text-decoration: underline;
 	color: #E30613;
 }
@@ -367,57 +363,67 @@ body.admin-bar #site-header #logo{
 }
 #site-header .primary-menu-wrapper{
 	flex: auto 0 0;
-}
-#site-header .primary-menu-wrapper a{
-	text-decoration: none;
+    height: 100%;
 	font-size: 1.625em;
-	color: #000;
 	font-weight: 600;
-}
-#site-header .primary-menu-wrapper a:hover{
-	color: #E72934;
-	text-decoration: underline;
+	font-family: 'garage-gothic', sans-serif;
+	font-style: normal;
+	text-transform: uppercase;
 }
 #site-header .primary-menu-wrapper ul.primary-menu{
 	display: flex;
 	padding: 0;
 	margin: 0;
+	height: 100%;
+    align-items: stretch;
 }
 #site-header .primary-menu-wrapper ul.primary-menu li{
 	list-style: none;
-	line-height: 4.8em;
 	text-align: center;
-	width: 100%;
-	margin-right: 3em;
+	margin-right: 1.9em;
 	position: relative;
-}
-#site-header .primary-menu-wrapper ul.primary-menu li.current-menu-item a{
-	color: #E30916;
-	text-decoration: underline;	
+	display: flex;
+    align-items: center;
 }
 #site-header .primary-menu-wrapper ul.primary-menu li ul.sub-menu{
 	position: absolute;
 	left: -999em;
+	top: 100%;
 	background-image: url(../fccentrum/img/menu-bg.svg);
-	background-size: contain;
-	padding: 1.5em;
+	background-size: 100% auto;
+	background-position: left bottom;
+	line-height: 1em;
+	padding: 1em 1em 2em;
 	z-index: 1;
+	border-top:  1px solid #000;
+	min-width: 10em;
 }
 #site-header .primary-menu-wrapper ul.primary-menu li:hover ul.sub-menu{
 	left: 50%;
 	transform: translate(-50%);
 }
-#site-header .primary-menu-wrapper ul.primary-menu li ul.sub-menu a{
-	color: #fff;
-	text-decoration: none;
-}
-#site-header .primary-menu-wrapper ul.primary-menu li ul.sub-menu a:hover{
-	text-decoration: underline;
-}
 #site-header .primary-menu-wrapper ul.primary-menu li ul.sub-menu li{
 	padding: 0;
-	line-height: 2em;
+	margin: 0;
 	text-align: left;
+}
+#site-header .primary-menu-wrapper a{
+	text-decoration: none;
+	color: #000;
+}
+#site-header .primary-menu-wrapper a:hover{
+	color: #E72934;
+	text-decoration: underline;
+}
+#site-header .primary-menu-wrapper ul.primary-menu li.current-menu-item a{
+	color: #E30916;
+	text-decoration: underline;	
+}
+#site-header .primary-menu-wrapper ul.primary-menu li ul.sub-menu a{
+	color: #fff;
+	margin: 0.25em 0;
+}
+#site-header .primary-menu-wrapper ul.primary-menu li ul.sub-menu a:hover{
 }
 #site-header .search-toggle{
 	flex: 2.5em 0 0;
@@ -440,53 +446,57 @@ body.admin-bar #site-header #logo{
 		background: transparent;
 		border: none;
 		margin-left: 2em;
+		outline: none;
 	}
 	#hamburger span.stripe{
-		 width: 2em;
-	   height: 3px;
-	   margin: 5px 0;
-	   background-color: #000;
-	   display:block;
-	   border-radius: 1em;
+		width: 2em;
+		height: 3px;
+		margin: 5px 0;
+		background-color: #000;
+		display:block;
+		border-radius: 1em;
 	}
-	#site-header .primary-menu-wrapper.show {
+	#site-header .primary-menu-wrapper{
+		display: none;
 		position: absolute;
-		top: 5em;
+		top: 5rem;
 		right: 0;
 	}
-	#site-header .primary-menu-wrapper.show  ul.primary-menu{
+	#site-header .primary-menu-wrapper.show {
+		display: block;
+	}
+	#site-header .primary-menu-wrapper  ul.primary-menu{
 		display: block;
 		width: 100vw;
-		height: 100%;
-		background: url(../fccentrum/img/menu-bg.svg) no-repeat center bottom;
-		background-size: 100%;
-		padding: 2em 0 4em 5em;            
+		height: auto;
+		background: transparent url(../fccentrum/img/menu-bg.svg) no-repeat bottom left;
+		background-size: 100% auto;
+		padding: 2em 2rem 4em;
+		line-height: 1em;
 	}
 	#site-header .primary-menu-wrapper  ul.primary-menu li{
-		line-height: 5em;
 		text-align: left;
+		display: block;
+		margin: 0 0 1.5em;
 	}
 	#site-header .primary-menu-wrapper  ul.primary-menu li a{
 		color: #fff;
 	}
 	#site-header .primary-menu-wrapper ul.primary-menu li.current-menu-item a{
-		color: #F28C92;
+		color: #000;
 	}
 	#site-header .primary-menu-wrapper  ul.primary-menu li ul.sub-menu{
 		left: 0;
 		padding: 0;
 		background: none;
 		position: relative;
+		line-height: 1em;
+		border-top:  none;
+		margin:  1em 0 0 0.5em;
+		font-weight: 100;
 	}
-	#site-header .primary-menu-wrapper  ul.primary-menu li ul.sub-menu a{
-		padding-left: 0.5em;
-		line-height: 2em;
-	}
-	#site-header .primary-menu-wrapper{
-		display: none;
-	}
-	#site-header .primary-menu-wrapper.show{
-		display: block;
+	#site-header .primary-menu-wrapper  ul.primary-menu li ul.sub-menu li{
+		margin: 0 0 1em;
 	}
 }
 
@@ -494,12 +504,19 @@ body.admin-bar #site-header #logo{
 	position: absolute;
 }
 
-#carousel{
+#carouselWrap{
 	width: 100%;
 	height: calc(100vh - 5em);
-	position: relative;
+	position: relative;	
 }
-#carousel button{
+#carousel{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+#carouselWrap > a{
+	display: block;
 	z-index: 1;
 	position: absolute;
 	border: none;
@@ -511,18 +528,18 @@ body.admin-bar #site-header #logo{
 	top: 0;
 	transition: transform 1s;
 }
-#carousel button.slick-prev{
+#carouselWrap > a#prevslide{
 	left: 3em;
 }
-#carousel button.slick-prev:hover{
+#carouselWrap > a#prevslide:hover{
 	background: transparent url(../fccentrum/img/previous-icon-hover.svg) no-repeat center;
 	transform: scale(1.5);
 }
-#carousel button.slick-next{
+#carouselWrap > a#nextslide{
 	right: 3em;
 	background-image:url(../fccentrum/img/next-icon.svg) ;
 }
-#carousel button.slick-next:hover{
+#carouselWrap > a#nextslide:hover{
 	background: transparent url(../fccentrum/img/next-icon-hover.svg) no-repeat center;
 	transform: scale(1.5);
 }

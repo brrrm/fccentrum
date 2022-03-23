@@ -1,13 +1,11 @@
 <?php
 /**
- * The template for displaying all single posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package WordPress
- * @subpackage Twenty_Twenty_One
- * @since Twenty Twenty-One 1.0
- */
+* Template Name: Stories-template
+*
+* @package WordPress
+* @subpackage FC Centrum
+* @since FC Centrum 1.0
+*/
 
 get_header();
 ?>
@@ -30,10 +28,8 @@ get_header();
 				?>
 				
 				<h1 class="page-title"><span><?php the_title(); ?></span></h1>
-				<?php the_content(__('(more...)')); ?>
-
-				<?php
-				get_template_part( 'template-parts/content', get_post_type() );
+				<?php 
+				the_content(__('(more...)')); 
 			}
 		}
 		?>
