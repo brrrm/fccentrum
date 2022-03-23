@@ -13,10 +13,10 @@ $text_color = 'foreground-' . get_field('tekstkleur', $terms[0]);
 						</div><!-- .footer-credits -->
 
 						<ul class="footer-socials">
-							<li class="footer-youtube"><a href="https://www.youtube.com/c/fccentrum/" target="_blank" rel="nofollow">FC Centrum op Youtube</a></li>
-							<li class="footer-twitter"><a href="https://twitter.com/fccentrum/" target="_blank" rel="nofollow">FC Centrum op Twitter</a></li>
-							<li class="footer-facebook"><a href="https://www.facebook.com/fccentrum/" target="_blank" rel="nofollow">FC Centrum op Facebook</a></li>
-							<li class="footer-instagram"><a href="https://www.instagram.com/fccentrum/" target="_blank" rel="nofollow">FC Centrum op Instagram</a></li>
+							<li class="footer-social youtube"><a href="https://www.youtube.com/c/fccentrum/" target="_blank" rel="nofollow">FC Centrum op Youtube</a></li>
+							<li class="footer-social twitter"><a href="https://twitter.com/fccentrum/" target="_blank" rel="nofollow">FC Centrum op Twitter</a></li>
+							<li class="footer-social facebook"><a href="https://www.facebook.com/fccentrum/" target="_blank" rel="nofollow">FC Centrum op Facebook</a></li>
+							<li class="footer-social instagram"><a href="https://www.instagram.com/fccentrum/" target="_blank" rel="nofollow">FC Centrum op Instagram</a></li>
 						</ul>
 
 						<p class="footer-address">
