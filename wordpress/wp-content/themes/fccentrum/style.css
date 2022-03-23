@@ -1038,18 +1038,30 @@ body.home #news-list{
 }
 body.home #news-list .news:not(:last-child){
 	border-bottom: 1px solid #707070;
+		margin-top: 0.5em;
+
 }
-body.home #news-list .news ul{
+body.home #news-list .news {
+	margin-top: 1em;
+}
+body.home #news-list .news:first-child{
+	margin-top: 0;
+}
+
+body.home #news-list .news ul.post-terms{
 	list-style: none;
 	padding: 0;
-	margin: 0;
 }
+
 body.home #news-list .news li a{
 	text-decoration: none;
 	font-size: 2em;
-	color: #E30613;
+	color: #E30613 !important;
+	font-weight: 900;
 }
-
+body.home #news-list .news:first-child li a{
+	line-height: 0;
+}
 body.home #news-list .news h2{
 	font-size: 3em;
 	text-align: left;
@@ -1063,7 +1075,7 @@ body.home #news-list h2 a{
 	font-weight: 700;
 	letter-spacing: 1px;
 }
-body.home  #site-content ul.post-terms{
+body.home #news-list ul.post-terms{
 	flex: 100% 0 0;
 	order: 1;
 	list-style: none;
@@ -1071,25 +1083,28 @@ body.home  #site-content ul.post-terms{
 	margin: 0;
 	display: flex;
 }
-body.home #site-content ul.post-terms li.term a{
+
+
+
+body.home #site-content .stories-container ul.post-terms li.term a{
 	color: inherit;
 	text-decoration: none;
 	padding: 0 1em 0em 0.5em;
 }
-body.home  #site-content ul.post-terms li.term:not(:last-child) a{
+body.home  #site-content .stories-container ul.post-terms li.term:not(:last-child) a{
 	background: url(../fccentrum/img/bulletpoint-white.svg);
 	background-repeat: no-repeat;
 	background-position: center right;
 	background-size: 10% auto;
 }
 
-body.home  #site-content ul.post-terms li.term:first-child a{
+body.home  #site-content .stories-container ul.post-terms li.term:first-child a{
 	padding-left: 0;
 }
-body.home  #site-content ul.post-terms li.term a:hover{
+body.home  #site-content .stories-container ul.post-terms li.term a:hover{
 	text-decoration: underline;
 }
-body.home #site-content .tekst_onder_foto ul.post-terms li.term:not(:last-child) a{
+body.home #site-content .stories-container .tekst_onder_foto ul.post-terms li.term:not(:last-child) a{
 	background-image: url(../fccentrum/img/bulletpoint-black.svg);
 }
 
