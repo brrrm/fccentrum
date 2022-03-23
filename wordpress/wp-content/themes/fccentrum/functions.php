@@ -1,5 +1,10 @@
 <?php
 
+
+remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles' );
+remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
+
+
 // Our custom post type function
 function create_posttypes() {
  	$storyLabels = array(
@@ -194,6 +199,7 @@ function create_taxonomy() {
 		'show_in_rest' 		=> true,
 		'show_admin_column' => true,
 		'query_var' 		=> true,
+		'sort'				=> true,
 		'rewrite' 			=> array( 
 			'slug' => 'fan'
 		),
@@ -222,7 +228,7 @@ function create_taxonomy() {
 		'show_admin_column' => true,
 		'query_var' 		=> true,
 		'rewrite' 			=> array( 
-			'slug' => 'fan'
+			'slug' => 'news-category'
 		),
 	));
  
@@ -389,12 +395,12 @@ function get_carousel(){
 	   
 	// The Loop
 	if ( $the_query->have_posts() ) {
-		echo '<div id="carousel">';
+		echo '<div id="carouselWrap"><a id="prevslide"></a><div id="carousel">';
 	    while ( $the_query->have_posts() ) {
 	        $the_query->the_post();
 	        get_template_part( 'template-parts/carousel', null, [] );
 	    }
-	    echo '</div>';
+	    echo '</div><a id="nextslide"></a></div>';
 	    echo '<a id="carousel-scrollDown-arrow" href="#site-content">Scroll naar beneden</a>';
 	}
 	   

@@ -18,8 +18,6 @@ $graphic = get_field('graphic_halverwege', $term);
 $image = get_field('headerafbeelding', $term);
 ?>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYtTpBXwzon3LA0TTzVGAl69h8qoMqFoc"></script>
-
 <main id="site-content" class="<?php echo $bg_color; ?> <?php echo $text_color; ?>" >
 	<header class="post-header">
 
