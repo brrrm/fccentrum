@@ -23,7 +23,7 @@ function create_posttypes() {
             'exclude_from_search'	=> false,
 
             'has_archive' 	=> true,
-            'rewrite' 		=> array('slug' => 'stories'),
+            'rewrite' 		=> array('slug' => 'story'),
             'show_in_rest' 	=> true,
             'menu_position'	=> 4,
  			'menu_icon'		=> 'dashicons-megaphone',
