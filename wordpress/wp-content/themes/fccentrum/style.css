@@ -81,37 +81,37 @@ Author URI: https://garbo.nl/
 }
 @font-face {
   font-family: "Odin";
-  src: url('fonts/Odin_van_de_wetenschap/OdinvandeWetenschap-Light.ttf') format('ttf'), url('fonts/Odin_van_de_wetenschap/OdinvandeWetenschap-Light.woff') format('woff');
+  src: url('fonts/Odin_van_de_Wetenschap/OdinvandeWetenschap-Light.ttf') format('ttf'), url('fonts/Odin_van_de_Wetenschap/OdinvandeWetenschap-Light.woff') format('woff');
   font-weight: 100;
   font-style: normal;
 }
 @font-face {
   font-family: "Odin";
-  src: url('fonts/Odin_van_de_wetenschap/OdinvandeWetenschap-LightItalic.ttf') format('ttf'), url('fonts/Odin_van_de_wetenschap/OdinvandeWetenschap-LightItalic.woff') format('woff');
+  src: url('fonts/Odin_van_de_Wetenschap/OdinvandeWetenschap-LightItalic.ttf') format('ttf'), url('fonts/Odin_van_de_Wetenschap/OdinvandeWetenschap-LightItalic.woff') format('woff');
   font-weight: 100;
   font-style: italic;
 }
 @font-face {
   font-family: "Odin";
-  src: url('fonts/Odin_van_de_wetenschap/OdinvandeWetenschap-Regular.ttf') format('ttf'), url('fonts/Odin_van_de_wetenschap/OdinvandeWetenschap-Regular.woff') format('woff');
+  src: url('fonts/Odin_van_de_Wetenschap/OdinvandeWetenschap-Regular.ttf') format('ttf'), url('fonts/Odin_van_de_Wetenschap/OdinvandeWetenschap-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "Odin";
-  src: url('fonts/Odin_van_de_wetenschap/OdinvandeWetenschap-RegularItalic.ttf') format('ttf'), url('fonts/Odin_van_de_wetenschap/OdinvandeWetenschap-RegularItalic.woff') format('woff');
+  src: url('fonts/Odin_van_de_Wetenschap/OdinvandeWetenschap-RegularItalic.ttf') format('ttf'), url('fonts/Odin_van_de_Wetenschap/OdinvandeWetenschap-RegularItalic.woff') format('woff');
   font-weight: 400;
   font-style: italic;
 }
 @font-face {
   font-family: "Odin";
-  src: url('fonts/Odin_van_de_wetenschap/OdinvandeWetenschap-Bold.ttf') format('ttf'), url('fonts/Odin_van_de_wetenschap/OdinvandeWetenschap-Bold.woff') format('woff');
+  src: url('fonts/Odin_van_de_Wetenschap/OdinvandeWetenschap-Bold.ttf') format('ttf'), url('fonts/Odin_van_de_Wetenschap/OdinvandeWetenschap-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: "Odin";
-  src: url('fonts/Odin_van_de_wetenschap/OdinvandeWetenschap-BoldItalic.ttf') format('ttf'), url('fonts/Odin_van_de_wetenschap/OdinvandeWetenschap-BoldItalic.woff') format('woff');
+  src: url('fonts/Odin_van_de_Wetenschap/OdinvandeWetenschap-BoldItalic.ttf') format('ttf'), url('fonts/Odin_van_de_Wetenschap/OdinvandeWetenschap-BoldItalic.woff') format('woff');
   font-weight: 700;
   font-style: italic;
 }
