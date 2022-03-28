@@ -115,8 +115,6 @@ Author URI: https://garbo.nl/
   font-weight: 700;
   font-style: italic;
 }
-
-
 /*
 font-family: 'garage-gothic', sans-serif;
 font-weight: 400;
@@ -126,6 +124,9 @@ font-family: 'BrandonTextCond', sans-serif;
 font-weight: 400;
 font-style: normal;
 */
+
+
+
 
 html,body{
 	margin: 0;
@@ -151,6 +152,54 @@ a:visited{
 }
 a:hover,
 a:focus{
+}
+
+
+h1{
+	text-align: center;
+	font-family: 'garage-gothic', sans-serif;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 5em;
+	padding: 0.5em 0;
+	margin: 0;
+	letter-spacing: 0;
+	line-height: 1em;
+	color: inherit;
+}
+h1.page-title{
+	color: #000;
+}
+h1.page-title span{
+	background: #fff;
+	padding: 0.1em 0.2em ;
+}
+h2{
+	font-family: 'garage-gothic', sans-serif;
+	font-weight: 400;
+	text-transform: uppercase;
+	font-size: 5em;
+	margin: 0.5em 0;
+	letter-spacing: 0;
+	line-height: 1em;
+	color: inherit;
+}
+h2 a:link,
+h2 a:visited{
+	color: inherit;
+	text-decoration: none;
+}
+h2 a:hover{
+	text-decoration: underline;
+}
+@media all and (max-width: 768px){
+	h1{
+		font-size: 4em;
+		margin: 1em 0 0 0;
+	}
+	h2{
+		font-size: 4em;
+	}
 }
 label{
 	font-family: 'garage-gothic', sans-serif;
@@ -230,81 +279,31 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 .background-wit .post-closure{
 	border-top: 1px solid black;
 }
-.always-white{
-	background: #fff;
-	color: #000;
-}
-/**Post fonts algemene layout */
- #site-content h1{
-	text-align: center;
-	font-family: 'garage-gothic', sans-serif;
-	font-weight: 700;
-	text-transform: uppercase;
-	font-size: 5em;
-	padding: 1em 0;
-	margin: 0;
-	letter-spacing: 0;
-	line-height: 1em;
-	color: inherit;
-}
-#site-content h1.page-title{
-	color: #000;
-}
-#site-content h1.page-title span{
-	background: #fff;
-	padding: 0.1em 0.2em ;
-}
-#site-content h2{
-	text-align: center;
-	font-family: 'garage-gothic', sans-serif;
-	font-weight: 400;
-	text-transform: uppercase;
-	font-size: 5em;
-	margin: 0.5em 0;
-	letter-spacing: 0;
-	line-height: 1em;
-	color: inherit;
-}
-#site-content h2 a:link,
-#site-content h2 a:visited{
-	color: inherit;
-	text-decoration: none;
-}
-#site-content h2 a:hover{
-	text-decoration: underline;
-}
-@media all and (max-width: 768px){
-	#site-content h1{
-		font-size: 4em;
-		margin: 1em 0 0 0;
-	}
-	#site-content h2{
-		font-size: 4em;
-	}
-}
+
+
 /**Page fonts algemene layout */
-body.page #site-content h1.page-title{
+body.page h1.page-title{
 	color: #fff;
 }
-body.page #site-content h1.page-title span{
+body.page h1.page-title span{
 	background: #000;
 }
-body.page #site-content .post-content h2{
+body.page .post-content h2{
 	text-align: left;
 }
 
 /**Zoom animatie foto buttons */
-#site-content .stories-container .teaser,
+.story.teaser,
 #site-content ul.categories-block li.cat .category-pic{
 	overflow: hidden;
 }
-#site-content .stories-container .teaser img,
+.story.teaser img,
 #site-content ul.categories-block li.cat .category-pic img{
   transition: transform 1s ease-in-out;
   object-fit: cover;
 	object-position: center;
 }
-#site-content .stories-container .teaser img:hover,
+.story.teaser img:hover,
 #site-content ul.categories-block li.cat .category-pic img:hover{
   transform: scale(1.1); 
 }
@@ -341,10 +340,13 @@ body.page #site-content .post-content h2{
 
 /* No picture background color*/
 .story .post-header,
-ul.categories-block .category-pic,
+.category-pic,
 .spot-pic{
 	background-color: lightgrey;
 }
+
+
+
 
 
 
@@ -483,8 +485,6 @@ body.admin-bar #site-header #logo{
 	margin-right: 2em;
 }
 
-
-
 #hamburger{
 	display: none;
 }
@@ -551,8 +551,64 @@ body.admin-bar #site-header #logo{
 }
 
 
-#header-graphic{
-	position: absolute;
+.search-modal{
+	position: relative;
+	display: none;
+	width: 100%;
+	padding: 0.5em 0em 1em  0em;
+	background: #E72934;
+	z-index: 10;
+}
+.search-modal.always-open{
+	display: block;
+}
+.search-modal .section-inner{
+	margin-left: auto ;
+	margin-right: auto;
+	width: 90%;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	border-bottom: 1px solid white;
+}
+.search-modal .section-inner form{
+	flex: 95% 1 0;
+	display: flex;
+	align-items: baseline;
+}
+.search-modal .section-inner form label{
+	order: 2;
+	flex: 95% 0 0;
+}
+.search-modal .section-inner form label input[type="search"]{ 
+	background: none;
+	border: none;
+	font-weight: 700;
+	font-family: 'garage-gothic', sans-serif;
+	text-transform: uppercase;
+	height: 2em;
+	outline: none;
+ 	color: #fff;
+}
+.search-modal .section-inner form label input::placeholder {
+	color: #F28C92;
+}
+.search-modal .section-inner form input[type="submit"]{
+	order: 1;
+	flex: auto 0 0;
+	border-radius: 0;
+	background: transparent url(../fccentrum/img/search-icon-white.svg) left center no-repeat;
+	background-size: contain;
+	width: 1em;
+	height: auto;
+	text-indent: -999em;
+}
+.search-modal .section-inner button{
+	flex: auto 0 0;
+	background: transparent url(../fccentrum/img/close.svg) left center no-repeat;
+	border: none;
+	cursor: pointer;
+	width: 1.5em;
 }
 
 #carouselWrap{
@@ -578,6 +634,7 @@ body.admin-bar #site-header #logo{
 	width: 2em;
 	top: 0;
 	transition: transform 1s;
+
 }
 #carouselWrap > a#prevslide{
 	left: 3em;
@@ -598,35 +655,35 @@ body.admin-bar #site-header #logo{
 	height:  calc(100vh - 5em);
 	position: relative;
 }
-#carousel h2{
-	z-index: 100;
-	margin: 0;
-	width: 35%;
-	position: absolute;
-	bottom: 5em; 
-	left: 2em;
-	background: ;
-}
 #carousel img{
 	height: 100vh;
 	object-fit: cover;
 	object-position: center;
 }
+#carousel h2{
+	position: absolute;
+	bottom: 1.5em; 
+	left: 2em;
+	font-family: "Odin";
+	font-weight: 700;
+	line-height: 1.5em;
+	color: #fff;
+	z-index: 100;
+	margin: 0;
+	width: 50%;
+	font-size: 4em;
+}
 #carousel h2 a{
-	font-size: 3em;
 	background: #000;
 	padding:0 0.2em;
-	text-decoration: none;
-	color: #fff;
-	font-weight: 700;
-	line-height: 1em;
+	
 	box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 }
 #carousel-scrollDown-arrow,
 #scrollDown-arrow{
 	position: absolute;
-	bottom: 3em;
+	bottom: 2em;
 	left: 50%;
 	background: transparent url(../fccentrum/img/dropdown-arrow-icon.svg) no-repeat;
 	width: 3em;
@@ -660,8 +717,19 @@ body.admin-bar #site-header #logo{
 }
 
 
+
+#header-graphic{
+	position: absolute;
+}
 body.home #header-graphic{
 	position: relative;
+}
+
+
+
+#site-content{
+	margin-right: auto;
+  margin-left: auto;
 }
 body.home #site-content{
 	max-width: 1300px;
@@ -671,145 +739,134 @@ body.home #site-content{
 }
 @media all and (max-width: 768px){
 	body.home #site-content{
-		display: block ;
+		display: block;
 	}
 }
 
-
-
-body.home #site-content .stories-container{
-	flex: 80% 0 1;
-	padding: 0;
-	margin-right: 1.3em;
-	font-family: 'garage-gothic', sans-serif;
-	font-weight: 400;
-	font-style: normal;	
-}
-body.home #site-content .stories-container .teaser.tekst_onder_foto .link-container{
-	position: relative;
-	bottom: 0;
-  left: 0;
-  color: inherit;
-	text-decoration: none;	
-	margin-top: 0.5em;
-}
-
-
-#site-content ul.post-terms {
-	display: none;
-	font-family: 'garage-gothic', sans-serif;
-	text-transform: uppercase;
-	list-style: none;
-	padding: 0;
-	margin: 0;
-}
-body.home #site-content .stories-container ul.post-terms,
-body.search-results #site-content .search-result ul.post-terms{
-	display: flex;
-}
-#site-content ul.post-terms a{
-	background: url(../fccentrum/img/bulletpoint-white.svg);
-	background-repeat: no-repeat;
-	background-position: center right;
-	background-size: 10% auto;
-	padding: 0 1em 0em 0.5em;
-	text-decoration: none;
-	color: inherit;
-}
- #site-content ul.post-terms li.term:last-child a{
-	background-image: none;
-}
-#site-content ul.post-terms li.term:first-child a{
-	padding-left: 0;
-}
-#site-content ul.post-terms a:hover{
-	text-decoration: underline;
-}
-#site-content .tekst_onder_foto ul.post-terms li.term:not(:last-child) a{
-	background-image: url(../fccentrum/img/bulletpoint-black.svg);
-}
-
-
-
-@media all and (max-width: 768px){
-	#site-content .stories-container{
-		width: 100%;
-	}
-	#site-content .stories-container .tekst_onder_foto{
-		margin-bottom: 0;
-	}
-}
-
-body.home #news-list{
-	flex: 20% 0 0 ;	
-	border-left: 1px solid #000;
-	padding-left: 1em;
-}
-body.home #news-list .news{
-	padding: 1em 0;
-	border-top: 1px solid #000;
-}
-body.home #news-list .news:first-child{
-	padding: 0 0 1em 0;
-	border-top: none;
-}
-body.home #news-list ul{
-	display: block;
-}
-body.home #news-list h2{
-	text-align: left;
-	font-size: 3em;
-	font-weight: 700;
-	margin: 0 0 0.2em 0;
-}
-body.home #news-list p{
-	margin: 0;
-}
-body.home #site-content #news-list ul.post-terms{
-	font-weight: 900;
-	font-size: 1.5em;
-	color: #E30613;
-}
-@media all and (max-width: 768px){
-	body.home #news-list{
-		border: none;
-		padding-left: 0;
-	}
-}
-
-
-
-
-
-#site-content{
-		margin-right: auto;
-    margin-left: auto;
-}
-@media all and (max-width: 768px){
-	#site-content{
-	}
-}
-
-#site-content .post-content{
+.post-content{
 	max-width: 600px;
 	width: 90%;
 	margin-left: auto;
 	margin-right: auto ;
 	position: relative;
 } 
-#site-content ul.categories-block,
-#site-content .stories-container{
+
+ul.post-terms {
+	display: none;
+	font-family: 'garage-gothic', sans-serif;
+	text-transform: uppercase;
+	list-style: none;
+	padding: 0;
+	margin: 0.2em 0;
+}
+body.home ul.post-terms,
+body.search-results ul.post-terms{
+	display: flex;
+}
+ul.post-terms li.term a{
+	background: url(../fccentrum/img/bulletpoint-black.svg);
+	color: #000;
+	background-repeat: no-repeat;
+	background-position: center right;
+	background-size: 0.5em;
+	padding: 0 1em 0em 0.5em;
+	text-decoration: none;
+}
+.color--blauw ul.post-terms li.term a{
+	color: #0090d7;
+	background-image: url(../fccentrum/img/bulletpoint-blue.svg);
+}
+.color--rood ul.post-terms li.term a{
+	color: #e30613;
+	background-image: url(../fccentrum/img/bulletpoint-red.svg);
+}
+.color--geel ul.post-terms li.term a{
+	color: #ffcc00;
+	background-image: url(../fccentrum/img/bulletpoint-yellow.svg);
+}
+.color--white ul.post-terms li.term a{
+	color: #fff;
+	background-image: url(../fccentrum/img/bulletpoint-white.svg);
+}
+ul.post-terms li.term:first-child a{
+	padding-left: 0;
+}
+ul.post-terms li.term:last-child a{
+	background-image: none;
+}
+ul.post-terms li a:hover{
+	text-decoration: underline;
+}
+.teaser h2{
+	font-size: 3em;
+	text-align: left;
+	margin: 0;
+}
+.teaser.font--default_light h2{
+	font-weight: 300;
+}
+.teaser.font--rounded h2{
+	color: inherit;
+	font-family: 'Odin';
+	font-weight: 400;
+	font-size: 2em;
+}
+
+
+#news-list{
+	flex: 20% 0 0 ;	
+	border-left: 1px solid #000;
+	padding-left: 1em;
+}
+@media all and (max-width: 768px){
+ 	#news-list{
+		border: none;
+		padding-left: 0;
+	}
+}
+.news.teaser{
+	padding: 1em 0;
+	border-top: 1px solid #000;
+}
+.news.teaser:first-child{
+	padding: 0 0 1em 0;
+	border-top: none;
+}
+.news.teaser p{
+	margin: 0;
+}
+.news.teaser ul.post-terms{
+	font-weight: 900;
+	font-size: 1.5em;
+}
+
+
+
+
+
+
+
+.always-white{
+	background: #fff;
+	color: #000;
+	margin: 0;
+}
+.always-white h2{
+	margin: 0;
+	padding: 0.5em 0;
+	text-align: center;
+}
+
+ul.categories-block,
+.stories-container{
 	max-width: 1200px;
 	width: 90%;
 	margin-left: auto;
 	margin-right: auto ;
 	position: relative;
 }
-#site-content .always-white h2{
-	margin: 0;
-	padding: 1em 0;
-}
-#site-content ul.categories-block{
+
+ul.categories-block{
 	display: flex;
 	flex-wrap: wrap;
 	list-style: none;
@@ -818,56 +875,82 @@ body.home #site-content #news-list ul.post-terms{
 	margin-top: 0;
 }
 @media all and (max-width: 768px){
-	#site-content ul.categories-block{
+	ul.categories-block{
 		display: block;
 	}
 }
-#site-content ul.categories-block li.cat{
+
+body.home #site-content .stories-container{
+	flex: 80% 0 1;
+	width: 100%;
+	padding: 0;
+	margin-right: 1.3em;
+	font-family: 'garage-gothic', sans-serif;
+}
+body.home .story.teaser.tekst_onder_foto .link-container{
+	position: relative;
+	bottom: 0;
+  left: 0;
+  color: inherit;
+}
+@media all and (max-width: 768px){
+	.story.teaser.tekst_onder_foto{
+		margin-bottom: 0;
+	}
+}
+ul.categories-block li.cat{
 	flex: 49% 0 0;
 	display: block;
 	margin: 0;
 	padding: 0;
 }
-#site-content ul.categories-block li.cat h2{
+ul.categories-block li.cat h2{
 	font-size: 2em;
-	margin: 1em;
+	margin:0.2em 0em 0.5em 0;
+	text-align: center;
 }
-#site-content ul.categories-block li.cat .category-pic{
+ul.categories-block li.cat .category-pic{
 	width: 100%;
 	height: 20em;
-	overflow: hidden;
 }
-#site-content ul.categories-block li.cat .category-pic img{
+ul.categories-block li.cat .category-pic img{
 	width: 100%;
 	height: 100%;
 	display: block;
 }
 
 
-#site-content .stories-container{
+.stories-container{
 	column-count: 2;
 	column-gap: 1.3em;
 	padding: 2em 0;
-
+}
+.story.teaser .link-container{
+	position: absolute;
+  bottom: 1.5em;
+  left: 1em;
+  display: block;
+  color: #fff;
 }
 @media all and (max-width: 678px){
-	#site-content .stories-container{
+ .stories-container{
 		width: 90%;
 		column-count: 1;
 		padding: 2.5em 0;
 	}
-	#site-content .stories-container .link-container{
+ .stories-container .link-container{
 		padding: 1em 0;
 		left: 0;
 	}
-
 }
-#site-content .stories-container  .teaser{
+
+
+.story.teaser{
 	position: relative;
   margin-bottom: 1.3em;
   break-inside: avoid;
 }
-#site-content .stories-container .teaser header a{
+.story.teaser header a{
 	position: relative;
 	display: block;
 	width:  100%;
@@ -875,13 +958,13 @@ body.home #site-content #news-list ul.post-terms{
 	padding: 100% 0 0 0;
 	overflow: hidden;
 }
-#site-content .stories-container .teaser header a.image-orientation-2x3{
+.story.teaser header a.image-orientation-2x3{
 	padding-top: 150%;
 }
-#site-content .stories-container .teaser header a.image-orientation-3x2{
+.story.teaser header a.image-orientation-3x2{
 	padding-top: 66.667%;
 }
-#site-content .stories-container .teaser img{
+.story.teaser img{
 	display: block;
 	width: 100%;
 	height: 100%;
@@ -889,21 +972,9 @@ body.home #site-content #news-list ul.post-terms{
 	left: 0;
 	top: 0;
 }
-#site-content .stories-container .teaser .link-container{
-	position: absolute;
-  bottom: 1.5em;
-  left: 1em;
-  display: flex;
-  flex-wrap: wrap;
-  color: #fff;
-}
 
-#site-content .stories-container .teaser .link-container h2{
-	flex: 100% 0 0;
-	order: 2;
-	font-size: 3em;
-	text-align: left;
-	margin: 0;
+body.single-story #site-content > h2{
+	text-align: center;
 }
 
 
@@ -937,21 +1008,18 @@ body.page-id-5{
 body.page-id-5 #header-graphic{
 	display: none;
 }
-body.page-id-5 #site-content{
-	max-width: 90%;
-}
 body.page-id-5 #site-content .post-content{
 	max-width: 900px;
-}
-body.page-id-5 #site-content .post-content h2{
-	color: #fff;
-	font-size: 3em;
-	font-weight: 200;
-	margin-top: 3em;
 }
 body.page-id-5 #site-content .post-content h1 span{
 	background-color: #E30613;
 }
+body.page-id-5 #site-content .post-content h2{
+	font-size: 3em;
+	font-weight: 200;
+	margin-top: 3em;
+}
+
 body.page-id-5 #site-content .post-content form{
 	display: flex;
 	flex-wrap: wrap;
@@ -1010,7 +1078,6 @@ body.page-id-5 #site-footer .footer-content{
 	}
 }
 
-
 @media all and (max-width: 786px){
 	body.page-id-5 #site-content .post-content form{
 		display: block;
@@ -1026,12 +1093,12 @@ body.page-id-50 #site-content{
 	margin-right: -1em;
 }
 .acf-map {
-    width: 100%;
-    height: calc(100vh - 5em);
-    margin: 0;
+  width: 100%;
+  height: calc(100vh - 5em);
+  margin: 0;
 }
 body.tax-spots .acf-map {
-    height: 30vh;
+  height: 30vh;
 }
 
 
@@ -1039,31 +1106,36 @@ body.tax-spots .acf-map {
 .acf-map img {
    max-width: inherit !important;
 }
-#site-content .marker-inner{
+.marker-inner{
 	text-align: center;
 	overflow: hidden;
 }
-#site-content .marker-inner .spot-pic img{
+.marker-inner .spot-pic img{
 	display: block;
 	width: 20em;
 	height: 12em;
 	object-fit: cover;
 }
-#site-content .marker-inner h2{
+.marker-inner h2{
   font-weight: 400;
 	font-size: 2em;
   padding: 0;
   margin: 0.5em 0 0 0;
 }
-#site-content .marker-inner p{
+.marker-inner p{
 	font-family: "BrandonTextCond";
   font-weight: 600;
 	font-size: 1.333em;
 	margin:0.5em 0;
 }
-body.tax-spots #site-content h1{
+
+body.tax-spots h1{
 	text-align: left;
 	font-weight: 400;
+}
+body.tax-spots h1 span{
+	padding: 0;
+	background: transparent;
 }
 body.tax-spots #header-graphic{
 	display: none;
@@ -1084,27 +1156,25 @@ body.single-story #site-content .mainVideo iframe{
 	body.single-story #site-content .mainVideo{
 		width: 100%;
 	}
-	
 }
-body.single-story #site-content .post-header img{
+body.single-story .post-header img{
 	display: block;
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 	object-position: center;
 }
-body.single-story #site-content .post-content h1{
+body.single-story .post-content h1{
 	text-align: left;
 	padding: 0.2em 0 0 0;
 }
-
-
-body.single-story #site-content .post-content figcaption{
+body.single-story .post-content figcaption{
 	text-align: right;
 }
 
+
 body.single-story .background-zwart#site-footer .footer-graphic{
-	display: none;
+	background-image: url(../fccentrum/img/bg-black.png);
 }
 body.single-story .background-zwart#site-footer .footer-content{
 	border-top: 1px solid #fff;
@@ -1285,66 +1355,6 @@ footer ul li.link button:hover{
 
 
 
-.search-modal{
-	position: relative;
-	display: none;
-	width: 100%;
-	padding: 0.5em 0em 1em  0em;
-	background: #E72934;
-	z-index: 10;
-}
-.search-modal.always-open{
-	display: block;
-}
-.search-modal .section-inner{
-	margin-left: auto ;
-	margin-right: auto;
-	width: 90%;
-	display: flex;
-	flex-wrap: nowrap;
-	justify-content: space-between;
-	border-bottom: 1px solid white;
-}
-.search-modal .section-inner form{
-	flex: 95% 1 0;
-	display: flex;
-	align-items: baseline;
-}
-.search-modal .section-inner form label{
-	order: 2;
-	flex: 95% 0 0;
-}
-.search-modal .section-inner form label input[type="search"]{ 
-	background: none;
-	border: none;
-	font-weight: 700;
-	font-family: 'garage-gothic', sans-serif;
-	text-transform: uppercase;
-	height: 2em;
-	outline: none;
- 	color: #fff;
-}
-.search-modal .section-inner form label input::placeholder {
-	color: #F28C92;
-}
-.search-modal .section-inner form input[type="submit"]{
-	order: 1;
-	flex: auto 0 0;
-	border-radius: 0;
-	background: transparent url(../fccentrum/img/search-icon-white.svg) left center no-repeat;
-	background-size: contain;
-	width: 1em;
-	height: auto;
-	text-indent: -999em;
-}
-.search-modal .section-inner button{
-	flex: auto 0 0;
-	background: transparent url(../fccentrum/img/close.svg) left center no-repeat;
-	border: none;
-	cursor: pointer;
-	width: 1.5em;
-}
-
 body.search #site-content{
 	max-width: 1200px;
 	width: 90%;
@@ -1393,16 +1403,9 @@ body.search #site-content .post-content .archive-subtitle p{
 	object-position: center;
 }
 
-body.search #site-content #news-list .teaser{
-	border-top: 1px solid #000;
-	padding: 2em 0.5em;
-}
 #site-content .search-results .search-result .post-info{
 	flex: auto 0 1;
 	margin: 0.5em 0;
-}
-#site-content .search-results  ul.post-terms li:not(:last-child) a{
-	background-image: url(../fccentrum/img/bulletpoint-black.svg);
 }
 
 #site-content .search-results .search-result .post-info h2{
