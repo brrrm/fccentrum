@@ -247,6 +247,7 @@ add_action( "spots_add_form", 'hide_description_row');
 function fccentrum_theme_support(){
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'align-wide' );
+	add_theme_support( 'title-tag' );
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments
