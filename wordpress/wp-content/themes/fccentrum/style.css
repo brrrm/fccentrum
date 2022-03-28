@@ -830,6 +830,9 @@ ul.post-terms li a:hover{
 	text-align: left;
 	margin: 0;
 }
+.teaser.font--default h2{
+	font-weight: 700;
+}
 .teaser.font--default_light h2{
 	font-weight: 300;
 }
