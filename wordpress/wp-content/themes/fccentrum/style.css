@@ -1355,11 +1355,7 @@ body.search #site-content #news-list .teaser{
 }
 #site-content .search-results .search-result .post-info{
 	flex: auto 0 1;
-	
 	margin: 0.5em 0;
-}
-#site-content .search-results .search-result .post-info{
-	flex: 100% 0 0;
 }
 #site-content .search-results  ul.post-terms li:not(:last-child) a{
 	background-image: url(../fccentrum/img/bulletpoint-black.svg);
