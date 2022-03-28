@@ -643,8 +643,8 @@ body.admin-bar #site-header #logo{
 		margin-left: 1em;
 		margin-right: 1em;
 		width: calc(100% - 2em);
-    left: 0;
-    bottom: 7em;
+	    left: 0;
+	    bottom: 7em;
 	}
 	#carousel h2 a{
 		font-size: 2em;
@@ -653,10 +653,25 @@ body.admin-bar #site-header #logo{
 #carousel .slide-video{
 	width: 100%;
 	height: 100%;
+	position: relative;
+	background: #000;
 }
 #carousel .slide-video iframe{
 	width:  100%;
 	height: 100%;
+}
+#carousel .slide-video.with-preview:not(.playing):after{
+	content: ' ';
+	display: block;
+	background: transparent url(img/play-btn.svg) left top no-repeat;
+	background-size: contain;
+	width:  150px;
+	height: 159px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	cursor: pointer;
 }
 
 
