@@ -2,9 +2,12 @@
 
 $story = $args['story'];
 $terms = wp_get_post_terms(get_the_ID(), ['category','news_cats']);
+
+$font = 'font--' . get_field('font');
+$color = 'color--' . get_field('rubriekkleur');
 ?>
 
-<div class="search-result">
+<div class="search-result  <?php echo $font; ?> <?php echo $color; ?>">
 	<a href="<?php echo esc_url( get_permalink() ); ?>" class="" >
 		<?php	
 		if(has_post_thumbnail()){
