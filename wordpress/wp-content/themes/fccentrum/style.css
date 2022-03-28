@@ -302,6 +302,14 @@ body.page #site-content .post-content h2{
 	}
 }
 
+/* No picture background color*/
+.story .post-header,
+ul.categories-block .category-pic,
+.spot-pic{
+	background-color: lightgrey;
+}
+
+
 
 #site-header{
 	display: flex;
@@ -504,8 +512,6 @@ body.admin-bar #site-header #logo{
 		padding: 0 0 1em;
 	}
 }
-
-
 
 
 #header-graphic{
