@@ -721,7 +721,7 @@ body.admin-bar #site-header #logo{
 #carousel .slide-video.with-preview:not(.playing):after{
 	content: ' ';
 	display: block;
-	background: transparent url(img/play-btn.svg) center no-repeat;
+	background: transparent url(img/playbutton.svg) center no-repeat;
 	background-size: contain;
 	width:  20vw;
 	height: 20vh;
