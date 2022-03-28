@@ -241,7 +241,8 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 	font-weight: 700;
 	text-transform: uppercase;
 	font-size: 5em;
-	margin: 0.5em 0;
+	padding: 1em 0;
+	margin: 0;
 	letter-spacing: 0;
 	line-height: 1em;
 	color: inherit;
@@ -400,7 +401,7 @@ body.admin-bar #site-header #logo{
 }
 #site-header .primary-menu-wrapper{
 	flex: auto 0 0;
-    height: 100%;
+  height: 100%;
 	font-size: 1.625em;
 	font-weight: 600;
 	font-family: 'garage-gothic', sans-serif;
@@ -412,7 +413,7 @@ body.admin-bar #site-header #logo{
 	padding: 0;
 	margin: 0;
 	height: 100%;
-    align-items: stretch;
+  align-items: stretch;
 }
 #site-header .primary-menu-wrapper ul.primary-menu li{
 	list-style: none;
@@ -447,6 +448,7 @@ body.admin-bar #site-header #logo{
 #site-header .primary-menu-wrapper a{
 	text-decoration: none;
 	color: #000;
+	display: block;
 }
 #site-header .primary-menu-wrapper a:hover{
 	color: #E72934;
@@ -472,6 +474,8 @@ body.admin-bar #site-header #logo{
 	cursor: pointer;
 	margin-right: 2em;
 }
+
+
 
 #hamburger{
 	display: none;
@@ -531,11 +535,15 @@ body.admin-bar #site-header #logo{
 		border-top:  none;
 		margin:  1em 0 0 0.5em;
 		font-weight: 100;
+		width: 100%;
 	}
 	#site-header .primary-menu-wrapper  ul.primary-menu li ul.sub-menu li{
-		margin: 0 0 1em;
+		padding: 0 0 1em;
 	}
 }
+
+
+
 
 #header-graphic{
 	position: absolute;
@@ -645,6 +653,7 @@ body.admin-bar #site-header #logo{
 	height: 100%;
 }
 
+
 body.home #header-graphic{
 	position: relative;
 }
@@ -659,14 +668,6 @@ body.home #site-content{
 		display: block ;
 	}
 }
-body.home #site-content ul.post-terms{
-	display: flex;
-	list-style: none;
-	padding: 0;
-	background: green;
-	text-decoration: none;
-}
-
 
 
 
@@ -683,84 +684,96 @@ body.home #site-content .stories-container .teaser.tekst_onder_foto .link-contai
 	bottom: 0;
   left: 0;
   color: inherit;
-	margin-top: 1em;
 	text-decoration: none;	
-}
-
-
-body.home #news-list{
-	flex: 20% 0 0 ;	
-	border-left: 1px solid #000;
-}
-
-
-
-
-body.home #site-content .stories-container ul.post-terms li.term a{
-	color: inherit;
-	text-decoration: none;
-	padding: 0 1em 0em 0.5em;
-}
-/*
-body.home  #site-content .stories-container ul.post-terms li.term:not(:last-child) a{
-	background: url(../fccentrum/img/bulletpoint-white.svg);
-	background-repeat: no-repeat;
-	background-position: center right;
-	background-size: 10% auto;
-}
-
-body.home  #site-content .stories-container ul.post-terms li.term:first-child a{
-	padding-left: 0;
-}
-body.home  #site-content .stories-container ul.post-terms li.term a:hover{
-	text-decoration: underline;
-}
-body.home #site-content .stories-container .tekst_onder_foto ul.post-terms li.term:not(:last-child) a{
-	background-image: url(../fccentrum/img/bulletpoint-black.svg);
-}
-*/
-
-
-/*body.home #news-list .news:not(:last-child){
-	border-bottom: 1px solid #707070;
-		margin-top: 0.5em;
-
-}
-body.home #news-list .news:first-child{
-	margin-top: 0;
-}
-
-
-body.home #news-list .news:not(:first-child) ul.post-terms{
 	margin-top: 0.5em;
 }
-body.home #news-list .news li a{
-	text-decoration: none;
-	font-size: 2em;
-	color: #E30613 !important;
-	font-weight: 900;
-}
-body.home #news-list .news h2{
-	font-size: 3em;
-	text-align: left;
-	margin: 0;
-	padding-top: 0;
-	font-family: "vag-rundschrift-d", sans-serif;
-	font-weight: 700;
-	font-style: normal;
-}
-body.home #news-list h2 a{
-	font-weight: 700;
-	letter-spacing: 1px;
-}
-body.home #news-list ul.post-terms{
-	flex: 100% 0 0;
+
+
+#site-content ul.post-terms {
+	display: none;
+	font-family: 'garage-gothic', sans-serif;
+	text-transform: uppercase;
 	list-style: none;
 	padding: 0;
 	margin: 0;
 }
+body.home #site-content .stories-container ul.post-terms,
+body.search-results #site-content .search-result ul.post-terms{
+	display: flex;
+}
+#site-content ul.post-terms a{
+	background: url(../fccentrum/img/bulletpoint-white.svg);
+	background-repeat: no-repeat;
+	background-position: center right;
+	background-size: 10% auto;
+	padding: 0 1em 0em 0.5em;
+	text-decoration: none;
+	color: inherit;
+}
+ #site-content ul.post-terms li.term:last-child a{
+	background-image: none;
+}
+#site-content ul.post-terms li.term:first-child a{
+	padding-left: 0;
+}
+#site-content ul.post-terms a:hover{
+	text-decoration: underline;
+}
+#site-content .tekst_onder_foto ul.post-terms li.term:not(:last-child) a{
+	background-image: url(../fccentrum/img/bulletpoint-black.svg);
+}
 
-*/
+
+
+@media all and (max-width: 768px){
+	#site-content .stories-container{
+		width: 100%;
+	}
+	#site-content .stories-container .tekst_onder_foto{
+		margin-bottom: 0;
+	}
+}
+
+body.home #news-list{
+	flex: 20% 0 0 ;	
+	border-left: 1px solid #000;
+	padding-left: 1em;
+}
+body.home #news-list .news{
+	padding: 1em 0;
+	border-top: 1px solid #000;
+}
+body.home #news-list .news:first-child{
+	padding: 0 0 1em 0;
+	border-top: none;
+}
+body.home #news-list ul{
+	display: block;
+}
+body.home #news-list h2{
+	text-align: left;
+	font-size: 3em;
+	font-weight: 700;
+	margin: 0 0 0.2em 0;
+}
+body.home #news-list p{
+	margin: 0;
+}
+body.home #site-content #news-list ul.post-terms{
+	font-weight: 900;
+	font-size: 1.5em;
+	color: #E30613;
+}
+@media all and (max-width: 768px){
+	body.home #news-list{
+		border: none;
+		padding-left: 0;
+	}
+}
+
+
+
+
 
 #site-content{
 		margin-right: auto;
@@ -886,14 +899,6 @@ body.home #news-list ul.post-terms{
 	text-align: left;
 	margin: 0;
 }
-
-
-#site-content ul.post-terms{
-	display: none;
-}
-
-
-
 
 
 
@@ -1084,6 +1089,7 @@ body.single-story #site-content .post-header img{
 }
 body.single-story #site-content .post-content h1{
 	text-align: left;
+	padding: 0.2em 0 0 0;
 }
 
 
@@ -1387,23 +1393,24 @@ body.search #site-content #news-list .teaser{
 }
 #site-content .search-results .search-result .post-info{
 	flex: auto 0 1;
+	margin: 0.5em 0;
 }
-#site-content .search-results .search-result .post-info ul{
-	padding: 0;
-}
-#site-content .search-results ul.post-terms li:not(:last-child) a{
+#site-content .search-results  ul.post-terms li:not(:last-child) a{
 	background-image: url(../fccentrum/img/bulletpoint-black.svg);
 }
+
 #site-content .search-results .search-result .post-info h2{
+	display: block;
 	font-size: 2.5em;
 	text-align: left;
 	margin: 0.2em 0;
 }
+
 #site-content .search-results .search-result .post-info p{
 	margin: 0;
   display: flex;
-  height: calc(100% - 4.5em);
-	 align-items: flex-end;
+  height: auto;
+	margin: 0 0.2em 0 0 ;
 }
 
 
