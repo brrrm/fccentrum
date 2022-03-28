@@ -4,9 +4,11 @@ $story = $args['story'];
 $terms = wp_get_post_terms(get_the_ID(), ['category', 'spots', 'fans']);
 $image_layout = get_field('afmetingen_teaser-foto');
 $text_pos = get_field('positie_van_titel');
+$font = 'font--' . get_field('font');
+$color = 'color--' . get_field('rubriekkleur');
 ?>
 
-<div class="story teaser <?php echo $text_pos; ?>">
+<div class="story teaser <?php echo $text_pos; ?> <?php echo $font; ?> <?php echo $color; ?>">
 	<header class="post-header">
 		<a href="<?php echo esc_url( get_permalink() ); ?>" class="<?php echo 'image-orientation-' . $image_layout; ?>" >
 			<?php	

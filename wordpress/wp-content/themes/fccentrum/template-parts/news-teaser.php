@@ -2,9 +2,11 @@
 
 $story = $args['story'];
 $terms = wp_get_post_terms(get_the_ID(), ['news_cats']);
+$font = 'font--' . get_field('font');
+$color = 'color--' . get_field('rubriekkleur');
 ?>
 
-<div class="news teaser">
+<div class="news teaser <?php echo $font; ?> <?php echo $color; ?>">
 	
 	<?php if($terms){ ?>
 		<ul class="post-terms">
