@@ -556,7 +556,7 @@ body.admin-bar #site-header #logo{
 	display: none;
 	width: 100%;
 	padding: 0.5em 0em 1em  0em;
-	background: #E72934;
+	background: #E30613;
 	z-index: 10;
 }
 .search-modal.always-open{
@@ -812,6 +812,18 @@ ul.post-terms li.term:last-child a{
 }
 ul.post-terms li a:hover{
 	text-decoration: underline;
+}
+.color--blauw a:hover{
+	color: #0090d7;
+}
+.color--rood a:hover{
+	color: #e30613;
+}
+.color--geel a:hover{
+	color: #ffcc00;
+}
+.color--white a:hover{
+	color: #fff;
 }
 .teaser h2{
 	font-size: 3em;
