@@ -363,7 +363,7 @@ body.admin-bar #site-header #logo{
 }
 #site-header .primary-menu-wrapper{
 	flex: auto 0 0;
-    height: 100%;
+  height: 100%;
 	font-size: 1.625em;
 	font-weight: 600;
 	font-family: 'garage-gothic', sans-serif;
@@ -375,7 +375,7 @@ body.admin-bar #site-header #logo{
 	padding: 0;
 	margin: 0;
 	height: 100%;
-    align-items: stretch;
+  align-items: stretch;
 }
 #site-header .primary-menu-wrapper ul.primary-menu li{
 	list-style: none;
@@ -410,6 +410,7 @@ body.admin-bar #site-header #logo{
 #site-header .primary-menu-wrapper a{
 	text-decoration: none;
 	color: #000;
+	display: block;
 }
 #site-header .primary-menu-wrapper a:hover{
 	color: #E72934;
@@ -435,6 +436,8 @@ body.admin-bar #site-header #logo{
 	cursor: pointer;
 	margin-right: 2em;
 }
+
+
 
 #hamburger{
 	display: none;
@@ -494,11 +497,15 @@ body.admin-bar #site-header #logo{
 		border-top:  none;
 		margin:  1em 0 0 0.5em;
 		font-weight: 100;
+		width: 100%;
 	}
 	#site-header .primary-menu-wrapper  ul.primary-menu li ul.sub-menu li{
-		margin: 0 0 1em;
+		padding: 0 0 1em;
 	}
 }
+
+
+
 
 #header-graphic{
 	position: absolute;
