@@ -1052,6 +1052,7 @@ body.single-story #site-content .post-header img{
 }
 body.single-story #site-content .post-content h1{
 	text-align: left;
+	padding: 0.2em 0 0 0;
 }
 
 
