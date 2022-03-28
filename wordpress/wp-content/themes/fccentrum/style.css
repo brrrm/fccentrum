@@ -608,6 +608,7 @@ body.admin-bar #site-header #logo{
 	height: 100%;
 }
 
+
 body.home #header-graphic{
 	position: relative;
 }
@@ -624,10 +625,15 @@ body.home #site-content{
 }
 body.home #site-content ul.post-terms{
 	display: flex;
+	font-family: 'garage-gothic', sans-serif;
 	list-style: none;
 	padding: 0;
-	background: green;
+	margin: 0;
+	text-transform: uppercase;
+}
+body.home #site-content ul.post-terms a{
 	text-decoration: none;
+	color: inherit;
 }
 
 
@@ -646,84 +652,74 @@ body.home #site-content .stories-container .teaser.tekst_onder_foto .link-contai
 	bottom: 0;
   left: 0;
   color: inherit;
-	margin-top: 1em;
 	text-decoration: none;	
+	margin-top: 0.5em;
 }
-
-
-body.home #news-list{
-	flex: 20% 0 0 ;	
-	border-left: 1px solid #000;
-}
-
-
-
-
-body.home #site-content .stories-container ul.post-terms li.term a{
-	color: inherit;
-	text-decoration: none;
-	padding: 0 1em 0em 0.5em;
-}
-/*
-body.home  #site-content .stories-container ul.post-terms li.term:not(:last-child) a{
+body.home  #site-content .stories-container ul.post-terms li.term a{
 	background: url(../fccentrum/img/bulletpoint-white.svg);
 	background-repeat: no-repeat;
 	background-position: center right;
 	background-size: 10% auto;
+	padding: 0 1em 0em 0.5em;
 }
-
+body.home #site-content .stories-container .tekst_onder_foto ul.post-terms li.term a{
+	background-image: url(../fccentrum/img/bulletpoint-black.svg);
+}
+body.home  #site-content .stories-container ul.post-terms li.term:last-child a{
+	background-image: none;
+}
 body.home  #site-content .stories-container ul.post-terms li.term:first-child a{
 	padding-left: 0;
 }
 body.home  #site-content .stories-container ul.post-terms li.term a:hover{
 	text-decoration: underline;
 }
-body.home #site-content .stories-container .tekst_onder_foto ul.post-terms li.term:not(:last-child) a{
-	background-image: url(../fccentrum/img/bulletpoint-black.svg);
+@media all and (max-width: 768px){
+	body.home #site-content .stories-container{
+		width: 100%;
+	}
+	body.home #site-content .stories-container .tekst_onder_foto{
+		margin-bottom: 0;
+	}
 }
-*/
 
-
-/*body.home #news-list .news:not(:last-child){
-	border-bottom: 1px solid #707070;
-		margin-top: 0.5em;
-
+body.home #news-list{
+	flex: 20% 0 0 ;	
+	border-left: 1px solid #000;
+	padding-left: 1em;
+}
+body.home #news-list .news{
+	padding: 1em 0;
+	border-top: 1px solid #000;
 }
 body.home #news-list .news:first-child{
-	margin-top: 0;
+	padding: 0 0 1em 0;
+	border-top: none;
 }
-
-
-body.home #news-list .news:not(:first-child) ul.post-terms{
-	margin-top: 0.5em;
-}
-body.home #news-list .news li a{
-	text-decoration: none;
-	font-size: 2em;
-	color: #E30613 !important;
-	font-weight: 900;
-}
-body.home #news-list .news h2{
-	font-size: 3em;
+body.home #news-list h2{
 	text-align: left;
-	margin: 0;
-	padding-top: 0;
-	font-family: "vag-rundschrift-d", sans-serif;
+	font-size: 3em;
 	font-weight: 700;
-	font-style: normal;
+	margin: 0 0 0.2em 0;
 }
-body.home #news-list h2 a{
-	font-weight: 700;
-	letter-spacing: 1px;
-}
-body.home #news-list ul.post-terms{
-	flex: 100% 0 0;
-	list-style: none;
-	padding: 0;
+body.home #news-list p{
 	margin: 0;
+}
+body.home #site-content #news-list ul.post-terms{
+	font-weight: 900;
+	font-size: 1.5em;
+	color: #E30613;
+}
+@media all and (max-width: 768px){
+	body.home #news-list{
+		border: none;
+		padding-left: 0;
+	}
 }
 
-*/
+
+
+
 
 #site-content{
 		margin-right: auto;
