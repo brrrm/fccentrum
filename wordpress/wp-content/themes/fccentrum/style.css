@@ -608,10 +608,123 @@ body.admin-bar #site-header #logo{
 	height: 100%;
 }
 
+body.home #header-graphic{
+	position: relative;
+}
+body.home #site-content{
+	max-width: 1300px;
+	width: 90%;
+	display: flex;
+	flex-wrap: nowrap;
+}
+@media all and (max-width: 768px){
+	body.home #site-content{
+		display: block ;
+	}
+}
+body.home #site-content ul.post-terms{
+	display: flex;
+	list-style: none;
+	padding: 0;
+	background: green;
+	text-decoration: none;
+}
 
-/*#site-content{
-	padding-top: 1px;
-}*/
+
+
+
+body.home #site-content .stories-container{
+	flex: 80% 0 1;
+	padding: 0;
+	margin-right: 1.3em;
+	font-family: 'garage-gothic', sans-serif;
+	font-weight: 400;
+	font-style: normal;	
+}
+body.home #site-content .stories-container .teaser.tekst_onder_foto .link-container{
+	position: relative;
+	bottom: 0;
+  left: 0;
+  color: inherit;
+	margin-top: 1em;
+	text-decoration: none;	
+}
+
+
+body.home #news-list{
+	flex: 20% 0 0 ;	
+	border-left: 1px solid #000;
+}
+
+
+
+
+body.home #site-content .stories-container ul.post-terms li.term a{
+	color: inherit;
+	text-decoration: none;
+	padding: 0 1em 0em 0.5em;
+}
+/*
+body.home  #site-content .stories-container ul.post-terms li.term:not(:last-child) a{
+	background: url(../fccentrum/img/bulletpoint-white.svg);
+	background-repeat: no-repeat;
+	background-position: center right;
+	background-size: 10% auto;
+}
+
+body.home  #site-content .stories-container ul.post-terms li.term:first-child a{
+	padding-left: 0;
+}
+body.home  #site-content .stories-container ul.post-terms li.term a:hover{
+	text-decoration: underline;
+}
+body.home #site-content .stories-container .tekst_onder_foto ul.post-terms li.term:not(:last-child) a{
+	background-image: url(../fccentrum/img/bulletpoint-black.svg);
+}
+*/
+
+
+/*body.home #news-list .news:not(:last-child){
+	border-bottom: 1px solid #707070;
+		margin-top: 0.5em;
+
+}
+body.home #news-list .news:first-child{
+	margin-top: 0;
+}
+
+
+body.home #news-list .news:not(:first-child) ul.post-terms{
+	margin-top: 0.5em;
+}
+body.home #news-list .news li a{
+	text-decoration: none;
+	font-size: 2em;
+	color: #E30613 !important;
+	font-weight: 900;
+}
+body.home #news-list .news h2{
+	font-size: 3em;
+	text-align: left;
+	margin: 0;
+	padding-top: 0;
+	font-family: "vag-rundschrift-d", sans-serif;
+	font-weight: 700;
+	font-style: normal;
+}
+body.home #news-list h2 a{
+	font-weight: 700;
+	letter-spacing: 1px;
+}
+body.home #news-list ul.post-terms{
+	flex: 100% 0 0;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+*/
+
 #site-content{
 		margin-right: auto;
     margin-left: auto;
@@ -728,13 +841,7 @@ body.admin-bar #site-header #logo{
   flex-wrap: wrap;
   color: #fff;
 }
-body.home #site-content .stories-container .teaser.tekst_onder_foto .link-container{
-	position: relative;
-	bottom: 0;
-  left: 0;
-  color: inherit;
-	margin-top: 1em;
-}
+
 #site-content .stories-container .teaser .link-container h2{
 	flex: 100% 0 0;
 	order: 2;
@@ -965,103 +1072,6 @@ body.single-story .background-zwart#site-footer .footer-content{
 }
 
 
-
-
-body.home #header-graphic{
-	position: relative;
-}
-body.home #site-content{
-	max-width: 1300px;
-	width: 90%;
-	display: flex;
-	flex-wrap: nowrap;
-	justify-content: space-between;
-}
-@media all and (max-width: 768px){
-	body.home #site-content{
-		display: block ;
-	}
-}
-body.home #site-content .stories-container{
-	flex: 77% 0 0;
-	width: 100%;
-	margin: 0;
-	padding: 0;
-}
-
-
-body.home #news-list{
-	flex: 22% 0 0 ;	
-	border-left: 1px solid #000;
-	padding: 0 1em;
-}
-body.home #news-list .news:not(:last-child){
-	border-bottom: 1px solid #707070;
-		margin-top: 0.5em;
-
-}
-body.home #news-list .news:first-child{
-	margin-top: 0;
-}
-
-body.home #news-list .news ul.post-terms{
-	list-style: none;
-	padding: 0;
-}
-body.home #news-list .news:not(:first-child) ul.post-terms{
-	margin-top: 0.5em;
-}
-body.home #news-list .news li a{
-	text-decoration: none;
-	font-size: 2em;
-	color: #E30613 !important;
-	font-weight: 900;
-}
-body.home #news-list .news h2{
-	font-size: 3em;
-	text-align: left;
-	margin: 0;
-	padding-top: 0;
-	font-family: "vag-rundschrift-d", sans-serif;
-	font-weight: 700;
-	font-style: normal;
-}
-body.home #news-list h2 a{
-	font-weight: 700;
-	letter-spacing: 1px;
-}
-body.home #news-list ul.post-terms{
-	flex: 100% 0 0;
-	order: 1;
-	list-style: none;
-	padding: 0;
-	margin: 0;
-	display: flex;
-}
-
-
-
-body.home #site-content .stories-container ul.post-terms li.term a{
-	color: inherit;
-	text-decoration: none;
-	padding: 0 1em 0em 0.5em;
-}
-body.home  #site-content .stories-container ul.post-terms li.term:not(:last-child) a{
-	background: url(../fccentrum/img/bulletpoint-white.svg);
-	background-repeat: no-repeat;
-	background-position: center right;
-	background-size: 10% auto;
-}
-
-body.home  #site-content .stories-container ul.post-terms li.term:first-child a{
-	padding-left: 0;
-}
-body.home  #site-content .stories-container ul.post-terms li.term a:hover{
-	text-decoration: underline;
-}
-body.home #site-content .stories-container .tekst_onder_foto ul.post-terms li.term:not(:last-child) a{
-	background-image: url(../fccentrum/img/bulletpoint-black.svg);
-}
 
 
 
@@ -1337,7 +1347,6 @@ body.search #site-content .post-content .archive-subtitle p{
 body.search #site-content #news-list .teaser{
 	border-top: 1px solid #000;
 	padding: 2em 0.5em;
-	background: red;
 }
 #site-content .search-results .search-result .post-info{
 	flex: auto 0 1;

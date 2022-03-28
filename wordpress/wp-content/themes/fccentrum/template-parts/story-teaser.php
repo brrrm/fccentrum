@@ -17,7 +17,7 @@ $text_pos = get_field('positie_van_titel');
 		</a>
 	</header>
 	<div class="link-container">
-		<h2><a href="<?php echo esc_url( get_permalink() ); ?>" ><?php the_title(); ?></a></h2>
+		
 		<?php if($terms){ ?>
 			<ul class="post-terms">
 				<?php foreach($terms as $term){ ?>
@@ -29,5 +29,6 @@ $text_pos = get_field('positie_van_titel');
 				<?php } ?>
 			</ul>
 		<?php } ?>
+		<h2><a href="<?php echo esc_url( get_permalink() ); ?>" ><?php the_title(); ?></a></h2>
 	</div>
 </div>
