@@ -7,6 +7,9 @@
 /wordpress/wp-content/themes/*
 /vendor/
 
+!/wordpress/*.ico
+!/wordpress/*.png
+!/wordpress/site.webmanifest
 !/wordpress/wp-content/themes/fccentrum/
 !/wordpress/wp-content/themes/fccentrum/*
 !/wordpress/wp-content/themes/fccentrum/**/*
