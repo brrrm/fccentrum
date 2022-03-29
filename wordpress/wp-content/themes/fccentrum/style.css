@@ -758,7 +758,7 @@ body.home #header-graphic{
 
 #site-content{
 	margin-right: auto;
-  margin-left: auto;
+  	margin-left: auto;
 }
 body.home #site-content{
 	max-width: 1300px;
@@ -929,44 +929,16 @@ ul.categories-block{
 
 body.home #site-content .stories-container{
 	flex: 80% 0 1;
-	width: 100%;
 	padding: 0;
 	margin-right: 1.3em;
 	font-family: 'garage-gothic', sans-serif;
 }
-body.home .story.teaser.tekst_onder_foto .link-container{
-	position: relative;
-	bottom: 0;
-  left: 0;
-  color: inherit;
-}
-@media all and (max-width: 768px){
-	.story.teaser.tekst_onder_foto{
-		margin-bottom: 0;
+@media screen and (max-width:  768px){
+	body.home #site-content .stories-container{
+		flex: none;
+		width: 100%;
 	}
 }
-ul.categories-block li.cat{
-	flex: 49% 0 0;
-	display: block;
-	margin: 0;
-	padding: 0;
-}
-ul.categories-block li.cat h2{
-	font-size: 2em;
-	margin:0.2em 0em 0.5em 0;
-	text-align: center;
-}
-ul.categories-block li.cat .category-pic{
-	width: 100%;
-	height: 20em;
-}
-ul.categories-block li.cat .category-pic img{
-	width: 100%;
-	height: 100%;
-	display: block;
-}
-
-
 .stories-container{
 	column-count: 2;
 	column-gap: 1.3em;
@@ -974,18 +946,18 @@ ul.categories-block li.cat .category-pic img{
 }
 .story.teaser .link-container{
 	position: absolute;
-  bottom: 1.5em;
-  left: 1em;
-  display: block;
-  color: #fff;
+	bottom: 1.5em;
+	left: 1em;
+	display: block;
+	color: #fff;
 }
-@media all and (max-width: 678px){
- .stories-container{
+@media all and (max-width: 768px){
+ 	.stories-container{
 		width: 90%;
 		column-count: 1;
 		padding: 2.5em 0;
 	}
- .stories-container .link-container{
+ 	.stories-container .link-container{
 		padding: 1em 0;
 		left: 0;
 	}
@@ -1028,6 +1000,37 @@ body.single-story #site-content > h2{
 }
 
 
+body.home .story.teaser.tekst_onder_foto .link-container{
+	position: relative;
+	bottom: 0;
+	left: 0;
+	color: inherit;
+}
+@media all and (max-width: 768px){
+	.story.teaser.tekst_onder_foto{
+		margin-bottom: 0;
+	}
+}
+ul.categories-block li.cat{
+	flex: 49% 0 0;
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+ul.categories-block li.cat h2{
+	font-size: 2em;
+	margin:0.2em 0em 0.5em 0;
+	text-align: center;
+}
+ul.categories-block li.cat .category-pic{
+	width: 100%;
+	height: 20em;
+}
+ul.categories-block li.cat .category-pic img{
+	width: 100%;
+	height: 100%;
+	display: block;
+}
 
 
 .post-content figure{
