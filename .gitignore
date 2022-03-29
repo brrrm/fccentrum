@@ -11,3 +11,4 @@
 !/wordpress/wp-content/themes/fccentrum/*
 !/wordpress/wp-content/themes/fccentrum/**/*
 .DS_Store
+/wordpress/wp-content/themes/fccentrum/.DS_Store

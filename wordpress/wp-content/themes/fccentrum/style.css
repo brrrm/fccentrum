@@ -652,6 +652,8 @@ body.admin-bar #site-header #logo{
 	width: 2em;
 	top: 0;
 	transition: transform 1s;
+	-webkit-filter: drop-shadow(0 0 5px rgba(0,0,0,0.3));
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.3));
 
 }
 #carouselWrap > a#prevslide{
@@ -709,6 +711,8 @@ body.admin-bar #site-header #logo{
 	height: auto;
 	text-indent: -999em;
 	transition: transform 1s ease-in-out;
+	-webkit-filter: drop-shadow(0 0 5px rgba(0,0,0,0.3));
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.3));
 }
 #carousel-scrollDown-arrow:hover,
 #scrollDown-arrow:hover{
@@ -1383,9 +1387,7 @@ footer ul li.link button:hover{
 	position: relative;
 	max-width: 900px;
 	width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 10em;
+	margin: 3em auto 10em;
 }
 #site-content footer.post-closure p.author{
 	position: absolute;
