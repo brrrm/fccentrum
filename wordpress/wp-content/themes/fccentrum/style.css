@@ -975,6 +975,10 @@ body.home .stories-container{
 	position: relative;
 	margin-bottom: 1.5em;
 	break-inside: avoid;
+	display: list-item;
+}
+.story.teaser:last-child{
+	margin-bottom: 0;
 }
 .story.teaser header a{
 	position: relative;
