@@ -703,19 +703,24 @@ body.admin-bar #site-header #logo.lager{
 }
 #carousel .carousel-slide.font--default h2{
 	font-family: 'garage-gothic', sans-serif;
-	font-weight: 400;
+	font-weight: 700;
 }
 #carousel .carousel-slide.font--default_light h2{
 	font-family: 'garage-gothic', sans-serif;
-	font-weight: 100;
+	font-weight: 400;
 }
 #carousel .carousel-slide.font--rounded h2{
 	font-family: 'Odin', sans-serif;
-	font-weight: 400;
+	font-weight: 700;
 }
 #carousel .carousel-slide.font--rounded_light h2{
 	font-family: 'Odin', sans-serif;
 	font-weight: 100;
+}
+#carousel .carousel-slide.font--rounded h2 a,
+#carousel .carousel-slide.font--rounded_light h2 a{
+	/* extra padding-top omdat dit font niet goed uitgeijnd is */
+	padding-top: 0.1875em;
 }
 #carousel .carousel-slide.foreground--wit h2,
 #carousel .carousel-slide.foreground--wit h2 a{
