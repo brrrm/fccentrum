@@ -361,15 +361,21 @@ body.page .post-content h2{
 	position: absolute;
 	width: 100%;
 	top: 0;
-  z-index: 11;
-  border-bottom: 1px solid #000;
+	z-index: 11;
+	border-bottom: 1px solid #000;
 }
 #site-header #logo{
 	display: block;
-	height: 5em;
+	height: 4em;
 	position: fixed;
 	left: 2em;
-	top: 0;
+	top: 0.5em;
+}
+@media screen and (max-width: 768px){
+	#site-header #logo{
+		left: 1em;
+		width: 8em;
+	}
 }
 body{
 	/* ruimte maken voor de header die absolute gepositioneerd is */
@@ -382,16 +388,19 @@ body.showHeader #site-header{
   	animation-name: slidein;
 }
 body.admin-bar #site-header,
-body.admin-bar.showHeader #site-header,
-body.admin-bar #site-header #logo{
+body.admin-bar.showHeader #site-header{
 	top: 32px;
-
+}
+body.admin-bar #site-header #logo{
+	top: calc(32px + 0.5em);
 }
 @media screen and ( max-width: 782px ) {
 	body.admin-bar #site-header,
-	body.admin-bar.showHeader #site-header,
-	body.admin-bar #site-header #logo{
+	body.admin-bar.showHeader #site-header{
 		top: 46px;
+	}
+	body.admin-bar #site-header #logo{
+		top: calc(46px + 0.5em);
 	}
 }
 @keyframes slidein {
@@ -773,7 +782,7 @@ ul.post-terms {
 	text-transform: uppercase;
 	list-style: none;
 	padding: 0;
-	margin: 0.2em 0;
+	margin: 0 0;
 }
 body.home ul.post-terms,
 body.search-results ul.post-terms{
@@ -841,6 +850,9 @@ ul.post-terms li a:hover{
 	font-family: 'Odin';
 	font-weight: 400;
 	font-size: 2em;
+}
+.news.teaser h2{
+	margin: 0 0 0.1em;
 }
 
 
@@ -978,8 +990,8 @@ ul.categories-block li.cat .category-pic img{
 
 .story.teaser{
 	position: relative;
-  margin-bottom: 1.3em;
-  break-inside: avoid;
+	margin-bottom: 1.5em;
+	break-inside: avoid;
 }
 .story.teaser header a{
 	position: relative;
@@ -1006,6 +1018,9 @@ ul.categories-block li.cat .category-pic img{
 
 body.single-story #site-content > h2{
 	text-align: center;
+}
+.story.teaser ul.post-terms{
+	margin-top: 0.5em;
 }
 
 
