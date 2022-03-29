@@ -367,6 +367,7 @@ body.page .post-content h2{
 #site-header #logo{
 	display: block;
 	height: 5em;
+	width: 8em; /* 1.59 * height */
 	position: fixed;
 	left: 1.5em;
 	top: 0em;
@@ -379,8 +380,6 @@ body.page .post-content h2{
 @media screen and (max-width: 768px){
 	#site-header #logo{
 		left: 1em;
-		width: 6.4em;
-		flex: none;
 	}
 }
 body{
@@ -394,18 +393,20 @@ body.showHeader #site-header{
   	animation-name: slidein;
 }
 body.admin-bar #site-header,
-body.admin-bar.showHeader #site-header{
+body.admin-bar.showHeader #site-header,
+body.admin-bar #site-header #logo{
 	top: 32px;
 }
-body.admin-bar #site-header #logo{
+body.admin-bar #site-header #logo.lager{
 	top: calc(32px + 0.5em);
 }
 @media screen and ( max-width: 782px ) {
 	body.admin-bar #site-header,
-	body.admin-bar.showHeader #site-header{
+	body.admin-bar.showHeader #site-header,
+	body.admin-bar #site-header #logo{
 		top: 46px;
 	}
-	body.admin-bar #site-header #logo{
+	body.admin-bar #site-header #logo.lager{
 		top: calc(46px + 0.5em);
 	}
 }
