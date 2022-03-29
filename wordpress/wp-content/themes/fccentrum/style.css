@@ -504,7 +504,8 @@ body.admin-bar #site-header #logo{
 		display: block;
 		background: transparent;
 		border: none;
-		margin-left: 2em;
+		margin-left: 0;
+		padding: 0;
 		outline: none;
 	}
 	#hamburger span.stripe{
@@ -530,13 +531,16 @@ body.admin-bar #site-header #logo{
 		height: auto;
 		background: transparent url(../fccentrum/img/menu-bg.svg) no-repeat bottom left;
 		background-size: 100% auto;
-		padding: 2em 2rem 4em;
+		padding: 1em 2rem 3em;
 		line-height: 1em;
 	}
 	#site-header .primary-menu-wrapper  ul.primary-menu li{
 		text-align: left;
 		display: block;
-		margin: 0 0 1.5em;
+		margin: 0 0 1em;
+	}
+	#site-header .primary-menu-wrapper  ul.primary-menu li:last-child{
+		margin-bottom: 0;
 	}
 	#site-header .primary-menu-wrapper  ul.primary-menu li a{
 		color: #fff;
