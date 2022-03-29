@@ -81,37 +81,37 @@ Author URI: https://garbo.nl/
 }
 @font-face {
   font-family: "Odin";
-  src: url('fonts/Odin_van_de_wetenschap/OdinvandeWetenschap-Light.ttf') format('ttf'), url('fonts/Odin_van_de_wetenschap/OdinvandeWetenschap-Light.woff') format('woff');
+  src: url('fonts/Odin_van_de_Wetenschap/OdinvandeWetenschap-Light.ttf') format('ttf'), url('fonts/Odin_van_de_Wetenschap/OdinvandeWetenschap-Light.woff') format('woff');
   font-weight: 100;
   font-style: normal;
 }
 @font-face {
   font-family: "Odin";
-  src: url('fonts/Odin_van_de_wetenschap/OdinvandeWetenschap-LightItalic.ttf') format('ttf'), url('fonts/Odin_van_de_wetenschap/OdinvandeWetenschap-LightItalic.woff') format('woff');
+  src: url('fonts/Odin_van_de_Wetenschap/OdinvandeWetenschap-LightItalic.ttf') format('ttf'), url('fonts/Odin_van_de_Wetenschap/OdinvandeWetenschap-LightItalic.woff') format('woff');
   font-weight: 100;
   font-style: italic;
 }
 @font-face {
   font-family: "Odin";
-  src: url('fonts/Odin_van_de_wetenschap/OdinvandeWetenschap-Regular.ttf') format('ttf'), url('fonts/Odin_van_de_wetenschap/OdinvandeWetenschap-Regular.woff') format('woff');
+  src: url('fonts/Odin_van_de_Wetenschap/OdinvandeWetenschap-Regular.ttf') format('ttf'), url('fonts/Odin_van_de_Wetenschap/OdinvandeWetenschap-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "Odin";
-  src: url('fonts/Odin_van_de_wetenschap/OdinvandeWetenschap-RegularItalic.ttf') format('ttf'), url('fonts/Odin_van_de_wetenschap/OdinvandeWetenschap-RegularItalic.woff') format('woff');
+  src: url('fonts/Odin_van_de_Wetenschap/OdinvandeWetenschap-RegularItalic.ttf') format('ttf'), url('fonts/Odin_van_de_Wetenschap/OdinvandeWetenschap-RegularItalic.woff') format('woff');
   font-weight: 400;
   font-style: italic;
 }
 @font-face {
   font-family: "Odin";
-  src: url('fonts/Odin_van_de_wetenschap/OdinvandeWetenschap-Bold.ttf') format('ttf'), url('fonts/Odin_van_de_wetenschap/OdinvandeWetenschap-Bold.woff') format('woff');
+  src: url('fonts/Odin_van_de_Wetenschap/OdinvandeWetenschap-Bold.ttf') format('ttf'), url('fonts/Odin_van_de_Wetenschap/OdinvandeWetenschap-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: "Odin";
-  src: url('fonts/Odin_van_de_wetenschap/OdinvandeWetenschap-BoldItalic.ttf') format('ttf'), url('fonts/Odin_van_de_wetenschap/OdinvandeWetenschap-BoldItalic.woff') format('woff');
+  src: url('fonts/Odin_van_de_Wetenschap/OdinvandeWetenschap-BoldItalic.ttf') format('ttf'), url('fonts/Odin_van_de_Wetenschap/OdinvandeWetenschap-BoldItalic.woff') format('woff');
   font-weight: 700;
   font-style: italic;
 }
@@ -137,8 +137,8 @@ html,body{
 }
 body{
 	background: #fff;
-	font-family: "BrandonTextCond";
-	font-weight: 400;
+	font-family: "Odin";
+	font-weight: 100;
 	font-style: normal;
 	font-size: 100%;
 	line-height: 1.333;
@@ -361,15 +361,27 @@ body.page .post-content h2{
 	position: absolute;
 	width: 100%;
 	top: 0;
-  z-index: 11;
-  border-bottom: 1px solid #000;
+	z-index: 11;
+	border-bottom: 1px solid #000;
 }
 #site-header #logo{
 	display: block;
 	height: 5em;
 	position: fixed;
-	left: 2em;
-	top: 0;
+	left: 1.5em;
+	top: 0em;
+	transition: top 0.5s ease-out;
+
+}
+#site-header #logo.lager{
+	top:  0.5em;
+}
+@media screen and (max-width: 768px){
+	#site-header #logo{
+		left: 1em;
+		width: 6.4em;
+		flex: none;
+	}
 }
 body{
 	/* ruimte maken voor de header die absolute gepositioneerd is */
@@ -382,16 +394,19 @@ body.showHeader #site-header{
   	animation-name: slidein;
 }
 body.admin-bar #site-header,
-body.admin-bar.showHeader #site-header,
-body.admin-bar #site-header #logo{
+body.admin-bar.showHeader #site-header{
 	top: 32px;
-
+}
+body.admin-bar #site-header #logo{
+	top: calc(32px + 0.5em);
 }
 @media screen and ( max-width: 782px ) {
 	body.admin-bar #site-header,
-	body.admin-bar.showHeader #site-header,
-	body.admin-bar #site-header #logo{
+	body.admin-bar.showHeader #site-header{
 		top: 46px;
+	}
+	body.admin-bar #site-header #logo{
+		top: calc(46px + 0.5em);
 	}
 }
 @keyframes slidein {
@@ -452,7 +467,7 @@ body.admin-bar #site-header #logo{
 }
 #site-header .primary-menu-wrapper ul.primary-menu li ul.sub-menu li{
 	padding: 0;
-	margin: 0;
+	margin-right: 0;
 	text-align: left;
 }
 #site-header .primary-menu-wrapper a{
@@ -494,7 +509,8 @@ body.admin-bar #site-header #logo{
 		display: block;
 		background: transparent;
 		border: none;
-		margin-left: 2em;
+		margin-left: 0;
+		padding: 0;
 		outline: none;
 	}
 	#hamburger span.stripe{
@@ -520,13 +536,16 @@ body.admin-bar #site-header #logo{
 		height: auto;
 		background: transparent url(../fccentrum/img/menu-bg.svg) no-repeat bottom left;
 		background-size: 100% auto;
-		padding: 2em 2rem 4em;
+		padding: 1em 2rem 3em;
 		line-height: 1em;
 	}
 	#site-header .primary-menu-wrapper  ul.primary-menu li{
 		text-align: left;
 		display: block;
-		margin: 0 0 1.5em;
+		margin: 0 0 1em;
+	}
+	#site-header .primary-menu-wrapper  ul.primary-menu li:last-child{
+		margin-bottom: 0;
 	}
 	#site-header .primary-menu-wrapper  ul.primary-menu li a{
 		color: #fff;
@@ -546,7 +565,6 @@ body.admin-bar #site-header #logo{
 		width: 100%;
 	}
 	#site-header .primary-menu-wrapper  ul.primary-menu li ul.sub-menu li{
-		padding: 0 0 1em;
 	}
 }
 
@@ -634,6 +652,8 @@ body.admin-bar #site-header #logo{
 	width: 2em;
 	top: 0;
 	transition: transform 1s;
+	-webkit-filter: drop-shadow(0 0 5px rgba(0,0,0,0.3));
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.3));
 
 }
 #carouselWrap > a#prevslide{
@@ -663,11 +683,11 @@ body.admin-bar #site-header #logo{
 }
 #carousel h2{
 	position: absolute;
-	bottom: 1.5em; 
-	left: 2em;
+	bottom: 0.6em; 
+	left: 1em;
 	font-family: "Odin";
 	font-weight: 700;
-	line-height: 1.5em;
+	line-height: 1em;
 	color: #fff;
 	z-index: 100;
 	margin: 0;
@@ -691,6 +711,8 @@ body.admin-bar #site-header #logo{
 	height: auto;
 	text-indent: -999em;
 	transition: transform 1s ease-in-out;
+	-webkit-filter: drop-shadow(0 0 5px rgba(0,0,0,0.3));
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.3));
 }
 #carousel-scrollDown-arrow:hover,
 #scrollDown-arrow:hover{
@@ -745,7 +767,7 @@ body.home #header-graphic{
 
 #site-content{
 	margin-right: auto;
-  margin-left: auto;
+  	margin-left: auto;
 }
 body.home #site-content{
 	max-width: 1300px;
@@ -773,7 +795,7 @@ ul.post-terms {
 	text-transform: uppercase;
 	list-style: none;
 	padding: 0;
-	margin: 0.2em 0;
+	margin: 0 0;
 }
 body.home ul.post-terms,
 body.search-results ul.post-terms{
@@ -842,6 +864,9 @@ ul.post-terms li a:hover{
 	font-weight: 400;
 	font-size: 2em;
 }
+.news.teaser h2{
+	margin: 0 0 0.1em;
+}
 
 
 #news-list{
@@ -865,6 +890,8 @@ ul.post-terms li a:hover{
 }
 .news.teaser p{
 	margin: 0;
+	font-size: 0.91667em;
+    line-height: 1.3em;
 }
 .news.teaser ul.post-terms{
 	font-weight: 900;
@@ -911,46 +938,18 @@ ul.categories-block{
 	}
 }
 
-body.home #site-content .stories-container{
+body.home .stories-container{
 	flex: 80% 0 1;
-	width: 100%;
 	padding: 0;
 	margin-right: 1.3em;
 	font-family: 'garage-gothic', sans-serif;
 }
-body.home .story.teaser.tekst_onder_foto .link-container{
-	position: relative;
-	bottom: 0;
-  left: 0;
-  color: inherit;
-}
-@media all and (max-width: 768px){
-	.story.teaser.tekst_onder_foto{
-		margin-bottom: 0;
+@media screen and (max-width:  768px){
+	body.home .stories-container{
+		flex: none;
+		width: 100%;
 	}
 }
-ul.categories-block li.cat{
-	flex: 49% 0 0;
-	display: block;
-	margin: 0;
-	padding: 0;
-}
-ul.categories-block li.cat h2{
-	font-size: 2em;
-	margin:0.2em 0em 0.5em 0;
-	text-align: center;
-}
-ul.categories-block li.cat .category-pic{
-	width: 100%;
-	height: 20em;
-}
-ul.categories-block li.cat .category-pic img{
-	width: 100%;
-	height: 100%;
-	display: block;
-}
-
-
 .stories-container{
 	column-count: 2;
 	column-gap: 1.3em;
@@ -958,28 +957,23 @@ ul.categories-block li.cat .category-pic img{
 }
 .story.teaser .link-container{
 	position: absolute;
-  bottom: 1.5em;
-  left: 1em;
-  display: block;
-  color: #fff;
+	bottom: 1.5em;
+	left: 1em;
+	display: block;
+	color: #fff;
 }
-@media all and (max-width: 678px){
- .stories-container{
-		width: 90%;
+@media all and (max-width: 768px){
+ 	.stories-container{
 		column-count: 1;
 		padding: 2.5em 0;
-	}
- .stories-container .link-container{
-		padding: 1em 0;
-		left: 0;
 	}
 }
 
 
 .story.teaser{
 	position: relative;
-  margin-bottom: 1.3em;
-  break-inside: avoid;
+	margin-bottom: 1.5em;
+	break-inside: avoid;
 }
 .story.teaser header a{
 	position: relative;
@@ -1007,8 +1001,41 @@ ul.categories-block li.cat .category-pic img{
 body.single-story #site-content > h2{
 	text-align: center;
 }
+.story.teaser ul.post-terms{
+	margin-top: 0.5em;
+}
+body.home .story.teaser.tekst_onder_foto .link-container{
+	position: relative;
+	bottom: 0;
+	left: 0;
+	color: inherit;
+}
 
 
+
+
+
+
+ul.categories-block li.cat{
+	flex: 49% 0 0;
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+ul.categories-block li.cat h2{
+	font-size: 2em;
+	margin:0.2em 0em 0.5em 0;
+	text-align: center;
+}
+ul.categories-block li.cat .category-pic{
+	width: 100%;
+	height: 20em;
+}
+ul.categories-block li.cat .category-pic img{
+	width: 100%;
+	height: 100%;
+	display: block;
+}
 
 
 .post-content figure{
@@ -1197,7 +1224,8 @@ body.single-story .post-header img{
 }
 body.single-story .post-content h1{
 	text-align: left;
-	padding: 0.2em 0 0 0;
+	margin: 1em 0 0 0;
+    padding: 0;
 }
 body.single-story .post-content figcaption{
 	text-align: right;
@@ -1359,9 +1387,7 @@ footer ul li.link button:hover{
 	position: relative;
 	max-width: 900px;
 	width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 10em;
+	margin: 3em auto 10em;
 }
 #site-content footer.post-closure p.author{
 	position: absolute;

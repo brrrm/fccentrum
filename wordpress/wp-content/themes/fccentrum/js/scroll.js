@@ -27,7 +27,11 @@
 
 	function headerScrollEffect(scrollPos) {
 	  let headerPos = $('#site-header').offset();
-	  if(scrollPos < lastKnownScrollPosition){
+	  console.log(scrollPos);
+	  if(scrollPos < 5){
+	  	$('body').addClass('showHeader');
+	  	$('#site-header').css('top', htmlTopMargin);
+	  }else if(scrollPos < lastKnownScrollPosition){
 	  	$('body').addClass('showHeader');
 	  	$('#site-header').css('top', htmlTopMargin);
 	  }else{	  	
