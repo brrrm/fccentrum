@@ -13,23 +13,27 @@
 		});
 		window.logoanim.setSpeed(2);
 
+		document.addEventListener('scroll', function(e) {
+		  if (!ticking) {
+		    window.requestAnimationFrame(function() {
+		      logoScrollEffect(window.scrollY);
+		      ticking = false;
+		    });
+
+		    ticking = true;
+		  }
+		});
 	});
 
-	document.addEventListener('scroll', function(e) {
-	  if (!ticking) {
-	    window.requestAnimationFrame(function() {
-	      logoScrollEffect(window.scrollY);
-	      ticking = false;
-	    });
-
-	    ticking = true;
-	  }
-	});
+	
 
 	function logoScrollEffect(scrollPos) {
 		if(typeof window.logoanim !== 'undefined'){
 	  		window.logoanim.pause();
-			if(scrollPos < lastKnownScrollPosition){
+	  		if(scrollPos < 40){
+				window.logoanim.setDirection(-1);
+				$('#logo').removeClass('lager');
+	  		}else if(scrollPos < lastKnownScrollPosition){
 				// scroll up
 				window.logoanim.setDirection(-1);
 				$('#logo').removeClass('lager');
