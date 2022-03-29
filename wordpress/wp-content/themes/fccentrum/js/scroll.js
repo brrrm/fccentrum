@@ -24,7 +24,7 @@
 	});
 
 	function headerScrollEffect(scrollPos) {
-		//console.log(scrollPos);
+		console.log(scrollPos);
 		if(scrollPos < 40){
 			$('body').addClass('showHeader');
 			$('#site-header').css('top', htmlTopMargin);
