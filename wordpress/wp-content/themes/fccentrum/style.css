@@ -698,10 +698,61 @@ body.admin-bar #site-header #logo.lager{
 #carousel h2 a{
 	background: #000;
 	padding:0 0.2em;
-	
 	box-decoration-break: clone;
   	-webkit-box-decoration-break: clone;
 }
+#carousel .carousel-slide.font--default h2{
+	font-family: 'garage-gothic', sans-serif;
+	font-weight: 400;
+}
+#carousel .carousel-slide.font--default_light h2{
+	font-family: 'garage-gothic', sans-serif;
+	font-weight: 100;
+}
+#carousel .carousel-slide.font--rounded h2{
+	font-family: 'Odin', sans-serif;
+	font-weight: 400;
+}
+#carousel .carousel-slide.font--rounded_light h2{
+	font-family: 'Odin', sans-serif;
+	font-weight: 100;
+}
+#carousel .carousel-slide.foreground--wit h2,
+#carousel .carousel-slide.foreground--wit h2 a{
+	color: #fff;
+}
+#carousel .carousel-slide.foreground--zwart h2,
+#carousel .carousel-slide.foreground--zwart h2 a{
+	color: #000;
+}
+#carousel .carousel-slide.foreground--rood h2,
+#carousel .carousel-slide.foreground--rood h2 a{
+	color: #e30613;
+}
+#carousel .carousel-slide.foreground--geel h2,
+#carousel .carousel-slide.foreground--geel h2 a{
+	color: #ffcc00;
+}
+#carousel .carousel-slide.foreground--blauw h2,
+#carousel .carousel-slide.foreground--blauw h2 a{
+	color: #0090d7;
+}
+#carousel .carousel-slide.background--wit h2 a{
+	background: #fff;
+}
+#carousel .carousel-slide.background--zwart h2 a{
+	background: #000;
+}
+#carousel .carousel-slide.background--rood h2 a{
+	background: #e30613;
+}
+#carousel .carousel-slide.background--geel h2 a{
+	background: #ffcc00;
+}
+#carousel .carousel-slide.background--blauw h2 a{
+	background: #0090d7;
+}
+
 #carousel-scrollDown-arrow,
 #scrollDown-arrow{
 	position: absolute;
