@@ -11,7 +11,7 @@
 			autoplay: false, // Optional
 			name: "Logo", // Name for future reference. Optional.
 		});
-
+		window.logoanim.setSpeed(2);
 
 	});
 
@@ -32,9 +32,11 @@
 			if(scrollPos < lastKnownScrollPosition){
 				// scroll up
 				window.logoanim.setDirection(-1);
+				$('#logo').removeClass('lager');
 			}else{	  	
 				// down
 				window.logoanim.setDirection(1);
+				$('#logo').addClass('lager');
 			}
 			lastKnownScrollPosition = scrollPos;
 			window.logoanim.play();

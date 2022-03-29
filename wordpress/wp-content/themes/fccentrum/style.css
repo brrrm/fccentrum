@@ -137,8 +137,8 @@ html,body{
 }
 body{
 	background: #fff;
-	font-family: "BrandonTextCond";
-	font-weight: 400;
+	font-family: "Odin";
+	font-weight: 100;
 	font-style: normal;
 	font-size: 100%;
 	line-height: 1.333;
@@ -366,10 +366,15 @@ body.page .post-content h2{
 }
 #site-header #logo{
 	display: block;
-	height: 4em;
+	height: 5em;
 	position: fixed;
-	left: 2em;
-	top: 0.5em;
+	left: 1.5em;
+	top: 0em;
+	transition: top 0.5s ease-out;
+
+}
+#site-header #logo.lager{
+	top:  0.5em;
 }
 @media screen and (max-width: 768px){
 	#site-header #logo{
@@ -676,11 +681,11 @@ body.admin-bar #site-header #logo{
 }
 #carousel h2{
 	position: absolute;
-	bottom: 1.5em; 
-	left: 2em;
+	bottom: 0.6em; 
+	left: 1em;
 	font-family: "Odin";
 	font-weight: 700;
-	line-height: 1.5em;
+	line-height: 1em;
 	color: #fff;
 	z-index: 100;
 	margin: 0;
@@ -881,6 +886,8 @@ ul.post-terms li a:hover{
 }
 .news.teaser p{
 	margin: 0;
+	font-size: 0.91667em;
+    line-height: 1.3em;
 }
 .news.teaser ul.post-terms{
 	font-weight: 900;
@@ -993,19 +1000,18 @@ body.single-story #site-content > h2{
 .story.teaser ul.post-terms{
 	margin-top: 0.5em;
 }
-
-
 body.home .story.teaser.tekst_onder_foto .link-container{
 	position: relative;
 	bottom: 0;
 	left: 0;
 	color: inherit;
 }
-@media all and (max-width: 768px){
-	.story.teaser.tekst_onder_foto{
-		margin-bottom: 0;
-	}
-}
+
+
+
+
+
+
 ul.categories-block li.cat{
 	flex: 49% 0 0;
 	display: block;
@@ -1214,7 +1220,8 @@ body.single-story .post-header img{
 }
 body.single-story .post-content h1{
 	text-align: left;
-	padding: 0.2em 0 0 0;
+	margin: 1em 0 0 0;
+    padding: 0;
 }
 body.single-story .post-content figcaption{
 	text-align: right;
