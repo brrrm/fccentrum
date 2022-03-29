@@ -374,7 +374,8 @@ body.page .post-content h2{
 @media screen and (max-width: 768px){
 	#site-header #logo{
 		left: 1em;
-		width: 8em;
+		width: 6.4em;
+		flex: none;
 	}
 }
 body{
