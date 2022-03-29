@@ -927,14 +927,14 @@ ul.categories-block{
 	}
 }
 
-body.home #site-content .stories-container{
+body.home .stories-container{
 	flex: 80% 0 1;
 	padding: 0;
 	margin-right: 1.3em;
 	font-family: 'garage-gothic', sans-serif;
 }
 @media screen and (max-width:  768px){
-	body.home #site-content .stories-container{
+	body.home .stories-container{
 		flex: none;
 		width: 100%;
 	}
@@ -953,13 +953,8 @@ body.home #site-content .stories-container{
 }
 @media all and (max-width: 768px){
  	.stories-container{
-		width: 90%;
 		column-count: 1;
 		padding: 2.5em 0;
-	}
- 	.stories-container .link-container{
-		padding: 1em 0;
-		left: 0;
 	}
 }
 
