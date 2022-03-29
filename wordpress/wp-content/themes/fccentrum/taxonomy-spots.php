@@ -31,7 +31,7 @@ $location = get_field('locatie', $term);
 		<?php if ( have_posts() ) : ?>
 
 			<div class="post-content">
-			<?php the_archive_title( '<h1><span>', '</span></h1>' ); ?>			
+			<?php the_archive_title( '<h1>', '</h1>' ); ?>			
 
 			<?php
 

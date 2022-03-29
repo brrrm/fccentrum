@@ -195,7 +195,6 @@ h2 a:hover{
 @media all and (max-width: 768px){
 	h1{
 		font-size: 4em;
-		margin: 1em 0 0 0;
 	}
 	h2{
 		font-size: 4em;
@@ -273,13 +272,6 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 .foreground-blauw{
 	color: #0090D7;
 }
-.background-zwart .post-closure{
-	border-top: 1px solid white;
-}
-.background-wit .post-closure{
-	border-top: 1px solid black;
-}
-
 
 /**Page fonts algemene layout */
 body.page h1.page-title{
@@ -291,27 +283,27 @@ body.page h1.page-title span{
 body.page .post-content h2{
 	text-align: left;
 }
+body.single-story h1{
+	text-align: left;
+	margin: 1em 0 0 0;
+  padding: 0;
+}
 
 /**Zoom animatie foto buttons */
 .story.teaser,
-#site-content ul.categories-block li.cat .category-pic{
+ul.categories-block .category-pic{
 	overflow: hidden;
 }
 .story.teaser img,
-#site-content ul.categories-block li.cat .category-pic img{
+ul.categories-block .category-pic img{
   transition: transform 1s ease-in-out;
   object-fit: cover;
 	object-position: center;
 }
 .story.teaser img:hover,
-#site-content ul.categories-block li.cat .category-pic img:hover{
+ul.categories-block .category-pic img:hover{
   transform: scale(1.1); 
 }
-
-
-
-
-
 
 /* Algemene header instellingen*/
 #header-graphic,
@@ -339,16 +331,11 @@ body.page .post-content h2{
 }
 
 /* No picture background color*/
-.story .post-header,
-.category-pic,
-.spot-pic{
+.story .post-header img,
+.category-pic img,
+.spot-pic img{
 	background-color: lightgrey;
 }
-
-
-
-
-
 
 #site-header{
 	display: flex;
@@ -568,7 +555,6 @@ body.admin-bar #site-header #logo.lager{
 	#site-header .primary-menu-wrapper  ul.primary-menu li ul.sub-menu li{
 	}
 }
-
 
 .search-modal{
 	position: relative;
@@ -803,15 +789,13 @@ body.admin-bar #site-header #logo.lager{
 	background: transparent url(img/playbutton.svg) center no-repeat;
 	background-size: contain;
 	width:  20vw;
-	height: 20vh;
+	height: 10vh;
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	cursor: pointer;
 }
-
-
 
 #header-graphic{
 	position: absolute;
@@ -820,11 +804,9 @@ body.home #header-graphic{
 	position: relative;
 }
 
-
-
 #site-content{
 	margin-right: auto;
-  	margin-left: auto;
+  margin-left: auto;
 }
 body.home #site-content{
 	max-width: 1300px;
@@ -837,7 +819,16 @@ body.home #site-content{
 		display: block;
 	}
 }
-
+#site-content > .post-header{
+	  padding-bottom: 5em;
+}
+.post-header img{
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
 .post-content{
 	max-width: 600px;
 	width: 90%;
@@ -892,18 +883,6 @@ ul.post-terms li.term:last-child a{
 ul.post-terms li a:hover{
 	text-decoration: underline;
 }
-.color--blauw a:hover{
-	color: #0090d7;
-}
-.color--rood a:hover{
-	color: #e30613;
-}
-.color--geel a:hover{
-	color: #ffcc00;
-}
-.color--white a:hover{
-	color: #fff;
-}
 .teaser h2{
 	font-size: 3em;
 	text-align: left;
@@ -924,7 +903,6 @@ ul.post-terms li a:hover{
 .news.teaser h2{
 	margin: 0 0 0.1em;
 }
-
 
 #news-list{
 	flex: 20% 0 0 ;	
@@ -954,12 +932,6 @@ ul.post-terms li a:hover{
 	font-weight: 900;
 	font-size: 1.5em;
 }
-
-
-
-
-
-
 
 .always-white{
 	background: #fff;
@@ -994,7 +966,6 @@ ul.categories-block{
 		display: block;
 	}
 }
-
 body.home .stories-container{
 	flex: 80% 0 1;
 	padding: 0;
@@ -1025,7 +996,6 @@ body.home .stories-container{
 		padding: 2.5em 0;
 	}
 }
-
 
 .story.teaser{
 	position: relative;
@@ -1072,16 +1042,14 @@ body.home .story.teaser.tekst_onder_foto .link-container{
 	color: inherit;
 }
 
-
-
-
-
-
 ul.categories-block li.cat{
 	flex: 49% 0 0;
 	display: block;
 	margin: 0;
 	padding: 0;
+}
+body.page-id-53 ul.categories-block li.cat{
+	flex: 32% 0 0;
 }
 ul.categories-block li.cat h2{
 	font-size: 2em;
@@ -1098,7 +1066,6 @@ ul.categories-block li.cat .category-pic img{
 	display: block;
 }
 
-
 .post-content figure{
 	display: block;
 	margin: 1.5em 0;
@@ -1113,9 +1080,36 @@ ul.categories-block li.cat .category-pic img{
 		margin-right: -2em;
 	}
 }
+ figcaption{
+	text-align: right;
+	color: inherit;
+	font-size: 0.8em;
+	font-style: italic;
+}
 
+form{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+form .field{
+	flex: 49% 0 0;
+	margin-bottom: 1em;
+}
+form .message,
+form .actions{
+	flex: 100% 0 0;
+}
+form .actions input[type="submit"]{ 
+	min-width: 12em;
+	float: right;
+}
 
-
+@media all and (max-width: 786px){
+	form{
+		display: block;
+	}
+}
 
 /*Contact pagina**/
 body.page-id-5{
@@ -1124,93 +1118,40 @@ body.page-id-5{
 	background-size: cover;
 	color: #fff;
 }
-body.page-id-5 #header-graphic{
-	display: none;
-}
-body.page-id-5 #site-content .post-content{
+body.page-id-5 .post-content{
 	max-width: 900px;
 }
-body.page-id-5 #site-content .post-content h1 span{
+body.page-id-5 h1.page-title span{
 	background-color: #E30613;
 }
-body.page-id-5 #site-content .post-content h2{
+body.page-id-5 h2{
 	font-size: 3em;
 	font-weight: 200;
 	margin-top: 3em;
 }
-
-body.page-id-5 #site-content .post-content form{
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-}
-body.page-id-5 #site-content .post-content form .field{
-	flex: 49% 0 0;
-	margin-bottom: 1em;
-}
-body.page-id-5 #site-content .post-content form .message{
-	flex: 100% 0 0;
-}
-body.page-id-5 #site-content .post-content form .actions{
-	flex: auto 0 0;
-	margin-left: auto;
-	margin-right: 0;
-}
-body.page-id-5 #site-content .post-content form .actions input{ 
-	min-width: 12em;
-	float: right;
-}
-@media all and (max-width: 768px){
-	body.page-id-5 #site-content header{
-		display: none;
-	}
-	body.page-id-5 #site-content .post-content form .actions input{ 
-		width: 100%;
-	}
-}
-
-
 body.page-id-5 #site-footer{
 	max-width: 90%;
-	margin-right: auto;
-	margin-left: auto;
-	margin-top: 4em;
-}
-body.page-id-5 #site-footer .footer-graphic{
-	display: none;
-}
-body.page-id-5 #site-footer .footer-content{
-	background: transparent;
-	border-top: 4px solid #fff;
+	margin: 3em auto 0 auto;
+	border-top: 2px solid #fff;
 	padding-top: 4em;
 }
+body.page-id-5 .footer-graphic{
+	display: none;
+}
 @media all and (max-width: 768px){
-	body.page-id-5 #site-footer{
-		margin-top: 1em;
+	body.page-id-5 form .actions input[type="submit"]{ 
+		width: 100%;
 	}
-	body.page-id-5 #site-footer .footer-content{
-		margin-top: 0;
-		padding-top: 2em;
-	}	
-	body.page-id-5 #site-content .post-content h2{
+	body.page-id-5 h2{
 		margin: 0;
 	}
-}
-
-@media all and (max-width: 786px){
-	body.page-id-5 #site-content .post-content form{
-		display: block;
-	}
-	body.page-id-5 #site-footer .footer-content{
-		border-top: 2px solid #fff;
+	body.page-id-5 #site-footer{
+		margin-top: 1em;
+		padding-top: 2em;
 	}
 }
 
 /** Spots*/
-body.page-id-50 #site-content{
-	margin-left: -1em;
-	margin-right: -1em;
-}
 .acf-map {
   width: 100%;
   height: calc(100vh - 5em);
@@ -1219,31 +1160,31 @@ body.page-id-50 #site-content{
 body.tax-spots .acf-map {
   height: 30vh;
 }
-
-
 // Fixes potential theme css conflict.
 .acf-map img {
    max-width: inherit !important;
 }
+
 .marker-inner{
 	text-align: center;
 	overflow: hidden;
 }
-.marker-inner .spot-pic img{
-	display: block;
+.marker-inner .spot-pic{
 	width: 20em;
 	height: 12em;
+}
+.marker-inner .spot-pic img{
+	display: block;
+	width: 100%;
+	height: 100%;
 	object-fit: cover;
 }
 .marker-inner h2{
-  font-weight: 400;
 	font-size: 2em;
   padding: 0;
   margin: 0.5em 0 0 0;
 }
 .marker-inner p{
-	font-family: "BrandonTextCond";
-  font-weight: 600;
 	font-size: 1.333em;
 	margin:0.5em 0;
 }
@@ -1252,115 +1193,16 @@ body.tax-spots h1{
 	text-align: left;
 	font-weight: 400;
 }
-body.tax-spots h1 span{
-	padding: 0;
-	background: transparent;
-}
-body.tax-spots #header-graphic{
-	display: none;
-}
 
 
-
-body.single-story #header-graphic{
-	display: none;
-}
-body.single-story #site-content > .post-header,
-body.single-story #site-content .mainVideo iframe{ 
+.mainVideo iframe{ 
 	height: calc(100vh - 5em);
 	width: 100%;
 }
 @media all and (max-width: 768px){
-	body.single-story #site-content > .post-header,
-	body.single-story #site-content .mainVideo{
-		width: 100%;
+	 .mainVideo iframe{
+			width: 100%;
 	}
-}
-body.single-story .post-header img{
-	display: block;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	object-position: center;
-}
-body.single-story .post-content h1{
-	text-align: left;
-	margin: 1em 0 0 0;
-    padding: 0;
-}
-body.single-story .post-content figcaption{
-	text-align: right;
-}
-
-
-body.single-story .background-zwart#site-footer .footer-graphic{
-	background-image: url(../fccentrum/img/bg-black.png);
-}
-body.single-story .background-zwart#site-footer .footer-content{
-	border-top: 1px solid #fff;
-	margin-left: auto;
-  margin-right: auto;
-  max-width: 1200px;
-  padding: 1em;
-}
-@media all and (max-width: 768px){
-	body.single-story .background-zwart#site-footer .footer-content{
-		margin-left: 1em;
-		margin-right: 1em;
-	}
-}
-
-
-
-
-
-body.page-id-53 #site-content ul.categories-block li.cat{
-	flex: 32% 0 0;
-}
-body.page-id-53 #site-content ul.categories-block li.cat .category-pic{
-	height: 25em;
-	height: 100%;
-}
-
-
-body.page:not(.page-id-50) #site-content .post-header{
-	height: 20vh;
-	position: relative;
-	top: 0;
-}
-body.page #site-content .post-header img{
-	width: 100%;
-	object-fit: contain;
-	object-position: center;
-
-
-}
-
-#site-footer .footer-graphic{
-	background: #000; 
-}
-#site-footer .footer-content{
-	background: #000;
-	padding-bottom: 3em;
-}
-
-#site-footer .footer-content .footer-logo{
-	text-align: center;
-}
-#site-footer .footer-content a{
-	color: inherit;	
-	text-decoration: none;
-	font-family: "BrandonTextCond";
-	font-weight: 600;
-}
-#site-footer .footer-content a:hover{
-	text-decoration: underline;
-}
-#site-footer .footer-content .footer-logo a,
-#site-footer .footer-content .footer-logo img{
-	width: 18em;
-	display: block;
-	margin: 0 auto;
 }
 
 
@@ -1392,6 +1234,7 @@ footer ul li.youtube a:hover{
 footer ul li.twitter a{
 	background-image: url(../fccentrum/img/twitter.svg);
 }
+.background-  footer ul li.twitter a,
 .background-wit footer ul li.twitter a{
 	background-image: url(../fccentrum/img/twitter-zwart.svg);
 }
@@ -1401,6 +1244,7 @@ footer ul li.twitter a:hover{
 footer ul li.facebook a{
 	background-image: url(../fccentrum/img/facebook.svg);
 }
+.background- footer ul li.facebook a,
 .background-wit footer ul li.facebook a{
 	background-image: url(../fccentrum/img/facebook-zwart.svg);
 }
@@ -1416,6 +1260,7 @@ footer ul li.instagram a:hover{
 footer ul li.email a{
 	background-image: url(../fccentrum/img/mail-icon.svg);
 }
+.background- footer ul li.email a,
 .background-wit footer ul li.email a{
 	background-image: url(../fccentrum/img/mail-icon-zwart.svg);
 }
@@ -1427,6 +1272,7 @@ footer ul li.link button{
 	background-color: transparent;
 	background-image: url(../fccentrum/img/link-icon.svg);
 }
+.background- footer ul li.link button,
 .background-wit footer ul li.link button{
 	border: none;
 	background-color: transparent;
@@ -1436,41 +1282,58 @@ footer ul li.link button:hover{
 	background-image: url(../fccentrum/img/link-icon-rood.svg);
 }
 
-
-
-#site-footer .footer-content p.footer-address{
-	color: white;
-	text-align: center;
-}
-
-
-#site-content footer.post-closure{
+.post-closure{
 	position: relative;
 	max-width: 900px;
 	width: 90%;
 	margin: 3em auto 10em;
 }
-#site-content footer.post-closure p.author{
+.background-zwart .post-closure{
+	border-top: 1px solid #fff;
+}
+.background- .post-closure,
+.background-wit .post-closure{
+	border-top: 1px solid #000;
+}
+.post-closure p.author{
 	position: absolute;
 	right: 0;
 }
-#site-content footer.post-closure h3{
+@media all and (max-width: 768px){
+	.post-closure p.author{
+		position: relative;
+		text-align: center;
+	}
+}
+.post-closure h3{
 	font-weight: 400;
 	text-transform: uppercase;
 	text-align: center;
 	margin-top:1em;
 }
-#site-content footer.post-closure .share-btns ul{
-	margin: 0;
-}
-#site-content footer.post-closure .share-btns ul li a{
+.post-closure .share-btns ul li a{
 	width: 1.7em;
 	height: 1.7em;
-	background-size: contain;
 }
 
-
-
+#site-footer{
+	padding-bottom: 3em;
+	background-color: #000;
+	text-align: center;
+}
+.footer-content a{
+	font-weight: 600;
+	color: #fff;	
+	text-decoration: none;
+}
+.footer-content a:hover{
+	text-decoration: underline;
+}
+.footer-content .footer-logo img {
+	width: 18em;
+	display: block;
+	margin: 0 auto;
+}
 
 
 body.search #site-content{
@@ -1481,18 +1344,16 @@ body.search #site-content{
 body.search .toggle{
 	display: none;
 }
-body.search .post-content h1{
+body.search h1{
 	display: none;
 } 
-body.search .post-content .archive-subtitle p{
+.archive-subtitle p{
 	font-size: 2em;
 	font-weight: 700;
 	font-family: 'garage-gothic', sans-serif;
 	text-transform: uppercase;
 	text-align: center;
 }
-
-
 .search-results .search-result{
 	border-top: 1.5px solid #949494;
 	display: flex;
@@ -1504,6 +1365,13 @@ body.search .post-content .archive-subtitle p{
 	height: 100%;
 	margin-right: 1.5em;
 }
+.search-results .search-result > a img{
+	display: block;
+	height: 12em;
+	min-width: 100%;
+	object-fit: cover;
+	object-position: center;
+}
 @media all and (max-width: 768px){	
 	.search-results .search-result{
 		display: block;
@@ -1512,13 +1380,6 @@ body.search .post-content .archive-subtitle p{
 	.search-results .search-result > a{
 		margin-right: 0;
 	}
-}
-.search-results .search-result > a img{
-	display: block;
-	height: 12em;
-	min-width: 100%;
-	object-fit: cover;
-	object-position: center;
 }
 .search-results .search-result .post-info{
 	flex: auto 0 1;
@@ -1530,7 +1391,7 @@ body.search .post-content .archive-subtitle p{
 .search-results .search-result .post-info p{
 	margin: 0;
 	height: calc(100% - 5em);
-	min-height: 3em;
+	min-height: 4em;
 	display: flex;
 	align-items: flex-end;
 }
