@@ -5,8 +5,13 @@ $text_color = 'foreground-' . get_field('tekstkleur', $terms[0]);
 ?>
 			<footer id="site-footer" class="header-footer-group <?php echo $bg_color; ?> <?php echo $text_color; ?>">
 					<div class="footer-graphic">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/footer-kerk.png" alt="Echt Amsterdams!" />
+						<?php if($bg_color == 'background-zwart'){ ?>
+							<img src="<?php echo get_template_directory_uri(); ?>/img/footer-img-dark.png" alt="Echt Amsterdams!" />
+						<?php }else{ ?>
+							<img src="<?php echo get_template_directory_uri(); ?>/img/footer-kerk.png" alt="Echt Amsterdams!" />
+						<?php } ?>
 					</div>
+
 					<div class="footer-content">
 						<div class="footer-logo">
 							<a href="/" title="Naar de homepage"><img src="<?php echo get_template_directory_uri(); ?>/img/footer_logo.svg" alt="footer logo FC Centrum" /></a>

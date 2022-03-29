@@ -354,6 +354,7 @@ ul.categories-block .category-pic img:hover{
 #site-header #logo{
 	display: block;
 	height: 5em;
+	width: 8em; /* 1.59 * height */
 	position: fixed;
 	left: 1.5em;
 	top: 0em;
@@ -366,8 +367,6 @@ ul.categories-block .category-pic img:hover{
 @media screen and (max-width: 768px){
 	#site-header #logo{
 		left: 1em;
-		width: 6.4em;
-		flex: none;
 	}
 }
 body{
@@ -381,18 +380,20 @@ body.showHeader #site-header{
   	animation-name: slidein;
 }
 body.admin-bar #site-header,
-body.admin-bar.showHeader #site-header{
+body.admin-bar.showHeader #site-header,
+body.admin-bar #site-header #logo{
 	top: 32px;
 }
-body.admin-bar #site-header #logo{
+body.admin-bar #site-header #logo.lager{
 	top: calc(32px + 0.5em);
 }
 @media screen and ( max-width: 782px ) {
 	body.admin-bar #site-header,
-	body.admin-bar.showHeader #site-header{
+	body.admin-bar.showHeader #site-header,
+	body.admin-bar #site-header #logo{
 		top: 46px;
 	}
-	body.admin-bar #site-header #logo{
+	body.admin-bar #site-header #logo.lager{
 		top: calc(46px + 0.5em);
 	}
 }
@@ -683,10 +684,66 @@ body.admin-bar #site-header #logo{
 #carousel h2 a{
 	background: #000;
 	padding:0 0.2em;
-	
 	box-decoration-break: clone;
   	-webkit-box-decoration-break: clone;
 }
+#carousel .carousel-slide.font--default h2{
+	font-family: 'garage-gothic', sans-serif;
+	font-weight: 700;
+}
+#carousel .carousel-slide.font--default_light h2{
+	font-family: 'garage-gothic', sans-serif;
+	font-weight: 400;
+}
+#carousel .carousel-slide.font--rounded h2{
+	font-family: 'Odin', sans-serif;
+	font-weight: 700;
+}
+#carousel .carousel-slide.font--rounded_light h2{
+	font-family: 'Odin', sans-serif;
+	font-weight: 100;
+}
+#carousel .carousel-slide.font--rounded h2 a,
+#carousel .carousel-slide.font--rounded_light h2 a{
+	/* extra padding-top omdat dit font niet goed uitgeijnd is */
+	padding-top: 0.1875em;
+}
+#carousel .carousel-slide.foreground--wit h2,
+#carousel .carousel-slide.foreground--wit h2 a{
+	color: #fff;
+}
+#carousel .carousel-slide.foreground--zwart h2,
+#carousel .carousel-slide.foreground--zwart h2 a{
+	color: #000;
+}
+#carousel .carousel-slide.foreground--rood h2,
+#carousel .carousel-slide.foreground--rood h2 a{
+	color: #e30613;
+}
+#carousel .carousel-slide.foreground--geel h2,
+#carousel .carousel-slide.foreground--geel h2 a{
+	color: #ffcc00;
+}
+#carousel .carousel-slide.foreground--blauw h2,
+#carousel .carousel-slide.foreground--blauw h2 a{
+	color: #0090d7;
+}
+#carousel .carousel-slide.background--wit h2 a{
+	background: #fff;
+}
+#carousel .carousel-slide.background--zwart h2 a{
+	background: #000;
+}
+#carousel .carousel-slide.background--rood h2 a{
+	background: #e30613;
+}
+#carousel .carousel-slide.background--geel h2 a{
+	background: #ffcc00;
+}
+#carousel .carousel-slide.background--blauw h2 a{
+	background: #0090d7;
+}
+
 #carousel-scrollDown-arrow,
 #scrollDown-arrow{
 	position: absolute;
@@ -944,6 +1001,10 @@ body.home .stories-container{
 	position: relative;
 	margin-bottom: 1.5em;
 	break-inside: avoid;
+	display: list-item;
+}
+.story.teaser:last-child{
+	margin-bottom: 0;
 }
 .story.teaser header a{
 	position: relative;
