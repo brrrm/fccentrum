@@ -462,7 +462,7 @@ body.admin-bar #site-header #logo{
 }
 #site-header .primary-menu-wrapper ul.primary-menu li ul.sub-menu li{
 	padding: 0;
-	margin: 0;
+	margin-right: 0;
 	text-align: left;
 }
 #site-header .primary-menu-wrapper a{
@@ -560,7 +560,6 @@ body.admin-bar #site-header #logo{
 		width: 100%;
 	}
 	#site-header .primary-menu-wrapper  ul.primary-menu li ul.sub-menu li{
-		padding: 0 0 1em;
 	}
 }
 
