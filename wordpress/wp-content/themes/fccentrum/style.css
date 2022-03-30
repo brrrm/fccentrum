@@ -223,15 +223,15 @@ input[type="text"],
 input[type="search"],
 input[type="email"],
 textarea{
-	font-family: "BrandonTextCond";
+	font-family: 'garage-gothic', sans-serif;
+	text-transform: uppercase;
 	font-weight: 400;
-	font-size: 1em;
+	font-size: 1.5em;
 	border: 1px solid #C3C3C3;
 	border-radius: 5px;
 	width: 100%;
 	padding: 0.5em 1em;
-	line-height: 2em;
-	height: 3em;
+	height: 2em;
 }
 textarea{
 	min-height: 6em;
@@ -406,6 +406,33 @@ body.admin-bar #site-header #logo.lager{
     top:  0;
   }
 }
+
+
+form{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: baseline;
+}
+form .field{
+	flex: 49% 0 0;
+	margin-bottom: 1em;
+}
+form .message,
+form .actions{
+	flex: 100% 0 0;
+}
+form .actions input[type="submit"]{ 
+	min-width: 12em;
+	float: right;
+}
+
+@media all and (max-width: 786px){
+	form{
+		display: block;
+	}
+}
+
 #site-header > a{
 	flex: auto 0 0;
 }
@@ -467,7 +494,7 @@ body.admin-bar #site-header #logo.lager{
 	color: #E72934;
 	text-decoration: underline;
 }
-#site-header .primary-menu-wrapper ul.primary-menu li.current-menu-item a{
+#site-header .primary-menu-wrapper ul.primary-menu li.current-menu-item > a{
 	color: #E30916;
 	text-decoration: underline;	
 }
@@ -578,20 +605,17 @@ body.admin-bar #site-header #logo.lager{
 }
 .search-modal .section-inner form{
 	flex: 95% 1 0;
-	display: flex;
-	align-items: baseline;
+	justify-content: normal;
 }
 .search-modal .section-inner form label{
 	order: 2;
 	flex: 95% 0 0;
+	font-size: 1em;
 }
 .search-modal .section-inner form label input[type="search"]{ 
 	background: none;
 	border: none;
 	font-weight: 700;
-	font-family: 'garage-gothic', sans-serif;
-	text-transform: uppercase;
-	height: 2em;
 	outline: none;
  	color: #fff;
 }
@@ -1087,30 +1111,6 @@ ul.categories-block li.cat .category-pic img{
 	font-style: italic;
 }
 
-form{
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-}
-form .field{
-	flex: 49% 0 0;
-	margin-bottom: 1em;
-}
-form .message,
-form .actions{
-	flex: 100% 0 0;
-}
-form .actions input[type="submit"]{ 
-	min-width: 12em;
-	float: right;
-}
-
-@media all and (max-width: 786px){
-	form{
-		display: block;
-	}
-}
-
 /*Contact pagina**/
 body.page-id-5{
 	background: black;
@@ -1134,6 +1134,7 @@ body.page-id-5 #site-footer{
 	margin: 3em auto 0 auto;
 	border-top: 2px solid #fff;
 	padding-top: 4em;
+	background-color: transparent;
 }
 body.page-id-5 .footer-graphic{
 	display: none;
@@ -1203,6 +1204,12 @@ body.tax-spots h1{
 	 .mainVideo iframe{
 			width: 100%;
 	}
+}
+body.page-id-50 #site-content .post-header{
+	padding: 0;
+}
+body.page-id-50 #site-footer{
+	display: none;
 }
 
 
