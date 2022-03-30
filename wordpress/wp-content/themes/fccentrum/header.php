@@ -121,7 +121,7 @@
 			<?php if(isset($graphic) && $graphic){ ?>
 				<?php echo wp_get_attachment_image( $graphic, 'full' ); ?>
 			<?php }elseif(is_home()){ ?>
-				<img src="<?php echo get_template_directory_uri(); ?>/img/header-graphic-1.png" alt="footer logo FC Centrum" />
+				<img src="<?php echo get_template_directory_uri(); ?>/img/header-graphic-1-black.png" alt="footer logo FC Centrum" />
 			<?php } ?>
 		</div>
 
