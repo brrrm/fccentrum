@@ -402,7 +402,7 @@ function get_carousel(){
 	        get_template_part( 'template-parts/carousel', null, [] );
 	    }
 	    echo '</div><a id="nextslide"></a></div>';
-	    echo '<a id="carousel-scrollDown-arrow" href="#site-content">Scroll naar beneden</a>';
+	    echo '<a id="carousel-scrollDown-arrow" href="#header-graphic">Scroll naar beneden</a>';
 	}
 	   
 	/* Restore original Post Data */

@@ -66,15 +66,17 @@ $graphic = get_field('graphic_halverwege', $terms[0]);
 				</div>
 			</footer>
 
-
-			<div id="mid-graphic">
-				<?php if(isset($graphic) && $graphic){ ?>
-					<?php echo wp_get_attachment_image( $graphic, 'full' ); ?>
-				<?php }else{ ?>
-					<img src="<?php echo get_template_directory_uri(); ?>/img/header-graphic-1.png" alt="footer logo FC Centrum" />
-				<?php } ?>
-			</div>
-
+			<?php if($bg_color == 'background-zwart'){ ?>
+				<hr id="non-graphic-divider" />
+			<?php }else{ ?>
+				<div id="mid-graphic">
+					<?php if(isset($graphic) && $graphic){ ?>
+						<?php echo wp_get_attachment_image( $graphic, 'full' ); ?>
+					<?php }else{ ?>
+						<img src="<?php echo get_template_directory_uri(); ?>/img/header-graphic-1.png" alt="footer logo FC Centrum" />
+					<?php } ?>
+				</div>
+			<?php } ?>
 			
 			<h2><?php echo $terms[0]->name; ?></h2>
 			<div class="stories-container">

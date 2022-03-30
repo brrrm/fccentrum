@@ -21,6 +21,13 @@
 				ticking = true;
 			}
 		});
+
+		$('#scrollDown-arrow, #carousel-scrollDown-arrow').click(function(e){
+			e.preventDefault();
+			let target = $(this).attr('href');
+			let targetPosition = $(target).position();
+			$("html, body").animate({ scrollTop: targetPosition.top }, 200);
+		})
 	});
 
 	function headerScrollEffect(scrollPos) {

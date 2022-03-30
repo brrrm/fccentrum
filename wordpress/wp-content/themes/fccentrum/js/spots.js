@@ -67,7 +67,7 @@ function initMarker( $marker, map ) {
     	anchor: new google.maps.Point(16, 16)
     };
     const activeImage = {
-    	url: '/wp-content/themes/fccentrum/img/marker_active.png',
+    	url: '/wp-content/themes/fccentrum/img/marker_active_rood.png',
     	size: new google.maps.Size(48, 48),
     	origin: new google.maps.Point(0, 0),
     	anchor: new google.maps.Point(24, 24)

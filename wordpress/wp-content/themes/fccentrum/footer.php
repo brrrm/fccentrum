@@ -5,7 +5,7 @@ $text_color = 'foreground-' . get_field('tekstkleur', $terms[0]);
 ?>
 			<footer id="site-footer" class="header-footer-group <?php echo $bg_color; ?> <?php echo $text_color; ?>">
 					<div class="footer-graphic">
-						<?php if($bg_color == 'background-zwart'){ ?>
+						<?php if(is_singular() && $bg_color == 'background-zwart'){ ?>
 							<img src="<?php echo get_template_directory_uri(); ?>/img/footer-img-dark.png" alt="Echt Amsterdams!" />
 						<?php }else{ ?>
 							<img src="<?php echo get_template_directory_uri(); ?>/img/footer-kerk.png" alt="Echt Amsterdams!" />
