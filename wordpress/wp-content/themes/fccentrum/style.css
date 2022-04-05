@@ -351,7 +351,7 @@ ul.categories-block .category-pic img:hover{
 	padding: 0 1em;
 	height: 5em;
 	background: #fff;
-	position: absolute;
+	position: fixed;
 	width: 100%;
 	top: 0;
 	z-index: 11;
@@ -382,8 +382,15 @@ body{
 body.showHeader #site-header{
     position: fixed;
     top: 0;
-    animation-duration: 0.4s;
+    animation-duration: 0.5s;
   	animation-name: slidein;
+}
+body.hideHeader #site-header{
+    position: fixed;
+    top: -7em;
+    animation-duration: 0.5s;
+  	animation-name: slideout;
+  	animation-timing-function: ease-in;
 }
 body.admin-bar #site-header,
 body.admin-bar.showHeader #site-header,
@@ -403,6 +410,9 @@ body.admin-bar #site-header #logo.lager{
 		top: calc(46px + 0.5em);
 	}
 }
+body.admin-bar.hideHeader #site-header{
+	top:  -7em;
+}
 @keyframes slidein {
   from {
     top: -7em;
@@ -410,6 +420,16 @@ body.admin-bar #site-header #logo.lager{
 
   to {
     top:  0;
+  }
+}
+
+@keyframes slideout {
+  from {
+    top: 0;
+  }
+
+  to {
+    top:  -7em;
   }
 }
 

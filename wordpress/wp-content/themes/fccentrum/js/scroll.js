@@ -34,13 +34,15 @@
 		console.log(scrollPos);
 		if(scrollPos < 40){
 			$('body').addClass('showHeader');
-			$('#site-header').css('top', htmlTopMargin);
+			//$('#site-header').css('top', htmlTopMargin);
 		}else if(scrollPos < lastKnownScrollPosition){
+			$('body').removeClass('hideHeader');
 			$('body').addClass('showHeader');
-			$('#site-header').css('top', htmlTopMargin);
-		}else{	  	
+			//$('#site-header').css('top', htmlTopMargin);
+		}else{
 			$('body').removeClass('showHeader');
-			$('#site-header').css('top', headerPos.top);
+			$('body').addClass('hideHeader');
+			//$('#site-header').css('top', headerPos.top);
 		}
 	  	lastKnownScrollPosition = scrollPos;
 	}
