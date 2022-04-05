@@ -1,7 +1,10 @@
 <?php
 $terms = get_the_terms($post, 'category');
-$bg_color = 'background-' . get_field('achtergrondkleur', $terms[0]);
-$text_color = 'foreground-' . get_field('tekstkleur', $terms[0]);
+$bg_color = get_field('achtergrondkleur', $terms[0]);
+$text_color = get_field('tekstkleur', $terms[0]);
+
+$bg_color = 'background-' . $bg_color;
+$text_color = 'foreground-' . $text_color;
 ?>
 			<footer id="site-footer" class="header-footer-group <?php echo $bg_color; ?> <?php echo $text_color; ?>">
 					<div class="footer-graphic">

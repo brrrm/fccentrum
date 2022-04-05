@@ -1341,11 +1341,24 @@ footer ul li.link button:hover{
 #site-footer{
 	padding-bottom: 3em;
 	background-color: #000;
+	color: #fff;
 	text-align: center;
+}
+#site-footer.background-rood{
+	background-color: #E72934;
+}
+#site-footer.background-blauw{
+	background-color: #0090D7;
+}
+#site-footer.foreground-rood{
+	color: #E72934;
+}
+#site-footer.foreground-blauw{
+	color: #0090D7;
 }
 .footer-content a{
 	font-weight: 600;
-	color: #fff;	
+	color: inherit;	
 	text-decoration: none;
 }
 .footer-content a:hover{
