@@ -11,7 +11,7 @@ $text_color = 'foreground-' . $text_color;
 						<?php if(is_singular() && $bg_color == 'background-zwart'){ ?>
 							<img src="<?php echo get_template_directory_uri(); ?>/img/footer-img-dark.png" alt="Echt Amsterdams!" />
 						<?php }else{ ?>
-							<img src="<?php echo get_template_directory_uri(); ?>/img/footer-kerk.png" alt="Echt Amsterdams!" />
+							<img src="<?php echo get_template_directory_uri(); ?>/img/footer-kerk2.png" alt="Echt Amsterdams!" />
 						<?php } ?>
 					</div>
 

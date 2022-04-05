@@ -856,7 +856,8 @@ body.home #header-graphic{
 
 #site-content{
 	margin-right: auto;
-  margin-left: auto;
+  	margin-left: auto;
+  	padding-bottom: 1px; /* nodig om evt margin-bottom van het laatste element binnenboort te houden */
 }
 body.home #site-content{
 	max-width: 1300px;
