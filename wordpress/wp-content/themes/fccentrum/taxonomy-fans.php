@@ -20,7 +20,6 @@ $image = get_field('headerafbeelding', $term);
 
 <main id="site-content" class="<?php echo $bg_color; ?> <?php echo $text_color; ?>" >
 	<header class="post-header">
-
 		<?php echo wp_get_attachment_image( $image, 'full' ); ?>
 	</header>
 	

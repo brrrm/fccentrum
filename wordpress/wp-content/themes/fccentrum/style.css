@@ -976,7 +976,8 @@ ul.post-terms li a:hover{
 }
 
 ul.categories-block,
-.stories-container{
+.stories-container,
+hr#non-graphic-divider{
 	max-width: 1200px;
 	width: 90%;
 	margin-left: auto;
