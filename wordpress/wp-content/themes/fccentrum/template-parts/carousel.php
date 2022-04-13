@@ -34,5 +34,7 @@ if($video && $image){
 			<a href="<?php echo $link['url']; ?>" title="<?php echo $link['title']; ?>"><?php echo wp_get_attachment_image( $image, [2000, 1500] ); ?></a>
 		</div>
 	<?php } ?>
-	<h2><a href="<?php echo $link['url']; ?>" title="<?php echo $link['title']; ?>"><?php echo $link['title']; ?></a></h2>
+	<?php if($link){ ?>
+		<h2><a href="<?php echo $link['url']; ?>" title="<?php echo $link['title']; ?>"><?php echo $link['title']; ?></a></h2>
+	<?php } ?>
 </div>

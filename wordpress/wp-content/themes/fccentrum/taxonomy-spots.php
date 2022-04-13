@@ -96,7 +96,7 @@ $location = get_field('locatie', $term);
 				<?php } ?>
 			</div>
 
-			<h2>Stories over <?php echo $term->name; ?></h2>
+			<h2 class="align-center">Stories over <?php echo $term->name; ?></h2>
 			
 			<div class="stories-container ">
 				<?php while ( have_posts() ) : ?>
