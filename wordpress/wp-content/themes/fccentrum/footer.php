@@ -32,7 +32,7 @@ if(is_home()){
 						</ul>
 
 						<p class="footer-address">
-							<a href="https://maps.google.com/maps?daddr=52.36662275500399,4.894462863652933" target="_blank" rel="nofollow">Reguliersbreestraat 22<br />1017 CN Amsterdam </a>
+							<a href="https://maps.google.com/maps?daddr=52.36662275500399,4.894462863652933" target="_blank" rel="nofollow">Vinkenstraat 17H<br />1013 JL Amsterdam </a>
 						</p>
 
 						<?php wp_nav_menu( ['menu' => 'footer_menu']); ?>

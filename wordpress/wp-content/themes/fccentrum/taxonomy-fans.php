@@ -23,7 +23,6 @@ $image = get_field('headerafbeelding', $term);
 		<?php echo wp_get_attachment_image( $image, 'full' ); ?>
 	</header>
 	
-		<?php if ( have_posts() ) : ?>
 
 			<div class="post-content">
 			<?php the_archive_title( '<h1 class="page-title"><span>', '</span></h1>' ); ?>			
@@ -81,7 +80,8 @@ $image = get_field('headerafbeelding', $term);
 				</div>
 			</footer>
 
-
+			
+		<?php if ( have_posts() ) : ?>
 
 			<div id="mid-graphic">
 				<?php if(isset($graphic) && $graphic){ ?>
@@ -90,7 +90,7 @@ $image = get_field('headerafbeelding', $term);
 					<img src="<?php echo get_template_directory_uri(); ?>/img/header-graphic-1.png" alt="footer logo FC Centrum" />
 				<?php } ?>
 			</div>
-
+		
 			<h2 class="align-center">Stories over <?php echo $term->name; ?></h2>
 
 			<div class="stories-container ">
