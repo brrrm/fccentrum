@@ -31,7 +31,11 @@ if($video && $image){
 		</div>
 	<?php }else{ ?>
 		<div class="slide-image">
-			<a href="<?php echo $link['url']; ?>" title="<?php echo $link['title']; ?>"><?php echo wp_get_attachment_image( $image, [2000, 1500] ); ?></a>
+			<?php if($link){ ?>
+				<a href="<?php echo $link['url']; ?>" title="<?php echo $link['title']; ?>"><?php echo wp_get_attachment_image( $image, [2000, 1500] ); ?></a>
+			<?php } else{ ?>
+				<?php echo wp_get_attachment_image( $image, [2000, 1500] ); ?>
+			<?php } ?>
 		</div>
 	<?php } ?>
 	<?php if($link){ ?>
