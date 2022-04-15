@@ -194,10 +194,10 @@ h2 a:hover{
 }
 @media all and (max-width: 768px){
 	h1{
-		font-size: 4em;
+		font-size: 3em;
 	}
 	h2{
-		font-size: 4em;
+		font-size: 2.5em;
 	}
 }
 label{
@@ -977,6 +977,9 @@ ul.post-terms li a:hover{
 	padding-left: 1em;
 }
 @media all and (max-width: 768px){
+	.teaser h2{
+		font-size: 2.5em;
+	}
  	#news-list{
 		border: none;
 		padding-left: 0;
@@ -1066,6 +1069,9 @@ body.home .stories-container{
 	color: #fff;
 }
 @media all and (max-width: 768px){
+	.story.teaser .link-container{
+		bottom: 1em;
+	}
  	.stories-container{
 		column-count: 1;
 		padding: 2.5em 0;
