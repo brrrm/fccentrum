@@ -601,7 +601,7 @@ form .actions input[type="submit"]{
 		position: relative;
 		line-height: 1em;
 		border-top:  none;
-		margin:  1em 0 0 0.5em;
+		margin:  1em 0 0 0;
 		font-weight: 100;
 		width: 100%;
 	}
@@ -813,14 +813,13 @@ form .actions input[type="submit"]{
 }
 @media all and (max-width: 768px){
 	#carousel h2{
+		font-size: 2.667em;
+    	line-height: 1.1em;
 		margin-left: 1em;
 		margin-right: 1em;
 		width: calc(100% - 2em);
 	    left: 0;
-	    bottom: 7em;
-	}
-	#carousel h2 a{
-		font-size: 2em;
+	    bottom: 3em;
 	}
 }
 #carousel .slide-video{
