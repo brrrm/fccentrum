@@ -1418,10 +1418,10 @@ footer ul li.link button:hover{
 	display: block;
 	margin: 0 auto;
 }
-.footer-content ul#menu-footermenu{
+.footer-content ul#menu-footer-menu{
 	margin-top: 2em;
 }
-.footer-content ul#menu-footermenu li{
+.footer-content ul#menu-footer-menu li{
 	margin: 0 0.5em;
 	font-weight: 100;
 }
