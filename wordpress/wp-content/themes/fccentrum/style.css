@@ -1488,6 +1488,9 @@ body.search h1{
 }
 
 @media all and (max-width: 768px){	
+	.wp-block-columns{
+		display: block;
+	}
 	.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column {
 		flex: 100% 1 0;
 	}
