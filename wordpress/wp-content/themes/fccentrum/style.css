@@ -708,6 +708,14 @@ form .actions input[type="submit"]{
 	background: transparent url(../fccentrum/img/next-icon-hover.svg) no-repeat center;
 	transform: scale(1.5);
 }
+@media and (max-width: 768px){
+	#carouselWrap > a#prevslide{
+		left:  1em;
+	}
+	#carouselWrap > a#nextslide{
+		right: 1em;
+	}
+}
 #carousel .carousel-slide{
 	height:  calc(100vh - 5em);
 	position: relative;
