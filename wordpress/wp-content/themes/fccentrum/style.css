@@ -689,8 +689,8 @@ form .actions input[type="submit"]{
 	width: 2em;
 	top: 0;
 	transition: transform 1s;
-	-webkit-filter: drop-shadow(0 0 5px rgba(0,0,0,0.3));
-    filter: drop-shadow(0 0 5px rgba(0,0,0,0.3));
+	-webkit-filter: drop-shadow(1px 1px 5px rgba(0,0,0,0.6));
+    filter: drop-shadow(1px 1px 5px rgba(0,0,0,0.6));
 
 }
 #carouselWrap > a#prevslide{
@@ -761,7 +761,6 @@ form .actions input[type="submit"]{
 	font-family: 'Odin', sans-serif;
 	font-weight: 100;
 }
-#carousel .carousel-slide.font--rounded h2 a,
 #carousel .carousel-slide.font--rounded_light h2 a{
 	/* extra padding-top omdat dit font niet goed uitgeijnd is */
 	padding-top: 0.1875em;
@@ -821,13 +820,22 @@ form .actions input[type="submit"]{
 }
 @media all and (max-width: 768px){
 	#carousel h2{
-		font-size: 2.667em;
+		font-size: 3em;
     	line-height: 1.1em;
 		margin-left: .6em;
 		margin-right: .6em;
 		width: calc(100% - 2em);
 	    left: 0;
 	    bottom: 3em;
+	}
+	#carousel .carousel-slide.font--default h2,
+	#carousel .carousel-slide.font--default_light h2{
+	}
+	#carousel .carousel-slide.font--rounded h2,
+	#carousel .carousel-slide.font--rounded_light h2{
+		font-size: 2.667em;
+    	line-height: 1.1em;
+	    bottom: 3.4em;
 	}
 }
 #carousel .slide-video{
