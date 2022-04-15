@@ -1487,7 +1487,10 @@ body.search h1{
 	align-items: flex-end;
 }
 
-
-
+@media all and (max-width: 768px){	
+	.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column {
+		flex-basis: 100%!important;
+	}
+}
 
 
