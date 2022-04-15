@@ -708,7 +708,7 @@ form .actions input[type="submit"]{
 	background: transparent url(../fccentrum/img/next-icon-hover.svg) no-repeat center;
 	transform: scale(1.5);
 }
-@media and (max-width: 768px){
+@media all and (max-width: 768px){
 	#carouselWrap > a#prevslide{
 		left:  1em;
 	}
@@ -823,8 +823,8 @@ form .actions input[type="submit"]{
 	#carousel h2{
 		font-size: 2.667em;
     	line-height: 1.1em;
-		margin-left: 1em;
-		margin-right: 1em;
+		margin-left: .6em;
+		margin-right: .6em;
 		width: calc(100% - 2em);
 	    left: 0;
 	    bottom: 3em;
