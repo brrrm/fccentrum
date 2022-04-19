@@ -28,7 +28,7 @@ $location = get_field('locatie', $term);
 		</div>
 	</header>
 	
-		<?php if ( have_posts() ) : ?>
+		
 
 			<div class="post-content">
 			<?php the_archive_title( '<h1>', '</h1>' ); ?>			
@@ -86,7 +86,7 @@ $location = get_field('locatie', $term);
 				</div>
 			</footer>
 
-
+		<?php if ( have_posts() ) : ?>
 
 			<div id="mid-graphic">
 				<?php if(isset($graphic) && $graphic){ ?>
@@ -108,13 +108,6 @@ $location = get_field('locatie', $term);
 			</div>
 			
 			
-		<?php else : ?>
-
-			<div class="post-content">
-				<?php the_archive_title( '<h1 class="page-title"><span>', '</span></h1>' ); ?>
-				<p>Geen posts</p>
-			</div>
-
 		<?php endif; ?>
 
 	
