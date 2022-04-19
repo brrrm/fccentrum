@@ -256,6 +256,7 @@ hr{
 /**background algemene layout */
 .background-zwart{
 	background: #000;
+	padding-bottom: 0 !important;
 }
 .background-wit{
 	background: #fff;
@@ -993,10 +994,19 @@ ul.post-terms li a:hover{
 	padding: 0 0 1em 0;
 	border-top: none;
 }
+@media all and (max-width: 768px){
+	#news-list{
+		margin-top: 5em;
+	}
+	.news.teaser:first-child{
+		border-top: 1px solid #000;
+		padding: 1em 0;
+	}
+}
 .news.teaser p{
 	margin: 0;
 	font-size: 0.91667em;
-    line-height: 1.3em;
+  line-height: 1.3em;
 }
 .news.teaser ul.post-terms{
 	font-weight: 900;
