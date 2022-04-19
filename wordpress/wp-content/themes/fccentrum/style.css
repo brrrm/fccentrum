@@ -256,6 +256,7 @@ hr{
 /**background algemene layout */
 .background-zwart{
 	background: #000;
+	padding-bottom: 0 !important;
 }
 .background-wit{
 	background: #fff;
