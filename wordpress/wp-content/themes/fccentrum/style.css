@@ -1095,7 +1095,7 @@ body.home .stories-container{
 	-webkit-column-break-inside: avoid;
   	column-break-inside: avoid;
 	break-inside: avoid;
-	display: inline-block;
+	display: block;
 	width: 100%;
 }
 .story.teaser:last-child{
