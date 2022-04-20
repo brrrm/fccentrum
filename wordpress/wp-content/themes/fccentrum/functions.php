@@ -26,7 +26,6 @@ function create_posttypes() {
             'labels' 		=> $storyLabels,
             'public' 		=> true,
             'exclude_from_search'	=> false,
-
             'has_archive' 	=> true,
             'rewrite' 		=> array('slug' => 'story'),
             'show_in_rest' 	=> true,
@@ -61,6 +60,7 @@ function create_posttypes() {
         array(
             'labels' 		=> $newsLabels,
             'public' 		=> true,
+            'exclude_from_search'	=> false,
             'has_archive' 	=> true,
             'rewrite' 		=> array('slug' => 'nieuws'),
             'show_in_rest' 	=> true,
@@ -94,6 +94,7 @@ function create_posttypes() {
         array(
             'labels' 		=> $carouselLabels,
             'public' 		=> true,
+            'exclude_from_search'	=> true,
             'has_archive' 	=> true,
             'rewrite' 		=> array('slug' => 'slide'),
             'show_in_rest' 	=> false,

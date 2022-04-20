@@ -27,7 +27,7 @@ if(is_home()){
 
 						<ul class="footer-socials">
 							<li class="footer-social youtube"><a href="https://www.youtube.com/c/fccentrum/" target="_blank" rel="nofollow">FC Centrum op Youtube</a></li>
-							<li class="footer-social facebook"><a href="https://www.facebook.com/fccentrum/" target="_blank" rel="nofollow">FC Centrum op Facebook</a></li>
+							<li class="footer-social facebook"><a href="https://www.facebook.com/FanclubCentrum/" target="_blank" rel="nofollow">FC Centrum op Facebook</a></li>
 							<li class="footer-social instagram"><a href="https://www.instagram.com/fccentrum/" target="_blank" rel="nofollow">FC Centrum op Instagram</a></li>
 						</ul>
 
