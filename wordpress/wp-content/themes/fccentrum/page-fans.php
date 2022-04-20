@@ -10,8 +10,13 @@
  */
 
 get_header();
+
+$bg_color = 'background-' . get_field('achtergrondkleur');
+$text_color = 'foreground-' . get_field('tekstkleur');
+
+$mid_graphic = get_field('graphic_halverwege');
 ?>
-<main id="site-content">
+<main id="site-content" class="<?php echo $bg_color; ?> <?php echo $text_color; ?>">
 	<header class="post-header">
 	<?php	
 	if(has_post_thumbnail()){
