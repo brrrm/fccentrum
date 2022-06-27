@@ -76,6 +76,7 @@ function create_posttypes() {
         )
     );
 
+    /*
     $carouselLabels = array(
 		'name' => __( 'Carousel slides' ),
 		'singular_name' => __( 'Carousel slide' ),
@@ -106,6 +107,7 @@ function create_posttypes() {
  			]
         )
     );
+    */
 
     
 }
