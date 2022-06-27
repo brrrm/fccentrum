@@ -107,10 +107,12 @@
 
 		</div><!-- .search-modal -->
 		
-		<?php 
+		<?php
+		/* 
 		if(is_home()){
 			get_carousel();
 		}
+		*/
 		?>
 
 		<?php
