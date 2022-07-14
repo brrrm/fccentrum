@@ -1,6 +1,5 @@
 <?php
 
-$story = $args['story'];
 $terms = wp_get_post_terms(get_the_ID(), ['news_cats']);
 $font = 'font--' . get_field('font');
 $color = 'color--' . get_field('rubriekkleur');

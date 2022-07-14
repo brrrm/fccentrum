@@ -361,12 +361,25 @@ ul.categories-block .category-pic img:hover{
 #site-header #logo{
 	display: block;
 	height: 5em;
-	width: 8em; /* 1.59 * height */
+	width: 12em; /* 1.59 * height */
 	position: fixed;
-	left: 1.5em;
+	left: 50%;
 	top: 0em;
+	transform: translate(-50%, 0);
 	transition: top 0.5s ease-out;
-
+	background: transparent url(img/logo-fanclub.svg) left 25% no-repeat;
+	background-size: contain;
+	padding: 0 0 1em;
+}
+#site-header #logo small{
+	font-size: 1em;
+	text-align: center;
+	position: absolute;
+	text-decoration: none;
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%, 0);
+	white-space: nowrap;
 }
 #site-header #logo.lager{
 	top:  0.5em;
@@ -473,7 +486,6 @@ form .actions input[type="submit"]{
 	font-weight: 600;
 	font-family: 'garage-gothic', sans-serif;
 	font-style: normal;
-	text-transform: uppercase;
 }
 #site-header .primary-menu-wrapper ul.primary-menu{
 	display: flex;
@@ -485,7 +497,7 @@ form .actions input[type="submit"]{
 #site-header .primary-menu-wrapper ul.primary-menu li{
 	list-style: none;
 	text-align: center;
-	margin-right: 1.9em;
+	margin-right: 1em;
 	position: relative;
 	display: flex;
     align-items: center;

@@ -295,19 +295,16 @@ function fccentrum_menus() {
 add_action( 'init', 'fccentrum_menus' );
 
 function my_scripts_method() {
-    wp_enqueue_script(
-        'spots',
-        get_stylesheet_directory_uri() . '/js/spots.js', #your JS file
-        array( 'jquery' ) #dependencies
-    );
-    wp_enqueue_style( 'fccentrum-styles', get_stylesheet_uri() );
-    wp_enqueue_style( 'typekit', 'https://use.typekit.net/fnf5oyg.css');
-    wp_enqueue_script('slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js');
-    wp_enqueue_style('slickstyles', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css');
-    wp_enqueue_script('bodymovin', 'https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.1/lottie.min.js');
-    wp_enqueue_script('carousel', get_stylesheet_directory_uri() . '/js/carousel.js', array( 'jquery' ));
-    wp_enqueue_script('scroll', get_stylesheet_directory_uri() . '/js/scroll.js', array( 'jquery' ));
-    wp_enqueue_script('logo', get_stylesheet_directory_uri() . '/js/logo.js', array( 'jquery' ));
+	$v = '0.2';
+    wp_enqueue_script('spots', get_stylesheet_directory_uri() . '/js/spots.js', array( 'jquery' ), $v);
+    wp_enqueue_style('fccentrum-styles', get_stylesheet_uri(), [], $v );
+    wp_enqueue_style('typekit', 'https://use.typekit.net/fnf5oyg.css', [], $v);
+    wp_enqueue_script('slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', [], $v);
+    wp_enqueue_style('slickstyles', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', [], $v);
+    wp_enqueue_script('bodymovin', 'https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.1/lottie.min.js', [], $v);
+    wp_enqueue_script('carousel', get_stylesheet_directory_uri() . '/js/carousel.js', array( 'jquery' ), $v);
+    wp_enqueue_script('scroll', get_stylesheet_directory_uri() . '/js/scroll.js', array( 'jquery' ), $v);
+    //wp_enqueue_script('logo', get_stylesheet_directory_uri() . '/js/logo.js', array( 'jquery' ), $v);
 }
 add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
 

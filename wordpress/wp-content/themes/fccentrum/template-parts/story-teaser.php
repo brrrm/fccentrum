@@ -1,6 +1,6 @@
 <?php
 
-$story = $args['story'];
+
 $terms = wp_get_post_terms(get_the_ID(), ['category', 'spots', 'fans']);
 $image_layout = get_field('afmetingen_teaser-foto');
 $text_pos = get_field('positie_van_titel');

@@ -20,7 +20,7 @@
 
 		<header id="site-header" class="header-footer-group">
 			<a href="/" title="Ga naar de home-pagina" id="logo">
-				
+				<small>FanClub voor onze oude binnenstad</small>
 			</a>
 
 
