@@ -17,6 +17,8 @@
 		if(((1.2 * $(window).height()) + $(window).scrollTop()) >= (containerTop + containerHeight)){
 			if(!isAjaxLoading && $('.navigation.pagination a.next').length){
 				loadNextPosts($('.navigation.pagination a.next'));
+			}else if(!isAjaxLoading && $('.cat-continue-nav a.next').length){
+				loadNextCategoryPosts($('.cat-continue-nav a.next'));
 			}
 		}
 	}
@@ -39,6 +41,30 @@
 		  		let pager = $(data).find('.navigation.pagination');
 		  		$('.stories-container').append(content);
 		  		$('.navigation.pagination').html(pager.html());
+		  		resizeAllGridItems();
+		  		isAjaxLoading = false;
+			}
+		);
+	}
+
+	function loadNextCategoryPosts(nextLink){
+		isAjaxLoading = true;
+		let url = nextLink.attr('href');
+		let termId = $('.cat-continue-nav').data('term');
+		let paged = $('.cat-continue-nav a.next').data('paged');
+				
+		let ajaxdata = {
+			term_id: termId,
+			paged: paged,
+			action: 'fccentrum_load_blog_posts',
+			nonce: 'sd'
+		};
+		$.get(
+		  	infinite_scroll_settings.ajaxurl,
+		  	ajaxdata,
+		  	function(data){
+		  		$('.stories-container .cat-continue-nav').remove();
+		  		$('.stories-container').append(data);
 		  		resizeAllGridItems();
 		  		isAjaxLoading = false;
 			}

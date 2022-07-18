@@ -274,12 +274,13 @@ add_action( 'init', 'remove_frontend_post_href' );
 
 
 
-function get_postsbycategory($term) {
+function get_postsbycategory($term, $paged = 1) {
 	// the query
 	$the_query = new WP_Query( [ 
 		'category_name'		=> $term->name, 
 		'posts_per_page'	=> 6,
-		'post_type'			=> 'story'
+		'post_type'			=> 'story',
+		'paged'				=> $paged
 	]);
 	   
 	// The Loop
@@ -289,8 +290,13 @@ function get_postsbycategory($term) {
 	        get_template_part( 'template-parts/story-teaser', null, [] );
 	    }
 	}
-	   
-	/* Restore original Post Data */
+	if($paged < $the_query->max_num_pages){
+		$paged += 1;
+		echo '<div class="cat-continue-nav" data-term="' . $term->term_id . '">';
+		echo '<a href="#" class="next" data-paged="' . $paged . '">next</a>';
+		echo '</div>';
+	}
+
 	wp_reset_postdata();
 }
 
@@ -304,28 +310,9 @@ add_action( 'wp_ajax_nopriv_fccentrum_load_blog_posts', 'fccentrum_load_blog_pos
 function fccentrum_load_blog_posts(){
 	$data = $_GET;
 
-	$url = $data['url'];
-	$url_parts = explode('/', $url);
-	$paged = $url_parts[count($url_parts) - 2];
+	$paged = $data['paged'];
+	$term = get_term($data['term_id']);
+	get_postsbycategory($term, $paged);
 
-	$the_query = new WP_Query( array( 
-		'post_type'			=> ['story'],
-		'posts_per_page'	=> 10,
-		'post_status'		=> 'publish',
-		'paged'				=> $paged
-	));
-
-	if ( $the_query->have_posts() ) {
-		while ( $the_query->have_posts() ){
-			$the_query->the_post();
-			global $is_ajax;
-			$is_ajax = true;
-			get_template_part( 'template-parts/story-teaser' );
-		}
-		if($paged <= $the_query->max_num_pages){
-		echo '<nav class="navigation pagination"><a href="?agenda_page=' . $paged . '" data-pagenum="' . $paged . '" class="next">' . $the_query->max_num_pages . 'Volgende posts</a></nav>';
-		}
-		wp_reset_postdata();
-	}
 	wp_die();
 }
