@@ -41,7 +41,7 @@ function create_posttypes() {
  			]
         )
     );
-
+    /*
  	$newsLabels = array(
 		'name' => __( 'News' ),
 		'singular_name' => __( 'News article' ),
@@ -76,7 +76,6 @@ function create_posttypes() {
         )
     );
 
-    /*
     $carouselLabels = array(
 		'name' => __( 'Carousel slides' ),
 		'singular_name' => __( 'Carousel slide' ),
@@ -126,21 +125,25 @@ add_action( 'pre_get_posts', 'add_my_post_types_to_query' );
 
 function alter_archive_title($title) {    
     if ( is_category() ) {    
-            $title = single_cat_title( '', false );    
-        } elseif ( is_tag() ) {    
-            $title = single_tag_title( '', false );    
-        } elseif ( is_author() ) {    
-            $title = '<span class="vcard">' . get_the_author() . '</span>' ;    
-        } elseif ( is_tax() ) { //for custom post types
-            $title = sprintf( __( '%1$s' ), single_term_title( '', false ) );
-        } elseif (is_post_type_archive()) {
-            $title = post_type_archive_title( '', false );
-        }
+        $title = single_cat_title( '', false );    
+    } elseif ( is_tag() ) {    
+        $title = single_tag_title( '', false );    
+    } elseif ( is_author() ) {    
+        $title = '<span class="vcard">' . get_the_author() . '</span>' ;    
+    } elseif ( is_tax() ) { //for custom post types
+        $title = sprintf( __( '%1$s' ), single_term_title( '', false ) );
+    } elseif (is_post_type_archive()) {
+        $title = post_type_archive_title( '', false );
+    }
     return $title;    
 };
 add_filter( 'get_the_archive_title', 'alter_archive_title', 10, 1);
 
 
+function wpdocs_custom_excerpt_length( $length ) {
+    return 20;
+}
+add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
 
 // ACF Google Maps Key Setting.
 function my_acf_init() {

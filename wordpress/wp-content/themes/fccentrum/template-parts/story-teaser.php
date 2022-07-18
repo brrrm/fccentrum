@@ -32,5 +32,6 @@ $color = 'color--' . get_field('rubriekkleur');
 			</ul>
 		<?php } ?>
 		<h2><a href="<?php echo esc_url( get_permalink() ); ?>" ><?php the_title(); ?></a></h2>
+		<?php the_excerpt(); ?>
 	</div>
 </div>

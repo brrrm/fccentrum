@@ -95,33 +95,6 @@ get_header();
 
 		<?php get_template_part( 'template-parts/pagination' ); ?>
 	</div>
-	<aside id="news-list">
-		<?php
-		// news listing
-		
-	   $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; //pagination
-	   $args = array(
-	        'paged'           => $paged,
-	        'posts_per_page'  => 12, //or any other number
-	        'post_type'       => 'news' //your custom post type
-	        );
-
-	    $the_query = new WP_Query( $args ); // The Query 
-
-	    if ( $the_query->have_posts() ) {  // The Loop
-	        while ( $the_query->have_posts() ) {
-	           $the_query->the_post();
-
-	           get_template_part( 'template-parts/news-teaser', null, [] );
-	        }
-
-	       	/* Restore original Post Data */
-	        
-
-	    } 
-	    wp_reset_postdata();
-	    ?>
-    </aside>
 </main><!-- #site-content -->
 
 <?php
