@@ -9,7 +9,6 @@
 		headerPos = $('#site-header').offset();
 		$('#hamburger').click(function(e){
 			e.preventDefault();
-			console.log('click');
 			$('nav.primary-menu-wrapper').toggleClass('show');
 		});
 		document.addEventListener('scroll', function(e) {
@@ -31,7 +30,6 @@
 	});
 
 	function headerScrollEffect(scrollPos) {
-		console.log(scrollPos);
 		if(scrollPos < 40){
 			$('body').addClass('showHeader');
 			//$('#site-header').css('top', htmlTopMargin);

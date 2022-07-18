@@ -92,9 +92,12 @@ get_header();
 			<?php
 		}
 		?>
-
-		<?php get_template_part( 'template-parts/pagination' ); ?>
+		
 	</div>
+
+	<?php the_posts_pagination(); ?>
+
+
 </main><!-- #site-content -->
 
 <?php

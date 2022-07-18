@@ -8,7 +8,7 @@ $font = 'font--' . get_field('font');
 $color = 'color--' . get_field('rubriekkleur');
 ?>
 
-<div class="story teaser <?php echo $text_pos; ?> <?php echo $font; ?> <?php echo $color; ?>">
+<div class="story teaser <?php echo $text_pos; ?> <?php echo $font; ?> <?php echo $color; ?> <?php echo 'post--' . get_the_ID(); ?>"><div class="inner">
 	<header class="post-header">
 		<a href="<?php echo esc_url( get_permalink() ); ?>" class="<?php echo 'image-orientation-' . $image_layout; ?>" >
 			<?php	
@@ -34,4 +34,4 @@ $color = 'color--' . get_field('rubriekkleur');
 		<h2><a href="<?php echo esc_url( get_permalink() ); ?>" ><?php the_title(); ?></a></h2>
 		<?php the_excerpt(); ?>
 	</div>
-</div>
+</div></div>

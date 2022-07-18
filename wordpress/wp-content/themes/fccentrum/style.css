@@ -1030,13 +1030,22 @@ body.home .stories-container{
 	text-align: center;
 }
 .stories-container{
+	/*
 	-moz-column-count: 3;
   	-webkit-column-count: 3;
 	column-count: 3;
 	-moz-column-gap: 1.3em;
 	-webkit-column-gap: 1.3em;
 	column-gap: 1.3em;
+	*/
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(3, minmax(150px,1fr));
+	grid-auto-rows: 20px;
 	padding: 2em 0;
+}
+.navigation.pagination{
+	display: none;
 }
 .story.teaser .link-container{
 	position: absolute;

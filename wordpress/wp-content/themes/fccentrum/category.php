@@ -37,6 +37,8 @@ $graphic = get_field('graphic_halverwege', $term);
 			<?php endwhile; ?>
 		</div>
 		
+		<?php the_posts_pagination(); ?>
+		
 	<?php else : ?>
 
 		<div class="post-content">

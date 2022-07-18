@@ -213,10 +213,16 @@ function my_scripts_method() {
     wp_enqueue_style('typekit', 'https://use.typekit.net/fnf5oyg.css', [], $v);
     wp_enqueue_script('slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', [], $v);
     wp_enqueue_style('slickstyles', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', [], $v);
-    wp_enqueue_script('bodymovin', 'https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.1/lottie.min.js', [], $v);
+    //wp_enqueue_script('bodymovin', 'https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.1/lottie.min.js', [], $v);
     wp_enqueue_script('carousel', get_stylesheet_directory_uri() . '/js/carousel.js', array( 'jquery' ), $v);
     wp_enqueue_script('scroll', get_stylesheet_directory_uri() . '/js/scroll.js', array( 'jquery' ), $v);
-    //wp_enqueue_script('logo', get_stylesheet_directory_uri() . '/js/logo.js', array( 'jquery' ), $v);
+
+    wp_enqueue_script('imagesloaded', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js', [], $v);
+    wp_register_script('infiniteScroll', get_stylesheet_directory_uri() . '/js/infiniteScroll.js', array( 'jquery' ), $v, true );
+	wp_localize_script('infiniteScroll', 'infinite_scroll_settings', array(
+		'ajaxurl'    => admin_url( 'admin-ajax.php' ),
+	));
+  	wp_enqueue_script('infiniteScroll');
 }
 add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
 
@@ -288,25 +294,38 @@ function get_postsbycategory($term) {
 	wp_reset_postdata();
 }
 
-function get_carousel(){
 
-	// the query
-	$the_query = new WP_Query( array(
-	    'posts_per_page' 	=> 6,
-		'post_type'			=> 'carouselslide'
-	) ); 
-	   
-	// The Loop
+
+
+
+add_action( 'wp_ajax_fccentrum_load_blog_posts', 'fccentrum_load_blog_posts' );
+add_action( 'wp_ajax_nopriv_fccentrum_load_blog_posts', 'fccentrum_load_blog_posts' );
+
+function fccentrum_load_blog_posts(){
+	$data = $_GET;
+
+	$url = $data['url'];
+	$url_parts = explode('/', $url);
+	$paged = $url_parts[count($url_parts) - 2];
+
+	$the_query = new WP_Query( array( 
+		'post_type'			=> ['story'],
+		'posts_per_page'	=> 10,
+		'post_status'		=> 'publish',
+		'paged'				=> $paged
+	));
+
 	if ( $the_query->have_posts() ) {
-		echo '<div id="carouselWrap"><a id="prevslide"></a><div id="carousel">';
-	    while ( $the_query->have_posts() ) {
-	        $the_query->the_post();
-	        get_template_part( 'template-parts/carousel', null, [] );
-	    }
-	    echo '</div><a id="nextslide"></a></div>';
-	    echo '<a id="carousel-scrollDown-arrow" href="#header-graphic">Scroll naar beneden</a>';
+		while ( $the_query->have_posts() ){
+			$the_query->the_post();
+			global $is_ajax;
+			$is_ajax = true;
+			get_template_part( 'template-parts/story-teaser' );
+		}
+		if($paged <= $the_query->max_num_pages){
+		echo '<nav class="navigation pagination"><a href="?agenda_page=' . $paged . '" data-pagenum="' . $paged . '" class="next">' . $the_query->max_num_pages . 'Volgende posts</a></nav>';
+		}
+		wp_reset_postdata();
 	}
-	   
-	/* Restore original Post Data */
-	wp_reset_postdata();
+	wp_die();
 }
