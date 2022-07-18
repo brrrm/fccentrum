@@ -23,6 +23,12 @@
 				<small>FanClub voor onze oude binnenstad</small>
 			</a>
 
+			<button id="hamburger">
+				<span class="stripe top"></span>
+				<span class="stripe middle"></span>
+				<span class="stripe bottom"></span>
+			</button>
+			
 
 			<nav class="primary-menu-wrapper" aria-label="<?php echo esc_attr_x( 'Horizontal', 'menu', 'twentytwenty' ); ?>">
 
@@ -57,7 +63,6 @@
 
 			</nav><!-- .primary-menu-wrapper -->
 
-
 			<button class="toggle search-toggle mobile-search-toggle" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
 				<span class="toggle-inner">
 					<span class="toggle-icon">
@@ -66,12 +71,6 @@
 					<span class="toggle-text"><?php _ex( 'Search', 'toggle text', 'twentytwenty' ); ?></span>
 				</span>
 			</button><!-- .search-toggle -->
-
-			<button id="hamburger">
-				<span class="stripe top"></span>
-				<span class="stripe middle"></span>
-				<span class="stripe bottom"></span>
-			</button>
 
 		</header><!-- #site-header -->
 		

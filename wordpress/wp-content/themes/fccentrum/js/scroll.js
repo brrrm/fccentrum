@@ -9,6 +9,9 @@
 		headerPos = $('#site-header').offset();
 		$('#hamburger').click(function(e){
 			e.preventDefault();
+			if($(window).width() > 768){
+				$('body').removeClass('hideHeader');
+			}
 			$('nav.primary-menu-wrapper').toggleClass('show');
 		});
 		document.addEventListener('scroll', function(e) {

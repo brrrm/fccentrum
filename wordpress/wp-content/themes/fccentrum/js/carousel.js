@@ -5,6 +5,7 @@
 		$('.search-toggle, .search-untoggle').click(function(e){
 			e.preventDefault();
 			$('.search-modal').toggle();
+			$('body').removeClass('hideHeader');
 			if($('.search-modal').css('display') == 'block'){
 				$('.search-modal .search-field').focus();
 			}

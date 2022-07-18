@@ -3,7 +3,7 @@
 	let isAjaxLoading = false;
 
 	$(document).ready(function(){
-
+		
 		resizeAllGridItems();
 		$(window).resize(function(){
 			resizeAllGridItems();
@@ -85,15 +85,19 @@
 	}
 
 	function resizeAllGridItems(){
-	  	allItems = $(".stories-container .teaser");
-	  	for(x=0;x<allItems.length;x++){
-	    	resizeGridItem(allItems[x]);
-	  	}
+		if($(window).width() > 768){
+		  	allItems = $(".stories-container .teaser");
+		  	for(x=0;x<allItems.length;x++){
+		    	resizeGridItem(allItems[x]);
+		  	}
+		}
 	}
 
-	allItems = $(".stories-container .teaser");
-	allItems.each(function(){
-		imagesLoaded($(this), resizeGridItem($(this)) );
-	});
+	if($(window).width() > 768){
+		allItems = $(".stories-container .teaser");
+		allItems.each(function(){
+			imagesLoaded($(this), resizeGridItem($(this)) );
+		});
+	}
 
 })(jQuery);
