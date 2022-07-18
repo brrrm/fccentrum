@@ -41,76 +41,12 @@ function create_posttypes() {
  			]
         )
     );
-    /*
- 	$newsLabels = array(
-		'name' => __( 'News' ),
-		'singular_name' => __( 'News article' ),
-		'add_new' => __( 'New news article' ),
-		'add_new_item' => __( 'Add new news article' ),
-		'edit_item' => __( 'Edit news article' ),
-		'new_item' => __( 'New news article' ),
-		'view_item' => __( 'View news article' ),
-		'search_items' => __( 'Search news articles' ),
-		'not_found' =>  __( 'No news article Found' ),
-		'not_found_in_trash' => __( 'No news article found in Trash'),
-	);
-
-    register_post_type( 'news',
-    // CPT Options
-        array(
-            'labels' 		=> $newsLabels,
-            'public' 		=> true,
-            'exclude_from_search'	=> false,
-            'has_archive' 	=> true,
-            'rewrite' 		=> array('slug' => 'nieuws'),
-            'show_in_rest' 	=> true,
-            'menu_position'	=> 5,
- 			'menu_icon'		=> 'dashicons-admin-site-alt',
- 			'taxonomies'	=> ['news_cats'],
- 			'supports'		=> [
- 				'title',
- 				'editor',
- 				'author',
- 				'revisions'
- 			]
-        )
-    );
-
-    $carouselLabels = array(
-		'name' => __( 'Carousel slides' ),
-		'singular_name' => __( 'Carousel slide' ),
-		'add_new' => __( 'New carousel slide' ),
-		'add_new_item' => __( 'Add new carousel slide' ),
-		'edit_item' => __( 'Edit carousel slide' ),
-		'new_item' => __( 'New carousel slide' ),
-		'view_item' => __( 'View carousel slide' ),
-		'search_items' => __( 'Search carousel slides' ),
-		'not_found' =>  __( 'No carousel slides Found' ),
-		'not_found_in_trash' => __( 'No carousel slide found in Trash'),
-	);
-
-    register_post_type( 'carouselslide',
-    // CPT Options
-        array(
-            'labels' 		=> $carouselLabels,
-            'public' 		=> true,
-            'exclude_from_search'	=> true,
-            'has_archive' 	=> true,
-            'rewrite' 		=> array('slug' => 'slide'),
-            'show_in_rest' 	=> false,
-            'menu_position'	=> 6,
- 			'menu_icon'		=> 'dashicons-format-gallery',
- 			'supports'		=> [
- 				'title',
- 				'revisions'
- 			]
-        )
-    );
-    */
 
     
 }
 add_action( 'init', 'create_posttypes' );
+
+
 
 
 // Show posts of 'post', 'page' and 'movie' post types on home page
@@ -210,33 +146,6 @@ function create_taxonomy() {
 			'slug' => 'fan'
 		),
 	));
-
-	$rubriekLabels = array(
-		'name' 				=> _x( 'News categories', 'taxonomy general name' ),
-		'singular_name' 	=> _x( 'News category', 'taxonomy singular name' ),
-		'search_items' 		=> __( 'Search news categories' ),
-		'all_items' 		=> __( 'All news categories' ),
-		'parent_item' 		=> __( 'Parent news category' ),
-		'parent_item_colon' => __( 'Parent news category:' ),
-		'edit_item' 		=> __( 'Edit news category' ), 
-		'update_item' 		=> __( 'Update news category' ),
-		'add_new_item' 		=> __( 'Add new news category' ),
-		'new_item_name' 	=> __( 'New subject news category' ),
-		'menu_name' 		=> __( 'news categories' ),
-	);    
-
-	// Now register the taxonomy
-	register_taxonomy('news_cats', array('story'), array(
-		'hierarchical' 		=> true,
-		'labels' 			=> $rubriekLabels,
-		'show_ui' 			=> true,
-		'show_in_rest' 		=> true,
-		'show_admin_column' => true,
-		'query_var' 		=> true,
-		'rewrite' 			=> array( 
-			'slug' => 'news-category'
-		),
-	));
  
 }
 add_action( 'init', 'create_taxonomy', 0 );
@@ -311,16 +220,6 @@ function my_scripts_method() {
 }
 add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
 
-// disable gutenberg editor for news post types
-function disable_gutenberg_editor($use_block_editor, $post_type){
-	if($post_type == 'news'){
-		return false;
-	}else{
-		return true;
-	}
-}
-add_filter("use_block_editor_for_post_type", "disable_gutenberg_editor", 10, 2);
-
 
 function namespace_add_custom_types( $query ) {
   if( (is_category() || is_tag()) && $query->is_archive() && empty( $query->query_vars['suppress_filters'] ) ) {
@@ -371,11 +270,11 @@ add_action( 'init', 'remove_frontend_post_href' );
 
 function get_postsbycategory($term) {
 	// the query
-	$the_query = new WP_Query( array( 
-	    'category_name' => $term->name, 
-	    'posts_per_page' => 6,
-				    'post_type'			=> 'story'
-	) ); 
+	$the_query = new WP_Query( [ 
+		'category_name'		=> $term->name, 
+		'posts_per_page'	=> 6,
+		'post_type'			=> 'story'
+	]);
 	   
 	// The Loop
 	if ( $the_query->have_posts() ) {
