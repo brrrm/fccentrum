@@ -1,14 +1,22 @@
 <?php
+
+$bg_color = 'background-zwart';
+$text_color = 'foreground-wit';
+
 if(is_home()){
 	$bg_color = 'background-zwart';
 	$text_color = 'foreground-wit';
-}else{
-	$terms = get_the_terms($post, 'category');
-	$bg_color = get_field('achtergrondkleur', $terms[0]);
-	$text_color = get_field('tekstkleur', $terms[0]);
+}else if($terms = get_the_terms($post, 'category')){
+	if(is_array($terms)){
+		$bg_color = get_field('achtergrondkleur', $terms[0]);
+		$text_color = get_field('tekstkleur', $terms[0]);
 
-	$bg_color = 'background-' . $bg_color;
-	$text_color = 'foreground-' . $text_color;
+		$bg_color = 'background-' . $bg_color;
+		$text_color = 'foreground-' . $text_color;
+	}
+}else{
+	$bg_color = 'background-' . get_field('achtergrondkleur');
+	$text_color = 'foreground-' . get_field('tekstkleur');
 }
 ?>
 			<footer id="site-footer" class="header-footer-group <?php echo $bg_color; ?> <?php echo $text_color; ?>">
