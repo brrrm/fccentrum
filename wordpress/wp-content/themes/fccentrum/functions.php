@@ -37,7 +37,8 @@ function create_posttypes() {
  				'editor',
  				'author',
  				'revisions',
- 				'thumbnail'
+ 				'thumbnail',
+ 				'excerpt'
  			]
         )
     );
