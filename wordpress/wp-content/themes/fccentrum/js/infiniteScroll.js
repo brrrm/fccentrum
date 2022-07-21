@@ -76,12 +76,17 @@
 
 
 	function resizeGridItem(item){
+	  	$(item).removeClass('masonry-processed');
 	  	grid = $(".stories-container");
 	  	rowHeight = parseInt(grid.css('grid-auto-rows'));
 	  	rowGap = parseInt(grid.css('grid-row-gap'));
+	  	//$(item).find('.post-header > a').css({padding: '', height: ''});
 	  	itemHeight = $(item).find('.inner').height();
 	  	rowSpan = Math.ceil((itemHeight + rowGap) / (rowHeight+rowGap));
 	    $(item).css({gridRowEnd: "span "+rowSpan });
+	    if(!$('body').hasClass('home') || $(item).hasClass('tekst_over_foto')){
+	    	$(item).addClass('masonry-processed');
+	    }
 	}
 
 	function resizeAllGridItems(){

@@ -830,6 +830,7 @@ ul.post-terms li a:hover{
 .teaser .link-container p{
 	font-family: "odin";
 	font-size: 0.8667em;
+	margin-bottom: 0;
 }
 
 .always-white{
@@ -904,8 +905,9 @@ body.home .stories-container{
 .story.teaser .link-container{
 	position: absolute;
 	z-index: 2;
-	bottom: 1.5em;
+	bottom: 1em;
 	left: 1em;
+	right: 1em;
 	display: block;
 	color: #fff;
 }
@@ -968,6 +970,14 @@ body.home .stories-container{
 	position: absolute;
 	left: 0;
 	top: 0;
+}
+.story.teaser.masonry-processed .inner,
+.story.teaser.masonry-processed .post-header{
+	height: 100%;
+}
+.story.teaser.masonry-processed header.post-header a{
+	padding: 0;
+	height: 100%;
 }
 
 body.single-story #site-content > h2{
