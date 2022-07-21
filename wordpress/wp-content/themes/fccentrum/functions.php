@@ -208,7 +208,7 @@ function fccentrum_menus() {
 add_action( 'init', 'fccentrum_menus' );
 
 function my_scripts_method() {
-	$v = '0.2';
+	$v = '0.3';
     wp_enqueue_script('spots', get_stylesheet_directory_uri() . '/js/spots.js', array( 'jquery' ), $v);
     wp_enqueue_style('fccentrum-styles', get_stylesheet_uri(), [], $v );
     wp_enqueue_style('typekit', 'https://use.typekit.net/fnf5oyg.css', [], $v);
