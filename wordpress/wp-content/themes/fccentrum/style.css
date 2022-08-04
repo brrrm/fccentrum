@@ -517,7 +517,7 @@ form .actions input[type="submit"]{
 	padding: 0;
 	margin: 0;
 	height: 100%;
-  align-items: stretch;
+  	align-items: stretch;
 }
 #site-header .primary-menu-wrapper ul.primary-menu li{
 	list-style: none;
@@ -531,18 +531,15 @@ form .actions input[type="submit"]{
 	position: absolute;
 	left: -999em;
 	top: 100%;
-	background-image: url(../fccentrum/img/menu-bg.svg);
-	background-size: 100% auto;
-	background-position: left bottom;
+	background: #E72934;
 	line-height: 1em;
-	padding: 1em 1em 2em;
+	padding: 1em 1em 1em;
 	z-index: 1;
 	border-top:  1px solid #000;
 	min-width: 10em;
 }
 #site-header .primary-menu-wrapper ul.primary-menu li:hover ul.sub-menu{
-	left: 50%;
-	transform: translate(-50%);
+	left: -1em;
 }
 #site-header .primary-menu-wrapper ul.primary-menu li ul.sub-menu li{
 	padding: 0;
@@ -554,9 +551,9 @@ form .actions input[type="submit"]{
 	color: #000;
 	display: block;
 }
-#site-header .primary-menu-wrapper a:hover{
+#site-header .primary-menu-wrapper a:hover,
+#site-header .primary-menu-wrapper li:hover > a{
 	color: #E72934;
-	text-decoration: underline;
 }
 #site-header .primary-menu-wrapper ul.primary-menu li.current-menu-item > a{
 	color: #E30916;
@@ -595,7 +592,7 @@ form .actions input[type="submit"]{
 	display:block;
 	border-radius: 1em;
 }
-@media all and (max-width: 768px){
+@media all and (max-width: 1024px){
 	#hamburger{
 		display: block;
 	}
