@@ -592,7 +592,7 @@ form .actions input[type="submit"]{
 	display:block;
 	border-radius: 1em;
 }
-@media all and (max-width: 1024px){
+@media all and (max-width: 950px){
 	#hamburger{
 		display: block;
 	}
@@ -669,7 +669,10 @@ form .actions input[type="submit"]{
 }
 .search-modal .section-inner form{
 	flex: 95% 1 0;
-	justify-content: normal;
+	justify-content: normal;    
+	display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
 }
 .search-modal .section-inner form label{
 	order: 2;
