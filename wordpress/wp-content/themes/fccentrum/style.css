@@ -613,9 +613,8 @@ form .actions input[type="submit"]{
 		display: block;
 		width: 100vw;
 		height: auto;
-		background: transparent url(../fccentrum/img/menu-bg.svg) no-repeat bottom left;
-		background-size: 100% auto;
-		padding: 1em 2rem 3em;
+		background: #E72934;
+		padding: 1em 2rem 1em;
 		line-height: 1em;
 	}
 	#site-header .primary-menu-wrapper  ul.primary-menu li{
@@ -643,7 +642,8 @@ form .actions input[type="submit"]{
 		font-weight: 100;
 		width: 100%;
 	}
-	#site-header .primary-menu-wrapper  ul.primary-menu li ul.sub-menu li{
+	#site-header .primary-menu-wrapper ul.primary-menu li:hover ul.sub-menu{
+		left: 0;
 	}
 }
 
