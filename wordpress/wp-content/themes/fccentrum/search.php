@@ -2,7 +2,7 @@
 get_header();
 ?>
 
-<main id="site-content" class="<?php echo $bg_color; ?> <?php echo $text_color; ?>" >
+<main id="site-content"  >
 	<header class="post-header">
 
 	</header>
