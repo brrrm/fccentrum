@@ -221,6 +221,7 @@ input[type="submit"]{
 input[type="text"],
 input[type="search"],
 input[type="email"],
+select,
 textarea{
 	font-family: 'garage-gothic', sans-serif;
 	text-transform: uppercase;
@@ -477,9 +478,23 @@ form{
 	justify-content: space-between;
 	align-items: baseline;
 }
+form label{
+	flex: 70% 0 0;
+	font-family: "Odin";
+  font-weight: 100;
+  text-transform: none;
+  font-size: 1em;
+}
 form .field{
-	flex: 49% 0 0;
+	flex: 100% 0 0;
 	margin-bottom: 1em;
+}
+body.page-id-5 form .field{
+	flex: 49% 0 0;
+}
+body.page-id-5 form .message,
+body.page-id-5 form .actions{
+	flex: 100% 0 0;
 }
 form .message,
 form .actions{
@@ -489,7 +504,21 @@ form .actions input[type="submit"]{
 	min-width: 12em;
 	float: right;
 }
-
+form .field.checkbox{
+	display: flex;
+	margin: 2em 0;
+}
+form .field.checkbox span{
+	order: 1;
+	margin: 0;
+	height: 2em;
+	width: 2em;
+}
+form .field.checkbox label{
+	order: 2;
+	font-weight: 500;
+  letter-spacing: 1px;
+}
 @media all and (max-width: 786px){
 	form{
 		display: block;
