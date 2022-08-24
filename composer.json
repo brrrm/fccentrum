@@ -25,5 +25,12 @@
 			"type": "composer",
 			"url": "https://pivvenit.github.io/acf-composer-bridge/composer/v3/wordpress-plugin/"
 		}
-    ]
+    ],
+    "config": {
+        "allow-plugins": {
+            "pivvenit/acf-pro-installer": true,
+            "composer/installers": true,
+            "johnpbloch/wordpress-core-installer": true
+        }
+    }
 }
