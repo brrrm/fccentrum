@@ -500,9 +500,6 @@ form .message,
 form .actions{
 	flex: 100% 0 0;
 }
-form .actions{
-	text-align: center;
-}
 form .actions input[type="submit"]{ 
 	min-width: 12em;
 }
