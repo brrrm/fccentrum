@@ -7,6 +7,7 @@
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" >
 		<link rel="profile" href="https://gmpg.org/xfn/11">
+		<meta name="facebook-domain-verification" content="licc5ah75316vf2zm16juk3ju9b3dx" />
 
 		<?php wp_head(); ?>
 
