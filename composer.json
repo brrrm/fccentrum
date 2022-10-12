@@ -3,7 +3,8 @@
         "johnpbloch/wordpress": ">=5.9",
         "advanced-custom-fields/advanced-custom-fields-pro": "^5.12",
         "wpackagist-plugin/contact-form-7": "^5.5",
-        "wpackagist-plugin/wordpress-seo": "^19.0"
+        "wpackagist-plugin/wordpress-seo": "^19.0",
+        "wpackagist-plugin/insert-headers-and-footers": "^2.0"
     },
     "extra": {
         "installer-paths": {
