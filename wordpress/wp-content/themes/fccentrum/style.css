@@ -1057,6 +1057,9 @@ ul.categories-block li.cat .category-pic img{
 		margin-right: -2em;
 	}
 }
+.wp-embed-responsive .wp-embed-aspect-4-5 .wp-block-embed__wrapper:before{
+	padding-top: 125%;
+}
 
 figcaption{
 	text-align: right;

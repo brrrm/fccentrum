@@ -11,9 +11,10 @@
 
 get_header();
 $terms = get_the_terms($post, 'category');
-$bg_color = 'background-' . get_field('achtergrondkleur', $terms[0]);
-$text_color = 'foreground-' . get_field('tekstkleur', $terms[0]);
-$graphic = get_field('graphic_halverwege', $terms[0]);
+
+$bg_color 	= is_array($terms)? 'background-' . get_field('achtergrondkleur', $terms[0]) : '';
+$text_color = is_array($terms)? 'foreground-' . get_field('tekstkleur', $terms[0]) : '';
+$graphic 	= is_array($terms)? get_field('graphic_halverwege', $terms[0]) : '';
 
 ?>
 
@@ -78,10 +79,12 @@ $graphic = get_field('graphic_halverwege', $terms[0]);
 				</div>
 			<?php } ?>
 			
-			<h2><?php echo $terms[0]->name; ?></h2>
-			<div class="stories-container">
-				<?php get_postsbycategory($terms[0]); // see functions.php ?>
-			</div>
+			<?php if(is_array($terms)){ ?>
+				<h2><?php echo $terms[0]->name; ?></h2>
+				<div class="stories-container">
+					<?php get_postsbycategory($terms[0]); // see functions.php ?>
+				</div>
+			<?php } ?>
 
 			<?php
 		}

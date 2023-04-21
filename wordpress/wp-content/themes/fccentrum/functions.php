@@ -317,3 +317,44 @@ function fccentrum_load_blog_posts(){
 
 	wp_die();
 }
+
+
+
+/*
+function custom_render_block_core_group (string $block_content, array $block ): string {
+	if ($block['blockName'] === 'core/embed' 
+		&& !wp_is_json_request()
+		&& $block['attrs']['type'] == 'video' 
+		&& $block['attrs']['providerNameSlug'] == 'youtube' 
+		&& str_contains($block['attrs']['url'], '/shorts/') ) {
+		// Add background color to the page section
+		$block['attrs']['className'] = str_replace('wp-embed-aspect-4-3', 'wp-embed-aspect-16-9', $block['attrs']['className']);
+		$block_content = str_replace('wp-embed-aspect-4-3', 'wp-embed-aspect-9-16', $block_content);
+		return $block_content;
+	}
+
+	return $block_content;
+}
+
+add_filter('render_block', 'custom_render_block_core_group', null, 2);
+*/
+
+
+function fccentrum_render_block_data_filter($parsed_block, $source_block, $parent_block){
+	if ($parsed_block['blockName'] === 'core/embed' 
+		&& !wp_is_json_request()
+		&& $parsed_block['attrs']['type'] == 'video' 
+		&& $parsed_block['attrs']['providerNameSlug'] == 'youtube' 
+		&& str_contains($parsed_block['attrs']['url'], '/shorts/') ) {
+
+		$parsed_block['attrs']['className'] = str_replace('wp-embed-aspect-4-3', 'wp-embed-aspect-4-5', $parsed_block['attrs']['className']);
+		$parsed_block['innerHTML'] = str_replace('wp-embed-aspect-4-3', 'wp-embed-aspect-4-5', $parsed_block['innerHTML']);
+		foreach($parsed_block['innerContent'] as $key => $innerContent){
+			$parsed_block['innerContent'][$key] = str_replace('wp-embed-aspect-4-3', 'wp-embed-aspect-4-5', $parsed_block['innerContent'][$key]);
+		}
+		//error_log(print_r($parsed_block, true));
+	}
+	return $parsed_block;
+}
+add_filter('render_block_data', 'fccentrum_render_block_data_filter', null, 3);
+
